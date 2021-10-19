@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Nodes/Club.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/Skyscraper.png" type="Texture" id=2]
+[ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=4]
+[ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/BackgroundBuildings.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.839216, 0.396078, 0.00784314, 1 )
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource( 4 )
+windUpOriginalPosition = 10
+windUpRate = 10
+windUpMax = 1000
+windUpMin = 10
+
+[node name="Skyscraper" type="Node2D" parent="."]
+
+[node name="Street" type="Sprite" parent="Skyscraper"]
+position = Vector2( 475.965, 3802.01 )
+texture = ExtResource( 6 )
+
+[node name="Building" type="Sprite" parent="Skyscraper"]
+texture = ExtResource( 2 )
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( -238.28, 4164.25 )
+
+[node name="Club" parent="." instance=ExtResource( 1 )]
+position = Vector2( -238.28, 4164.25 )
+
+[node name="WindUpBar" type="ProgressBar" parent="."]
+margin_left = 7.0
+margin_top = 695.0
+margin_right = 407.0
+margin_bottom = 715.0
+custom_styles/fg = SubResource( 4 )
+min_value = 100.0
+max_value = 2000.0
+step = 10.0
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flag" parent="." instance=ExtResource( 5 )]
+position = Vector2( 284.423, 4173.18 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, 4150 )
+current = true

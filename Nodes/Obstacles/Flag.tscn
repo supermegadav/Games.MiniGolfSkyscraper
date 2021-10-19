@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Sprites/Hole.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Flag.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.78748, 2.623 )
+
+[node name="Flag" type="Area2D" groups=[
+"Flag",
+]]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 9.32038, -53.3873 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.686089, -1.14477 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Flag_body_entered"]
