@@ -13,9 +13,12 @@ radius = 7.23545
 [node name="Ball" type="RigidBody2D" groups=[
 "Ball",
 ]]
+position = Vector2( 1, 1 )
+collision_layer = 0
 mass = 10.0
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
+continuous_cd = 2
 linear_damp = 0.75
 script = ExtResource( 2 )
 

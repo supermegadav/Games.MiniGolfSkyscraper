@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Perspectives.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 464.397, 12.7462 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 464.163, 14.6895 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 464.47, 22.1021 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 464.777, 25.5049 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 463.886, 30.8978 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 462.629, 33.7654 )
+
+[node name="Perspectives" type="Node2D" groups=[
+"Perspective",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Perspective6" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perspective6"]
+modulate = Color( 0.745098, 0.560784, 0.866667, 1 )
+position = Vector2( -1.33636, -63.2538 )
+shape = SubResource( 1 )
+
+[node name="Perspective5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perspective5"]
+position = Vector2( -0.561249, -35.0769 )
+shape = SubResource( 2 )
+
+[node name="Perspective4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perspective4"]
+modulate = Color( 0.878431, 0.682353, 0.92549, 1 )
+position = Vector2( 0.529739, 3.17839 )
+shape = SubResource( 3 )
+
+[node name="Perspective3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perspective3"]
+position = Vector2( 0, 51.6461 )
+shape = SubResource( 4 )
+
+[node name="Perspective2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perspective2"]
+modulate = Color( 0.619608, 0.34902, 0.666667, 1 )
+position = Vector2( 0.456329, 109.116 )
+shape = SubResource( 5 )
+
+[node name="Perspective1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perspective1"]
+modulate = Color( 0.686275, 0, 1, 1 )
+position = Vector2( 0, 174.543 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="Perspective6" to="." method="_on_Perspective6_body_entered"]
+[connection signal="body_entered" from="Perspective5" to="." method="_on_Perspective5_body_entered"]
+[connection signal="body_entered" from="Perspective4" to="." method="_on_Perspective4_body_entered"]
+[connection signal="body_entered" from="Perspective3" to="." method="_on_Perspective3_body_entered"]
+[connection signal="body_entered" from="Perspective2" to="." method="_on_Perspective2_body_entered"]
+[connection signal="body_entered" from="Perspective1" to="." method="_on_Perspective1_body_entered"]

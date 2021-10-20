@@ -1,0 +1,63 @@
+[gd_scene format=2]
+
+[node name="SideScroller" type="Node2D"]
+
+[node name="Borders" type="StaticBody2D" parent="." groups=[
+"SideScrollerMode",
+]]
+collision_layer = 64512
+
+[node name="LeftBorder" type="CollisionPolygon2D" parent="Borders"]
+polygon = PoolVector2Array( -347.07, -382.064, -347.07, -78.4226, -450.383, 207.579, -347.7, 208.209, -348.33, 382.708, -366.598, 382.708, -367.228, 222.068, -473.691, 220.809, -364.709, -87.2422, -364.708, -381.434 )
+
+[node name="RightBorder" type="CollisionPolygon2D" parent="Borders"]
+polygon = PoolVector2Array( 350.818, -381.753, 350.818, -78.0771, 466.21, 206.949, 354.5, 208.5, 354.5, 383, 366.5, 383.5, 365.5, 219.5, 487.629, 220.809, 364.5, -78.4109, 367.837, -381.419 )
+
+[node name="Plane6" type="StaticBody2D" parent="." groups=[
+"SideScrollerMode",
+]]
+collision_layer = 32768
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plane6"]
+polygon = PoolVector2Array( -357.595, -59.7902, 365.232, -60.0177, 368.536, -54.3544, -362.495, -56.7141 )
+one_way_collision_margin = 0.0
+
+[node name="Plane5" type="StaticBody2D" parent="." groups=[
+"SideScrollerMode",
+]]
+collision_layer = 16384
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plane5"]
+polygon = PoolVector2Array( -366.742, -32.6453, 377.031, -33.1172, 379.39, -26.5101, -374.765, -26.0382 )
+
+[node name="Plane4" type="StaticBody2D" parent="." groups=[
+"SideScrollerMode",
+]]
+collision_layer = 8192
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plane4"]
+polygon = PoolVector2Array( -378.914, -2.21173, 390.121, -1.74487, 392.366, 4.9899, -383.816, 4.42865 )
+
+[node name="Plane3" type="StaticBody2D" parent="." groups=[
+"SideScrollerMode",
+]]
+collision_layer = 4096
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plane3"]
+polygon = PoolVector2Array( -396.724, 44.8372, 406.397, 45.3986, 409.764, 52.1333, -400.653, 51.0108 )
+
+[node name="Plane2" type="StaticBody2D" parent="." groups=[
+"SideScrollerMode",
+]]
+collision_layer = 2048
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plane2"]
+polygon = PoolVector2Array( -415.806, 100.399, 427.163, 101.521, 431.092, 109.94, -419.735, 108.256 )
+
+[node name="Plane1" type="StaticBody2D" parent="." groups=[
+"SideScrollerMode",
+]]
+collision_layer = 1024
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plane1"]
+polygon = PoolVector2Array( -440.72, 174.212, 460.269, 175.412, 454.276, 162.676, -435.666, 163.806 )

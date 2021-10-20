@@ -1,0 +1,96 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Nodes/Levels/Level01.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nodes/Club.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Nodes/Levels/Level02.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Nodes/Levels/Level03.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Nodes/Levels/Level04.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Nodes/Levels/Level06.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Nodes/Levels/Level05.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Nodes/Levels/Level07.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Nodes/Levels/Level08.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Nodes/Levels/Level09.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Sprites/BackgroundBuildings.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/Skyscraper.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Sprites/SkyscraperPeak.png" type="Texture" id=15]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.839216, 0.396078, 0.00784314, 1 )
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource( 14 )
+windUpOriginalPosition = 10
+windUpRate = 10
+windUpMax = 1500
+windUpMin = 10
+currentLevel = 9
+
+[node name="Skyscraper" type="Node2D" parent="."]
+
+[node name="Street" type="Sprite" parent="Skyscraper"]
+position = Vector2( 475.965, 3802.01 )
+texture = ExtResource( 12 )
+
+[node name="Building" type="Sprite" parent="Skyscraper"]
+visible = false
+modulate = Color( 1, 1, 1, 0.203922 )
+texture = ExtResource( 13 )
+
+[node name="Level01" parent="Skyscraper" instance=ExtResource( 1 )]
+position = Vector2( 0, 4100 )
+
+[node name="Level02" parent="Skyscraper" instance=ExtResource( 4 )]
+position = Vector2( 0, 3340 )
+
+[node name="Level03" parent="Skyscraper" instance=ExtResource( 5 )]
+position = Vector2( 0, 2580 )
+
+[node name="Level04" parent="Skyscraper" instance=ExtResource( 6 )]
+position = Vector2( 0, 1820 )
+
+[node name="Level05" parent="Skyscraper" instance=ExtResource( 8 )]
+position = Vector2( 0, 1060 )
+
+[node name="Level06" parent="Skyscraper" instance=ExtResource( 7 )]
+position = Vector2( 0, 300 )
+
+[node name="Level07" parent="Skyscraper" instance=ExtResource( 9 )]
+position = Vector2( 0, -460 )
+
+[node name="Level08" parent="Skyscraper" instance=ExtResource( 10 )]
+position = Vector2( 0, -1220 )
+
+[node name="Level09" parent="Skyscraper" instance=ExtResource( 11 )]
+position = Vector2( 0, -1980 )
+
+[node name="SkyscraperPeak" type="Sprite" parent="Skyscraper"]
+position = Vector2( 6, -3330 )
+texture = ExtResource( 15 )
+
+[node name="Ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( -238.28, 4164.25 )
+
+[node name="Club" parent="." instance=ExtResource( 3 )]
+position = Vector2( -238.28, 4164.25 )
+
+[node name="WindUpBar" type="ProgressBar" parent="Club"]
+margin_left = -80.0
+margin_right = -30.0
+margin_bottom = 12.0
+custom_styles/fg = SubResource( 1 )
+min_value = 100.0
+max_value = 2000.0
+step = 10.0
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, 4150 )
+current = true
+
+[node name="Tween" type="Tween" parent="."]
