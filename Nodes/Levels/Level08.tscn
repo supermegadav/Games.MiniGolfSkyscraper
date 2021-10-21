@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Assets/Sprites/Level09.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Level08.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/Level01_debug.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Levels/Perspectives.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Nodes/Levels/SideScroller.tscn" type="PackedScene" id=6]
 
 [node name="Level08" type="Node2D"]
 script = ExtResource( 3 )
@@ -20,8 +19,10 @@ position = Vector2( -0.5, 0 )
 texture = ExtResource( 2 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
+position = Vector2( 33.9028, -153.622 )
 
 [node name="TopDown" type="Node2D" parent="."]
+visible = false
 
 [node name="Sandbox" type="StaticBody2D" parent="TopDown" groups=[
 "TopDownMode",
@@ -31,9 +32,7 @@ texture = ExtResource( 2 )
 polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
 
 [node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( 0.338074, 21.866 )
-
-[node name="SideScroller" parent="." instance=ExtResource( 6 )]
+position = Vector2( 319.365, -108.281 )
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -41,7 +40,61 @@ position = Vector2( 0.338074, 21.866 )
 "ObstacleVoid",
 ]]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( 80.1479, -46.3975, 123.454, -46.8179, 149.101, 124.725, 53.2392, 124.725 )
+[node name="SideScroller" type="Node2D" parent="."]
+
+[node name="Plane6" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 32768
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane6"]
+polygon = PoolVector2Array( -357.595, -59.7902, 365.232, -60.0177, 368.536, -54.3544, -362.495, -56.7141 )
+one_way_collision_margin = 0.0
+
+[node name="Plane5" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 16384
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane5"]
+polygon = PoolVector2Array( -366.742, -32.6453, 377.031, -33.1172, 379.39, -26.5101, -374.765, -26.0382 )
+
+[node name="Plane4" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 8192
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane4"]
+polygon = PoolVector2Array( -378.914, -2.21173, 390.121, -1.74487, 392.366, 4.9899, -383.816, 4.42865 )
+
+[node name="Plane3" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 4096
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane3"]
+polygon = PoolVector2Array( -396.724, 44.8372, 406.397, 45.3986, 409.764, 52.1333, -400.653, 51.0108 )
+
+[node name="Plane2" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 2048
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane2"]
+polygon = PoolVector2Array( -415.806, 100.399, 427.163, 101.521, 431.092, 109.94, -419.735, 108.256 )
+
+[node name="Plane1" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 1024
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane1"]
+polygon = PoolVector2Array( -440.72, 174.212, 460.269, 175.412, 454.276, 162.676, -435.666, 163.806 )
 
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]

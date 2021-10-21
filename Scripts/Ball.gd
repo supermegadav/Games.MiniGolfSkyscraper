@@ -50,7 +50,7 @@ func collision_with_hole():
 	
 	
 func enteredVoid():
-	linear_velocity = Vector2(linear_velocity.x,1200)
+	linear_velocity = Vector2(linear_velocity.x / 3,1000)
 	set_collision_mask_bit(0, false)
 	set_collision_mask_bit(9+ballIsInPerspective, true)
 	ballIsFreefalling = true

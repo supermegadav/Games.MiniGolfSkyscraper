@@ -23,6 +23,13 @@ func _ready():
 	loadNewLevel()
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("debug_increase_level"):
+		currentLevel += 1
+		resetCamera()
+	if Input.is_action_just_pressed("debug_decrease_level"):
+		currentLevel -= 1
+		resetCamera()
+	
 	if hasWindUpInAction:
 		$Club/WindUpBar.value = windUp
 		if windUpIncrease:
@@ -82,36 +89,54 @@ func changeCamera(off:Vector2):
 
 func resetCamera():
 	$Camera2D.current = true
+	var cameraOffset = Vector2()
+	var cameraZoom = Vector2()
+	
 	if currentLevel == 1:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,4150), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(1,1)
+		cameraOffset = Vector2(0,4200)
 	elif currentLevel == 2:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,3390), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(1,1)
+		cameraOffset = Vector2(0,3440)
 	elif currentLevel == 3:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,2630), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(1,1)
+		cameraOffset = Vector2(0,2680)
 	elif currentLevel == 4:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,1870), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(1.75,1.75)
+		cameraOffset = Vector2(620,1920)
 	elif currentLevel == 5:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,1110), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(1.75,1.75)
+		cameraOffset = Vector2(620,1160)
 	elif currentLevel == 6:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,350), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(1.75,1.75)
+		cameraOffset = Vector2(620,400)
 	elif currentLevel == 7:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,-410), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(1.75,1.75)
+		cameraOffset = Vector2(620,-360)
 	elif currentLevel == 8:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,-1170), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(1,1)
+		cameraOffset = Vector2(0,-1120)
 	elif currentLevel == 9:
-		$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, Vector2(0,-1930), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		cameraZoom = Vector2(2,2)
+		cameraOffset = Vector2(0,-2280)
 	else:
+		#TODO where do you won!!
+		cameraZoom = Vector2(12,12)
+		cameraOffset = Vector2(620,920)
 		print('you won!')
+		
+	$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, cameraZoom, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, cameraOffset, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	
 func loadNewLevel():
 	resetCamera()
 	if currentLevel == 1:
-		$Ball.resetPosition(Vector2(-150,4150))
+		$Ball.resetPosition(Vector2(250,4150))
 	elif currentLevel == 2:
-		$Ball.resetPosition(Vector2(-150,3390))
+		$Ball.resetPosition(Vector2(-250,3390))
 	elif currentLevel == 3:
-		$Ball.resetPosition(Vector2(-150,2630))
+		$Ball.resetPosition(Vector2(50,2750))
 	elif currentLevel == 4:
 		$Ball.resetPosition(Vector2(-150,1870))
 	elif currentLevel == 5:

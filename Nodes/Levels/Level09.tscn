@@ -5,7 +5,9 @@
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Levels/Perspectives.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Nodes/Levels/SideScroller.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1100, 5.41 )
 
 [node name="Level09" type="Node2D"]
 script = ExtResource( 3 )
@@ -19,9 +21,14 @@ modulate = Color( 1, 1, 1, 0.592157 )
 position = Vector2( -0.5, 0 )
 texture = ExtResource( 2 )
 
+[node name="Perspectives2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 55.559, -571.464 )
+
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
+position = Vector2( -7.93701, 261.921 )
 
 [node name="TopDown" type="Node2D" parent="."]
+visible = false
 
 [node name="Sandbox" type="StaticBody2D" parent="TopDown" groups=[
 "TopDownMode",
@@ -30,10 +37,8 @@ texture = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopDown/Sandbox"]
 polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
 
-[node name="SideScroller" parent="." instance=ExtResource( 6 )]
-
 [node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( 220.715, 1.72189 )
+position = Vector2( -289.285, -514.278 )
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -41,7 +46,66 @@ position = Vector2( 220.715, 1.72189 )
 "ObstacleVoid",
 ]]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( 80.1479, -46.3975, 123.454, -46.8179, 149.101, 124.725, 53.2392, 124.725 )
+[node name="SideScroller" type="Node2D" parent="."]
+
+[node name="Plane6" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( 12.9568, 263.521 )
+collision_layer = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane6"]
+position = Vector2( 5.34543, -54.3448 )
+shape = SubResource( 1 )
+
+[node name="Plane5" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( 12.9568, 263.521 )
+collision_layer = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane5"]
+position = Vector2( 7.19785, -27.3689 )
+shape = SubResource( 1 )
+
+[node name="Plane4" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( 12.9568, 263.521 )
+collision_layer = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane4"]
+position = Vector2( 8.19897, 3.33241 )
+shape = SubResource( 1 )
+
+[node name="Plane3" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( 12.9568, 263.521 )
+collision_layer = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane3"]
+position = Vector2( 7.86526, 51.0529 )
+shape = SubResource( 1 )
+
+[node name="Plane2" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( 12.9568, 263.521 )
+collision_layer = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane2"]
+position = Vector2( 8.19897, 106.783 )
+shape = SubResource( 1 )
+
+[node name="Plane1" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( 12.9568, 263.521 )
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane1"]
+position = Vector2( 8.64444, 169.145 )
+shape = SubResource( 1 )
 
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]

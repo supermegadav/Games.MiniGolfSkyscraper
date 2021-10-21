@@ -1,11 +1,27 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Sprites/Level01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Level03.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/Level01_debug.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Levels/Perspectives.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Nodes/Levels/SideScroller.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Sprites/Wheelhouse_Wheel.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Wheelhouse_House.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 4.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Wheel:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, 0, 0, 0, 0, -360, 0, 0, 0, 0 ),
+"times": PoolRealArray( 0, 4 )
+}
 
 [node name="Level03" type="Node2D"]
 script = ExtResource( 3 )
@@ -20,17 +36,126 @@ position = Vector2( -0.5, 0 )
 texture = ExtResource( 2 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 1.49829, -153.577 )
 
 [node name="TopDown" type="Node2D" parent="."]
+visible = false
 
 [node name="Sandbox" type="StaticBody2D" parent="TopDown" groups=[
 "TopDownMode",
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopDown/Sandbox"]
+position = Vector2( -7.49155, -153.576 )
 polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
 
 [node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( 297.866, -43.8997 )
+position = Vector2( -0.296875, -195.229 )
 
-[node name="SideScroller" parent="." instance=ExtResource( 6 )]
+[node name="SideScroller" type="Node2D" parent="."]
+
+[node name="Plane6" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 32768
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane6"]
+polygon = PoolVector2Array( -357.595, -59.7902, 365.232, -60.0177, 368.536, -54.3544, -362.495, -56.7141 )
+one_way_collision_margin = 0.0
+
+[node name="Plane5" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 16384
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane5"]
+polygon = PoolVector2Array( -366.742, -32.6453, 377.031, -33.1172, 379.39, -26.5101, -374.765, -26.0382 )
+
+[node name="Plane4" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 8192
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane4"]
+polygon = PoolVector2Array( -378.914, -2.21173, 390.121, -1.74487, 392.366, 4.9899, -383.816, 4.42865 )
+
+[node name="Plane3" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 4096
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane3"]
+polygon = PoolVector2Array( -396.724, 44.8372, 406.397, 45.3986, 409.764, 52.1333, -400.653, 51.0108 )
+
+[node name="Plane2" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 2048
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane2"]
+polygon = PoolVector2Array( -415.806, 100.399, 427.163, 101.521, 431.092, 109.94, -419.735, 108.256 )
+
+[node name="Plane1" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 1024
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideScroller/Plane1"]
+polygon = PoolVector2Array( -440.72, 174.212, 460.269, 175.412, 454.276, 162.676, -435.666, 163.806 )
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Void" type="Area2D" parent="Obstacles" groups=[
+"ObstacleVoid",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( -318.166, -229.31, -403.453, 52.507, -328.761, 53.0367, -259.366, -229.31 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( 285.198, -231.429, 336.582, 54.0961, 404.388, 53.5664, 324.928, -230.37 )
+
+[node name="House" type="StaticBody2D" parent="Obstacles"]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/House"]
+position = Vector2( -6.52861, -268.336 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/House"]
+position = Vector2( -4.2894, 60.5038 )
+polygon = PoolVector2Array( -187.297, -232.863, -178.477, -190.026, -168.398, -170.497, -157.059, -164.828, -143.2, -161.048, -127.451, -161.678, -111.072, -165.458, -93.4326, -166.717, -74.5338, -166.717, -61.3047, -167.977, -44.9257, -167.977, -38.6261, -166.087, -39.1458, -191.04, -40.0367, -211.086, -40.4821, -230.685, -29.7914, -260.531, -20.8824, -282.358, -3.3502, -283.526, 19.6535, -283.694, 39.6987, -263.203, 45.935, -237.367, 55.2895, -220.44, 54.844, -165.65, 90.9254, -170.104, 143.488, -162.532, 171.533, -163.522, 181.797, -177.232, 179.57, -303.739, 61.0803, -302.403, -25.3369, -301.512, -63.6455, -303.739, -186.59, -305.521 )
+
+[node name="Wheel" type="StaticBody2D" parent="Obstacles"]
+position = Vector2( 0, -300 )
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Wheel"]
+texture = ExtResource( 6 )
+
+[node name="Collision4" type="CollisionPolygon2D" parent="Obstacles/Wheel"]
+position = Vector2( 265.89, -132.548 )
+polygon = PoolVector2Array( -124.616, 263.808, -93.1519, 285.908, -40.3366, 174.284, -71.0519, 166.043 )
+
+[node name="Collision3" type="CollisionPolygon2D" parent="Obstacles/Wheel"]
+position = Vector2( 3.17474, -371.452 )
+polygon = PoolVector2Array( 21.9796, 175.706, 121.617, 223.651, 139.971, 200.053, 30.5949, 142.743 )
+
+[node name="Collision2" type="CollisionPolygon2D" parent="Obstacles/Wheel"]
+position = Vector2( -70.6394, -277.421 )
+polygon = PoolVector2Array( -157.795, 219.144, -125.581, 228.509, -76.1369, 129.995, -101.234, 112.015 )
+
+[node name="Collision1" type="CollisionPolygon2D" parent="Obstacles/Wheel"]
+polygon = PoolVector2Array( -156.89, 172.088, -47.888, 228.65, -40.0219, 194.563, -135.914, 144.744 )
+
+[node name="WheelMovingAnim" type="AnimationPlayer" parent="Obstacles"]
+playback_speed = 2.0
+method_call_mode = 1
+"anims/New Anim" = SubResource( 1 )
+
+[connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]

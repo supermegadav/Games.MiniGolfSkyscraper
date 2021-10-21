@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Nodes/Levels/Level01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=2]
@@ -12,9 +12,10 @@
 [ext_resource path="res://Nodes/Levels/Level08.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Nodes/Levels/Level09.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Sprites/BackgroundBuildings.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Sprites/Skyscraper.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/BuildingsStructure.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Sprites/SkyscraperPeak.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/BuildingsStructure_FrontPillars.png" type="Texture" id=16]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.839216, 0.396078, 0.00784314, 1 )
@@ -25,49 +26,65 @@ windUpOriginalPosition = 10
 windUpRate = 10
 windUpMax = 1500
 windUpMin = 10
-currentLevel = 9
+angleRate = 2
+currentLevel = 3
 
 [node name="Skyscraper" type="Node2D" parent="."]
 
 [node name="Street" type="Sprite" parent="Skyscraper"]
-position = Vector2( 475.965, 3802.01 )
+position = Vector2( 475.965, 3800.42 )
 texture = ExtResource( 12 )
 
 [node name="Building" type="Sprite" parent="Skyscraper"]
 visible = false
-modulate = Color( 1, 1, 1, 0.203922 )
+position = Vector2( 615, 800 )
 texture = ExtResource( 13 )
 
 [node name="Level01" parent="Skyscraper" instance=ExtResource( 1 )]
-position = Vector2( 0, 4100 )
+position = Vector2( 0, 4285 )
 
 [node name="Level02" parent="Skyscraper" instance=ExtResource( 4 )]
-position = Vector2( 0, 3340 )
+position = Vector2( 0, 3525 )
 
 [node name="Level03" parent="Skyscraper" instance=ExtResource( 5 )]
-position = Vector2( 0, 2580 )
+position = Vector2( 0, 2765 )
 
 [node name="Level04" parent="Skyscraper" instance=ExtResource( 6 )]
-position = Vector2( 0, 1820 )
+position = Vector2( 620, 2005 )
 
 [node name="Level05" parent="Skyscraper" instance=ExtResource( 8 )]
-position = Vector2( 0, 1060 )
+position = Vector2( 620, 1245 )
 
 [node name="Level06" parent="Skyscraper" instance=ExtResource( 7 )]
-position = Vector2( 0, 300 )
+position = Vector2( 620, 485 )
 
 [node name="Level07" parent="Skyscraper" instance=ExtResource( 9 )]
-position = Vector2( 0, -460 )
+position = Vector2( 620, -275 )
 
 [node name="Level08" parent="Skyscraper" instance=ExtResource( 10 )]
-position = Vector2( 0, -1220 )
+position = Vector2( 0, -1035 )
 
 [node name="Level09" parent="Skyscraper" instance=ExtResource( 11 )]
-position = Vector2( 0, -1980 )
+position = Vector2( 0, -2270 )
 
 [node name="SkyscraperPeak" type="Sprite" parent="Skyscraper"]
+visible = false
 position = Vector2( 6, -3330 )
 texture = ExtResource( 15 )
+
+[node name="BuildingsStructure_FrontPillars" type="Sprite" parent="Skyscraper"]
+visible = false
+position = Vector2( 620, 940 )
+texture = ExtResource( 16 )
+
+[node name="BuildingStructure_FreeFall" type="StaticBody2D" parent="Skyscraper"]
+collision_layer = 64512
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Skyscraper/BuildingStructure_FreeFall"]
+polygon = PoolVector2Array( -378.576, 4510.14, -377, -2931, -422, -2932, -413.901, 4510.69 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Skyscraper/BuildingStructure_FreeFall"]
+polygon = PoolVector2Array( 429.015, 4512.89, 412.979, 2513.71, 880.882, 2087.1, 1667.07, 2089.62, 1662.03, -546.13, 424.791, -551.171, 437.389, -2929.9, 389.512, -2929.9, 392.032, -523.453, 1624.24, -515.894, 1640.64, 2071.83, 863.773, 2070.04, 382.688, 2497.67, 382.688, 4514.67 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( -238.28, 4164.25 )
@@ -94,3 +111,5 @@ offset = Vector2( 0, 4150 )
 current = true
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
