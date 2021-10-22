@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Nodes/Levels/Level01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=2]
@@ -14,29 +14,56 @@
 [ext_resource path="res://Assets/Sprites/BackgroundBuildings.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Sprites/SkyscraperPeak.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure_FrontPillars.png" type="Texture" id=16]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.839216, 0.396078, 0.00784314, 1 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 386.989, 218.992 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 393.227, 217.928 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1012.06, 219.124 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1041.48, 223.994 )
+
 [node name="Gameplay" type="Node2D"]
 script = ExtResource( 14 )
-windUpOriginalPosition = 10
-windUpRate = 10
-windUpMax = 1500
-windUpMin = 10
-angleRate = 2
-currentLevel = 3
+currentLevel = 5
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 10
+offset = Vector2( 20, 685 )
+transform = Transform2D( 1, 0, 0, 1, 20, 685 )
+
+[node name="WindUpBar" type="ProgressBar" parent="HUD"]
+margin_right = 400.0
+margin_bottom = 20.0
+custom_styles/fg = SubResource( 1 )
+min_value = 100.0
+max_value = 2000.0
+step = 10.0
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, 4150 )
+current = true
 
 [node name="Skyscraper" type="Node2D" parent="."]
 
 [node name="Street" type="Sprite" parent="Skyscraper"]
-position = Vector2( 475.965, 3800.42 )
+position = Vector2( 476.759, 3800.42 )
 texture = ExtResource( 12 )
 
 [node name="Building" type="Sprite" parent="Skyscraper"]
-visible = false
 position = Vector2( 615, 800 )
 texture = ExtResource( 13 )
 
@@ -67,13 +94,7 @@ position = Vector2( 0, -1035 )
 [node name="Level09" parent="Skyscraper" instance=ExtResource( 11 )]
 position = Vector2( 0, -2270 )
 
-[node name="SkyscraperPeak" type="Sprite" parent="Skyscraper"]
-visible = false
-position = Vector2( 6, -3330 )
-texture = ExtResource( 15 )
-
 [node name="BuildingsStructure_FrontPillars" type="Sprite" parent="Skyscraper"]
-visible = false
 position = Vector2( 620, 940 )
 texture = ExtResource( 16 )
 
@@ -86,30 +107,75 @@ polygon = PoolVector2Array( -378.576, 4510.14, -377, -2931, -422, -2932, -413.90
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Skyscraper/BuildingStructure_FreeFall"]
 polygon = PoolVector2Array( 429.015, 4512.89, 412.979, 2513.71, 880.882, 2087.1, 1667.07, 2089.62, 1662.03, -546.13, 424.791, -551.171, 437.389, -2929.9, 389.512, -2929.9, 392.032, -523.453, 1624.24, -515.894, 1640.64, 2071.83, 863.773, 2070.04, 382.688, 2497.67, 382.688, 4514.67 )
 
+[node name="Area_FreeFall" type="Area2D" parent="Skyscraper"]
+collision_layer = 64512
+
+[node name="BetweenLevel1and2" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
+position = Vector2( 1.59857, 3810.64 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BetweenLevel2and3" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
+position = Vector2( 3.5636, 3068.26 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BetweenLevel3and4" type="CollisionPolygon2D" parent="Skyscraper/Area_FreeFall"]
+polygon = PoolVector2Array( -388, 2061, -383, 2520, 378, 2526, 379, 2492, 856, 2068 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BetweenLevel4and5" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
+position = Vector2( 631.984, 1526.48 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BetweenLevel5and6" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
+position = Vector2( 623.708, 785.114 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BetweenLevel6and7" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
+position = Vector2( 600.4, 20.1815 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BetweenLevel7and8" type="CollisionPolygon2D" parent="Skyscraper/Area_FreeFall"]
+polygon = PoolVector2Array( -386.817, -975.771, -384.698, -511.726, 413.077, -511.726, 399.304, -976.83 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BetweenLevel8and9" type="CollisionPolygon2D" parent="Skyscraper/Area_FreeFall"]
+polygon = PoolVector2Array( -385.83, -1792.16, -389.834, -1272.91, 411.07, -1271.57, 401.726, -1793.5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BetweenLayersOf9" type="CollisionPolygon2D" parent="Skyscraper/Area_FreeFall"]
+polygon = PoolVector2Array( -385.83, -2625.1, -387.164, -2092.5, 412.405, -2089.83, 401.726, -2625.1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( -238.28, 4164.25 )
 
 [node name="Club" parent="." instance=ExtResource( 3 )]
 position = Vector2( -238.28, 4164.25 )
 
-[node name="WindUpBar" type="ProgressBar" parent="Club"]
-margin_left = -80.0
-margin_right = -30.0
-margin_bottom = 12.0
-custom_styles/fg = SubResource( 1 )
-min_value = 100.0
-max_value = 2000.0
-step = 10.0
-value = 100.0
-percent_visible = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, 4150 )
-current = true
-
 [node name="Tween" type="Tween" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[connection signal="body_entered" from="Skyscraper/Area_FreeFall" to="." method="_on_Area_FreeFall_body_entered"]
+[connection signal="body_exited" from="Skyscraper/Area_FreeFall" to="." method="_on_Area_FreeFall_body_exited"]

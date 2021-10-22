@@ -22,7 +22,11 @@ position = Vector2( -0.5, 0 )
 texture = ExtResource( 2 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 0, -153.978 )
+
+[node name="Flag" parent="." instance=ExtResource( 5 )]
+position = Vector2( 872.85, -93.3592 )
 
 [node name="TopDown" type="Node2D" parent="."]
 visible = false
@@ -32,10 +36,8 @@ visible = false
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopDown/Sandbox"]
-polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
-
-[node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( 872.85, -93.3592 )
+position = Vector2( -625.082, -154.149 )
+polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 1669.75, -162.551, 1819.66, 270.199, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 1705.11, 209.387, 1594.8, -76.2837, -348.821, -76.8574, -448.251, 205.439 )
 
 [node name="SideScroller" type="Node2D" parent="."]
 
@@ -98,3 +100,24 @@ collision_layer = 1024
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane1"]
 position = Vector2( 8.64444, 169.145 )
 shape = SubResource( 1 )
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Trap" type="Node2D" parent="Obstacles"]
+
+[node name="Void" type="Area2D" parent="Obstacles" groups=[
+"ObstacleVoid",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( 1.05951, 2.11896 )
+polygon = PoolVector2Array( -380.505, -156.484, -422.825, -38.8839, -612.468, -38.8839, -577.506, -157.544 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( -178.782, -46.1245, -158.276, 52.8705, 157.801, 52.1633, 174.772, -45.4174 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( 0, 0.707108 )
+polygon = PoolVector2Array( -219.087, -227.851, -195.752, -127.442, 186.793, -128.149, 206.592, -229.265 )
+
+[connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]

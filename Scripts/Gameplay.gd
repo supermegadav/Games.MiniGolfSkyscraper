@@ -1,41 +1,47 @@
 extends Node2D
 
 export var windUpOriginalPosition = 100
-export var windUpRate = 20
-export var windUpMax = 1400
+export var windUpRate = 1.03
+export var windUpMax = 1500
 export var windUpMin = 100
-export var angleRate = 4
+export var angleRate = 2
 export var currentLevel = 1
 var windUp = 100
 var angleFromUp = 0
 var windUpIncrease = true
 var hasWindUpInAction = false
 var hasShotInAction = false
-
-
+export var isDebug = true
 
 func _ready():
 	$Ball.connect("ball_finished_moving", self, "on_ball_finished_moving")
 	$Ball.connect("ball_entered_hole", self, "on_ball_entered_hole")
 	$Ball.connect("ball_freefall_done", self, "on_ball_free_fall")
-	$Club/WindUpBar.min_value = windUpMin
-	$Club/WindUpBar.max_value = windUpMax
+	$HUD/WindUpBar.min_value = windUpMin
+	$HUD/WindUpBar.max_value = windUpMax
 	loadNewLevel()
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("debug_increase_level"):
-		currentLevel += 1
-		resetCamera()
-	if Input.is_action_just_pressed("debug_decrease_level"):
-		currentLevel -= 1
-		resetCamera()
-	
+	if isDebug:
+		if not $Ball.ballIsMoving:
+			if Input.is_action_just_pressed("debug_increase_level"):
+				if currentLevel <= 9: 
+					currentLevel += 1
+					loadNewLevel()
+			if Input.is_action_just_pressed("debug_decrease_level"):
+				if currentLevel > 0: 
+					currentLevel -= 1
+					loadNewLevel()
+			if Input.is_action_just_pressed("debug_reset_level"):
+					loadNewLevel()
+
+			
 	if hasWindUpInAction:
-		$Club/WindUpBar.value = windUp
+		$HUD/WindUpBar.value = windUp
 		if windUpIncrease:
-			windUp += windUpRate
+			windUp *= windUpRate
 		else:
-			windUp -= windUpRate
+			windUp /= windUpRate
 		if windUp > windUpMax:
 			windUpIncrease = false
 		elif windUp < windUpMin:
@@ -67,7 +73,7 @@ func on_ball_finished_moving():
 	hasShotInAction = false
 	$Club.position = $Ball.position
 	$Club.rotation_degrees = 0
-	$Club/WindUpBar.value = 100
+	$HUD/WindUpBar.value = windUpOriginalPosition
 	print('ball finished moving')
 	print('ball position: %s' % $Ball.position)
 	resetCamera()
@@ -130,6 +136,7 @@ func resetCamera():
 	$Tween.start()
 	
 func loadNewLevel():
+	print(currentLevel)
 	resetCamera()
 	if currentLevel == 1:
 		$Ball.resetPosition(Vector2(250,4150))
@@ -138,13 +145,13 @@ func loadNewLevel():
 	elif currentLevel == 3:
 		$Ball.resetPosition(Vector2(50,2750))
 	elif currentLevel == 4:
-		$Ball.resetPosition(Vector2(-150,1870))
+		$Ball.resetPosition(Vector2(-150,1920))
 	elif currentLevel == 5:
-		$Ball.resetPosition(Vector2(-150,1110))
+		$Ball.resetPosition(Vector2(1350,1210))
 	elif currentLevel == 6:
 		$Ball.resetPosition(Vector2(-150,350))
 	elif currentLevel == 7:
-		$Ball.resetPosition(Vector2(-150,-410))
+		$Ball.resetPosition(Vector2(1350,-310))
 	elif currentLevel == 8:
 		$Ball.resetPosition(Vector2(-150,-1170))
 	elif currentLevel == 9:
@@ -152,5 +159,15 @@ func loadNewLevel():
 	$Tween.start()
 	$Club.position = $Ball.position
 	$Club.rotation_degrees = 0
-	$Club/WindUpBar.value = 100
+	$HUD/WindUpBar.value = windUpOriginalPosition
 		
+
+
+func _on_Area_FreeFall_body_entered(body):
+	if body.is_in_group("Ball"):
+		$Ball.enteredFreeFallArea()
+
+
+func _on_Area_FreeFall_body_exited(body):
+	if body.is_in_group("Ball"):
+		$Ball.exitedFreeFallArea()

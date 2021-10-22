@@ -1,13 +1,201 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Sprites/Level05.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/Level01_debug.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Levels/Perspectives.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/PistonHandle.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Pistons.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1100, 5.41 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 81, 189 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 81, 0, 81, 189 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 162, 0, 81, 189 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 243, 0, 81, 189 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 324, 0, 81, 189 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 405, 0, 81, 189 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 29.292, 18.0442 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "PistonAnimation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Piston1/Piston:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 75 ), Vector2( 0, 75 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Piston1/AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 5.3, 5.7, 6.2, 6.6, 7, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "PistonAnimation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Piston1/Piston:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 75 ), Vector2( 0, 75 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Piston1/AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 5.3, 5.7, 6.2, 6.6, 7, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "PistonAnimation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Piston1/Piston:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 75 ), Vector2( 0, 75 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Piston1/AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 5.3, 5.7, 6.2, 6.6, 7, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "PistonAnimation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Piston1/Piston:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 75 ), Vector2( 0, 75 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Piston1/AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 5.3, 5.7, 6.2, 6.6, 7, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "PistonAnimation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Piston1/Piston:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 75 ), Vector2( 0, 75 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Piston1/AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 5.3, 5.7, 6.2, 6.6, 7, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1, 0 ]
+}
 
 [node name="Level05" type="Node2D"]
 script = ExtResource( 3 )
@@ -24,7 +212,11 @@ position = Vector2( -0.5, 0 )
 texture = ExtResource( 2 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( -4.24268, -151.321 )
+
+[node name="Flag" parent="." instance=ExtResource( 5 )]
+position = Vector2( -601.879, -83.5977 )
 
 [node name="TopDown" type="Node2D" parent="."]
 visible = false
@@ -34,12 +226,11 @@ visible = false
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopDown/Sandbox"]
-polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
-
-[node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( -601.879, -83.5977 )
+position = Vector2( -625.082, -154.149 )
+polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 1669.75, -162.551, 1819.66, 270.199, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 1705.11, 209.387, 1594.8, -76.2837, -348.821, -76.8574, -448.251, 205.439 )
 
 [node name="SideScroller" type="Node2D" parent="."]
+visible = false
 
 [node name="Plane6" type="StaticBody2D" parent="SideScroller" groups=[
 "SideScrollerMode",
@@ -100,3 +291,132 @@ collision_layer = 1024
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane1"]
 position = Vector2( 8.64444, 169.145 )
 shape = SubResource( 1 )
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Void" type="Area2D" parent="Obstacles" groups=[
+"ObstacleVoid",
+]]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( -164.44, -22.5994, -154.926, 53.5098, 153.673, 52.9152, 166.16, -22.0048 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( 0, 0.707108 )
+polygon = PoolVector2Array( -186.44, -226.066, -176.926, -136.281, 176.268, -136.876, 188.16, -227.256 )
+
+[node name="Pistons" type="Node2D" parent="Obstacles"]
+
+[node name="Piston1" type="Node2D" parent="Obstacles/Pistons"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Pistons/Piston1"]
+position = Vector2( -126.81, -119.468 )
+frames = SubResource( 8 )
+
+[node name="Piston" type="StaticBody2D" parent="Obstacles/Pistons/Piston1"]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Pistons/Piston1/Piston"]
+position = Vector2( -125.475, -142.716 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pistons/Piston1/Piston"]
+position = Vector2( -125.131, -142.795 )
+shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pistons"]
+playback_speed = 6.0
+anims/PistonAnimation = SubResource( 9 )
+
+[node name="Pistons2" type="Node2D" parent="Obstacles"]
+position = Vector2( 60, 0 )
+
+[node name="Piston1" type="Node2D" parent="Obstacles/Pistons2"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Pistons2/Piston1"]
+position = Vector2( -126.81, -119.468 )
+frames = SubResource( 8 )
+
+[node name="Piston" type="StaticBody2D" parent="Obstacles/Pistons2/Piston1"]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Pistons2/Piston1/Piston"]
+position = Vector2( -125.475, -142.716 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pistons2/Piston1/Piston"]
+position = Vector2( -125.131, -142.795 )
+shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pistons2"]
+playback_speed = 6.0
+anims/PistonAnimation = SubResource( 10 )
+
+[node name="Pistons3" type="Node2D" parent="Obstacles"]
+position = Vector2( 120, 0 )
+
+[node name="Piston1" type="Node2D" parent="Obstacles/Pistons3"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Pistons3/Piston1"]
+position = Vector2( -126.81, -119.468 )
+frames = SubResource( 8 )
+
+[node name="Piston" type="StaticBody2D" parent="Obstacles/Pistons3/Piston1"]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Pistons3/Piston1/Piston"]
+position = Vector2( -125.475, -142.716 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pistons3/Piston1/Piston"]
+position = Vector2( -125.131, -142.795 )
+shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pistons3"]
+playback_speed = 6.0
+anims/PistonAnimation = SubResource( 11 )
+
+[node name="Pistons4" type="Node2D" parent="Obstacles"]
+position = Vector2( 180, 0 )
+
+[node name="Piston1" type="Node2D" parent="Obstacles/Pistons4"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Pistons4/Piston1"]
+position = Vector2( -126.81, -119.468 )
+frames = SubResource( 8 )
+
+[node name="Piston" type="StaticBody2D" parent="Obstacles/Pistons4/Piston1"]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Pistons4/Piston1/Piston"]
+position = Vector2( -125.475, -142.716 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pistons4/Piston1/Piston"]
+position = Vector2( -125.131, -142.795 )
+shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pistons4"]
+playback_speed = 6.0
+anims/PistonAnimation = SubResource( 12 )
+
+[node name="Pistons5" type="Node2D" parent="Obstacles"]
+position = Vector2( 240, 0 )
+
+[node name="Piston1" type="Node2D" parent="Obstacles/Pistons5"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Pistons5/Piston1"]
+position = Vector2( -126.81, -119.468 )
+frames = SubResource( 8 )
+
+[node name="Piston" type="StaticBody2D" parent="Obstacles/Pistons5/Piston1"]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Pistons5/Piston1/Piston"]
+position = Vector2( -125.475, -142.716 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pistons5/Piston1/Piston"]
+position = Vector2( -125.131, -142.795 )
+shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pistons5"]
+playback_speed = 6.0
+anims/PistonAnimation = SubResource( 13 )
+
+[connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]

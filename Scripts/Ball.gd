@@ -7,20 +7,43 @@ signal ball_freefall_done
 var ballIsMoving = false
 var ballIsFreefalling = false
 var ballIsInPerspective = 0
+var ballIsJumping = false
+var ballIsJumpingNeedsReverse = false
+var ballIsJumpingNeedsReverseLeft = false
+var ballIsJumpingNeedsReverseRight = false
+var ballIsInFreeFallArea = false
 
 func _physics_process(delta):
-	#slowdown faster
-	if abs(linear_velocity.x) <= 50 && abs(linear_velocity.y) < 50:
-		if ballIsMoving:
-			emit_signal("ball_finished_moving")
-			ballIsMoving = false
-			linear_velocity = Vector2(0,0)
+	if ballIsJumping:
+		if !ballIsJumpingNeedsReverse:
+			if abs(linear_velocity.x) <= 10:
+				if linear_velocity.x > 0:
+					ballIsJumpingNeedsReverseLeft = true
+				else:
+					ballIsJumpingNeedsReverseRight = true
+				ballIsJumpingNeedsReverse = true
+		else:
+			linear_damp = 0.4
+			if ballIsJumpingNeedsReverseLeft:
+				linear_velocity.x -= 10
+			elif ballIsJumpingNeedsReverseRight:
+				linear_velocity.x += 10
+			linear_velocity.y = 35
 	else:
-		if ballIsFreefalling && linear_velocity.y < 0:
-			resetToTopDownMode()
-			ballIsFreefalling = false
-		elif ballIsFreefalling:
-			get_parent().changeCamera(position)
+		#slowdown faster
+		if abs(linear_velocity.x) <= 50 && abs(linear_velocity.y) < 50:
+			if ballIsMoving:
+				emit_signal("ball_finished_moving")
+				ballIsMoving = false
+				linear_velocity = Vector2(0,0)
+		else:
+			if ballIsFreefalling && linear_velocity.y < 0:
+				resetToTopDownMode()
+				ballIsFreefalling = false
+			elif ballIsFreefalling:
+				get_parent().changeCamera(position)
+				if ballIsInFreeFallArea:
+					linear_velocity.y = 800
 
 
 func resetToTopDownMode():
@@ -50,11 +73,34 @@ func collision_with_hole():
 	
 	
 func enteredVoid():
-	linear_velocity = Vector2(linear_velocity.x / 3,1000)
+	linear_velocity = Vector2(linear_velocity.x,1000)
 	set_collision_mask_bit(0, false)
 	set_collision_mask_bit(9+ballIsInPerspective, true)
 	ballIsFreefalling = true
 	
+func enteredJump():
+	linear_damp = 1.75
+	if linear_velocity.x > 0:
+		linear_velocity = Vector2(linear_velocity.x - 100, linear_velocity.y - 130)
+	else:
+		linear_velocity = Vector2(linear_velocity.x + 100, linear_velocity.y - 130)
+	ballIsJumping = true
+	return linear_velocity
+	
+func exitJump():
+	linear_damp = 0.75
+	ballIsJumping = false
+	ballIsJumpingNeedsReverse = false
+	ballIsJumpingNeedsReverseLeft = false
+	ballIsJumpingNeedsReverseRight = false
+	return linear_velocity
+	
+	
+func enteredFreeFallArea():
+	ballIsInFreeFallArea = true
+	
+func exitedFreeFallArea():
+	ballIsInFreeFallArea = false
 
 func changeScale(perspective):
 	if perspective == 1:

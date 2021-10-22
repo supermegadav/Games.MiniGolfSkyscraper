@@ -26,7 +26,6 @@ visible = false
 position = Vector2( 4.75684, -154.597 )
 
 [node name="TopDown" type="Node2D" parent="."]
-visible = false
 
 [node name="Sandbox" type="StaticBody2D" parent="TopDown" groups=[
 "TopDownMode",
@@ -100,3 +99,37 @@ collision_layer = 1024
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane1"]
 position = Vector2( 8.64444, 169.145 )
 shape = SubResource( 1 )
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Void" type="Area2D" parent="Obstacles" groups=[
+"ObstacleVoid",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( -433.531, -174.405, -430.882, -44.621, -347.714, -43.0318, -351.952, -173.346 )
+
+[node name="Jump" type="Node2D" parent="Obstacles"]
+
+[node name="Side" type="StaticBody2D" parent="Obstacles/Jump"]
+rotation = -3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Jump/Side"]
+position = Vector2( 1080.65, 129.254 )
+polygon = PoolVector2Array( -648.746, -19.8441, -648.746, -87.2679, -424.375, -89.1408 )
+one_way_collision = true
+one_way_collision_margin = 18.8
+
+[node name="Ramp" type="Area2D" parent="Obstacles/Jump"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Jump/Ramp"]
+polygon = PoolVector2Array( -641.06, -133.875, -656.809, -41.9007, -431.283, -109.306, -434.433, -195.611 )
+
+[node name="OtherSideRamp" type="StaticBody2D" parent="Obstacles/Jump"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Jump/OtherSideRamp"]
+polygon = PoolVector2Array( -641.544, -136.887, -434.644, -195.62, -434.644, -168.923 )
+one_way_collision = true
+
+[connection signal="body_entered" from="Obstacles/Jump/Ramp" to="." method="_on_Ramp_body_entered"]
+[connection signal="body_exited" from="Obstacles/Jump/Ramp" to="." method="_on_Ramp_body_exited"]

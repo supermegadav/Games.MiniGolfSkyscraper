@@ -26,9 +26,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="-76504.425"
-     inkscape:cy="8313.993"
+     inkscape:zoom="0.98994948"
+     inkscape:cx="-74421.528"
+     inkscape:cy="5468.9261"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -53,6 +53,141 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:0.23115581;stroke:none;stroke-width:3.76194572;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5952"
+       width="41.426773"
+       height="95.816124"
+       x="-19688.879"
+       y="-1172.7944" />
+    <rect
+       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:3.73986387;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1211-9-2-1-2-6-9-2"
+       width="366.19302"
+       height="5.3453894"
+       x="-19827.182"
+       y="-1876.7312"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <path
+       style="opacity:1;fill:#527169;fill-opacity:1;stroke:none;stroke-width:2.7585628;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19828.287,-1911.1545 h 352.641 l 7.617,36.8386 h -360.258 z"
+       id="rect1213-7-5-0-0-5-0-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:2.92881012;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-1-84-9-2-1"
+       width="344.79376"
+       height="5.2481756"
+       x="-19821.012"
+       y="-1910.8876"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:3.50805259;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-1-0-8-0-4-6"
+       width="212.84244"
+       height="12.197184"
+       x="-19810.066"
+       y="-2187.489"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:3.50805259;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-1-0-8-0-4"
+       width="212.84244"
+       height="12.197184"
+       x="-19808.996"
+       y="-2248.1592"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:3.36245513;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-1-84-3-9-3-5-0"
+       width="454.4541"
+       height="5.2481756"
+       x="-19849.752"
+       y="822.76953"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:3.19202614;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-1-84-3-9-3-5"
+       width="409.5528"
+       height="5.2481756"
+       x="-19828.639"
+       y="761.32874"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <path
+       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:3.77093768;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19812.15,708.52589 373.707,0.10023 2.072,5.07812 -376.413,-0.63616 z"
+       id="rect1211-9-2-1-2-0-3-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="opacity:1;fill:#527169;fill-opacity:1;stroke:none;stroke-width:2.75442982;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19804.137,690.88849 h 358.504 l 8.061,20.20767 -374.125,-1.51191 z"
+       id="rect1213-7-5-0-0-2-0-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:2.9864738;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-1-84-3-9-3"
+       width="358.5043"
+       height="5.2481756"
+       x="-19804.137"
+       y="686.16949"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:4.9570365;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1211-9-2-1-2-0-3-7"
+       width="643.3432"
+       height="5.3453894"
+       x="-20092.545"
+       y="162.29077"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#527169;fill-opacity:1;stroke:none;stroke-width:3.86015463;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1213-7-5-0-0-2-0-1"
+       width="699.15625"
+       height="36.838619"
+       x="-20101.443"
+       y="126.8181"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:3.63066196;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1211-9-2-1-2-0-3-6"
+       width="345.11996"
+       height="5.3453894"
+       x="-19858.439"
+       y="159.96068"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:4.45659351;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-1-84-3-9-4"
+       width="988.24188"
+       height="4.2396321"
+       x="-20101.443"
+       y="126.8181"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
     <rect
        style="opacity:1;fill:#7f7f7f;fill-opacity:0.46231157;stroke:none;stroke-width:5.13704681;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1612-1-7-8-2"
@@ -420,7 +555,7 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <rect
-       style="opacity:1;fill:#ffae00;fill-opacity:0.24120604;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ffae00;fill-opacity:0.24120603;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-6-2-5-5-0-2"
        width="630.75604"
        height="389.69052"
@@ -454,7 +589,7 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <rect
-       style="opacity:1;fill:#ff0000;fill-opacity:0.24120604;stroke:none;stroke-width:1.05624533;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ff0000;fill-opacity:0.24120603;stroke:none;stroke-width:1.05624533;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238"
        width="630.75604"
        height="388.55658"
@@ -1802,7 +1937,7 @@
        height="211.66667"
        width="203.46458" />
     <path
-       style="fill:#004035;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:#004035;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m -5332.677,-1092.8184 -5.8587,32.5059 h 57.8305 l -7.1816,-32.6949 z"
        id="path2169"
        inkscape:connector-curvature="0" />
@@ -1980,7 +2115,7 @@
          style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:10.49091911;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke" />
     </g>
     <path
-       style="fill:#55c35b;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m -5374.79,-309.16729 -10.4237,75.10274 h 75.9047 l -9.0873,-75.10272 z"
        id="path2312"
        inkscape:connector-curvature="0"
@@ -3541,22 +3676,22 @@
          style="stroke-width:0.72296369">TODOS ce soir</tspan><tspan
          sodipodi:role="line"
          x="-14111.889"
-         y="-28.518093"
+         y="-28.518091"
          style="stroke-width:0.72296369"
          id="tspan1471" /><tspan
          sodipodi:role="line"
          x="-14111.889"
-         y="-16.950674"
+         y="-16.950672"
          style="stroke-width:0.72296369"
          id="tspan1473">- Faire mes 6 corridors de perspectives (faire un scale sur la balle = X,Y selon la perspective)</tspan><tspan
          sodipodi:role="line"
          x="-14111.889"
-         y="-5.383255"
+         y="-5.3832531"
          style="stroke-width:0.72296369"
          id="tspan1475">-:Faire mes bounderies TOP-DOWN physics (pour l'instant il sera tout fermé sans trou)</tspan><tspan
          sodipodi:role="line"
          x="-14111.889"
-         y="6.184164"
+         y="6.184166"
          style="stroke-width:0.72296369"
          id="tspan1477">- Pouvoir frapper la balle et qu'elle ricochait sur les bounderies dans le 1er tableau</tspan><tspan
          sodipodi:role="line"
@@ -3566,7 +3701,7 @@
          id="tspan1479">- Mettre un drapeau à chaque niveau et quand on réussi un trou, ca va au prochain</tspan><tspan
          sodipodi:role="line"
          x="-14111.889"
-         y="29.319002"
+         y="29.319004"
          style="stroke-width:0.72296369"
          id="tspan1469" /></text>
     <g
@@ -3627,7 +3762,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:#006300;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:#006300;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m -14442.978,-3137.2799 c 2.138,-0.067 22.25,-0.2003 22.25,-0.2003 l -0.334,-2.6059 -21.586,0.2053 z"
        id="path1603"
        inkscape:connector-curvature="0" />
@@ -3656,7 +3791,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <rect
-       style="opacity:1;fill:#ff9000;fill-opacity:0.24120604;stroke:none;stroke-width:1.05624533;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ff9000;fill-opacity:0.24120603;stroke:none;stroke-width:1.05624533;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-2"
        width="630.75604"
        height="388.55658"
@@ -3699,7 +3834,7 @@
        x="-17847.426"
        y="-741.85303" />
     <rect
-       style="opacity:1;fill:#ffae00;fill-opacity:0.24120604;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ffae00;fill-opacity:0.24120603;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-6-2-6"
        width="630.75604"
        height="389.69052"
@@ -3723,7 +3858,7 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <rect
-       style="opacity:1;fill:#ffae00;fill-opacity:0.24120604;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ffae00;fill-opacity:0.24120603;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-6-2-5-5-0"
        width="630.75604"
        height="389.69052"
@@ -3740,7 +3875,7 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <rect
-       style="opacity:1;fill:#ffae00;fill-opacity:0.24120604;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ffae00;fill-opacity:0.24120603;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-6-2-5-5-2-6-8"
        width="630.75604"
        height="389.69052"
@@ -3754,7 +3889,7 @@
        x="-17847.426"
        y="-3079.9961" />
     <rect
-       style="opacity:1;fill:#ffae00;fill-opacity:0.24120604;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ffae00;fill-opacity:0.24120603;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-6-2-5-5-2-6-9-0-4"
        width="630.75604"
        height="389.69052"
@@ -3812,9 +3947,10 @@
        inkscape:export-ydpi="49.997551" />
     <path
        style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:1.10795891px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M -63194.211 -5164.4863 L -66929.295 -5164.4844 L -67130.238 -4617.3262 L -62988.25 -4617.3262 L -63194.211 -5164.4863 z M -65896.816 -5057.4707 L -65729.131 -5057.4707 L -65729.131 -4805.9434 L -65896.816 -4805.9434 L -65896.816 -5057.4707 z "
+       d="m -63194.211,-5164.4863 h -3735.084 l -200.943,547.1582 h 4141.988 z m -2702.605,107.0156 h 167.685 v 251.5273 h -167.685 z"
        transform="scale(0.26458333)"
-       id="path1160-5-3-6" />
+       id="path1160-5-3-6"
+       inkscape:connector-curvature="0" />
     <rect
        style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:5.16659975;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1211-9-41"
@@ -3872,9 +4008,10 @@
        inkscape:export-ydpi="49.997551" />
     <path
        style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:1.10795891px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M -66930.691 -2217.2852 L -67131.637 -1670.127 L -65366.73 -1670.127 L -65579.566 -2217.2852 L -66930.691 -2217.2852 z M -66568.57 -2135.3379 L -66020.002 -2133.3359 L -66007.191 -2038.3379 L -66587.908 -2038.3457 L -66568.57 -2135.3379 z M -66612.994 -1911.4727 L -65990.74 -1910.9688 L -65968.918 -1751.7148 L -66645.215 -1753.1445 L -66612.994 -1911.4727 z "
+       d="m -66930.691,-2217.2852 -200.946,547.1582 h 1764.907 l -212.836,-547.1582 z m 362.121,81.9473 548.568,2.002 12.811,94.998 -580.717,-0.01 z m -44.424,223.8652 622.254,0.5039 21.822,159.254 -676.297,-1.4297 z"
        id="path1160-5-0-4"
-       transform="scale(0.26458333)" />
+       transform="scale(0.26458333)"
+       inkscape:connector-curvature="0" />
     <rect
        style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:5.16659975;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1211-9-4-6"
@@ -3942,9 +4079,10 @@
        inkscape:export-ydpi="49.997551" />
     <path
        style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:1.10795891px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M -66928.691 -3689.3145 L -67129.637 -3142.1562 L -66938.34 -3142.1562 L -67024.631 -3143.3555 L -66860.441 -3689.3145 L -66928.691 -3689.3145 z M -66743.939 -3689.3145 L -66878.969 -3142.1562 L -65602.93 -3142.1562 L -65701.244 -3689.3145 L -66743.939 -3689.3145 z M -65624.912 -3689.3145 L -65469.287 -3142.4805 L -65529.869 -3142.1562 L -65364.73 -3142.1562 L -65577.568 -3689.3145 L -65624.912 -3689.3145 z "
+       d="m -66928.691,-3689.3145 -200.946,547.1583 h 191.297 l -86.291,-1.1993 164.19,-545.959 z m 184.752,0 -135.03,547.1583 h 1276.039 l -98.314,-547.1583 z m 1119.027,0 155.625,546.834 -60.582,0.3243 h 165.139 l -212.838,-547.1583 z"
        id="path1160-5-1-3"
-       transform="scale(0.26458333)" />
+       transform="scale(0.26458333)"
+       inkscape:connector-curvature="0" />
     <rect
        style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:5.16659975;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1211-9-7-3"
@@ -4261,7 +4399,7 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <rect
-       style="opacity:1;fill:#ff9000;fill-opacity:0.24120604;stroke:none;stroke-width:1.05624533;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ff9000;fill-opacity:0.24120603;stroke:none;stroke-width:1.05624533;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-2-5"
        width="630.75604"
        height="388.55658"
@@ -4275,14 +4413,14 @@
        x="-17216.67"
        y="-741.85278" />
     <rect
-       style="opacity:1;fill:#ffae00;fill-opacity:0.24120604;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ffae00;fill-opacity:0.24120603;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-6-2-6-8"
        width="630.75604"
        height="389.69052"
        x="-17216.67"
        y="-1131.5436" />
     <rect
-       style="opacity:1;fill:#ffae00;fill-opacity:0.24120604;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#ffae00;fill-opacity:0.24120603;stroke:none;stroke-width:1.05778539;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1238-6-2-5-5-2-6-8-9"
        width="630.75604"
        height="389.69052"
@@ -4952,7 +5090,7 @@
     <path
        inkscape:connector-curvature="0"
        style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:0.29314747px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -19867.4,-2266.1414 -53.167,144.7689 h 466.965 l -56.312,-144.7689 z m 95.812,21.6819 145.141,0.5296 3.39,25.1349 -153.648,-0 z m -11.754,59.231 164.638,0.1333 5.773,42.1359 -178.936,-0.3782 z"
+       d="m -19867.4,-2266.1414 -53.167,144.7689 h 466.965 l -56.312,-144.7689 z m 95.812,21.6819 145.141,0.5296 3.39,25.1349 h -153.648 z m -11.754,59.231 164.638,0.1333 5.773,42.1359 -178.936,-0.3782 z"
        id="path1160-5-0-4-8" />
     <rect
        style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:5.13985682;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
@@ -5018,16 +5156,6 @@
        height="12.197184"
        x="-19881.012"
        y="-1766.4384"
-       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
-       inkscape:export-xdpi="49.997551"
-       inkscape:export-ydpi="49.997551" />
-    <rect
-       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:3.36501217;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
-       id="rect1162-0-6-7-5-9"
-       width="348.62189"
-       height="6.8517928"
-       x="-19828.914"
-       y="-1911.2074"
        inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
@@ -5231,6 +5359,13 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <rect
+       style="opacity:1;fill:#13242c;fill-opacity:1;stroke:none;stroke-width:2.59881043;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5780"
+       width="162.49986"
+       height="38.21954"
+       x="-19663.287"
+       y="-1046.8313" />
+    <rect
        style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:3.26004291;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1162-0-5-1-84-9-2"
        width="427.19257"
@@ -5354,11 +5489,11 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <rect
-       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:3.63066196;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:4.93660784;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1211-9-2-1-2-0-3"
-       width="345.11996"
+       width="638.05151"
        height="5.3453894"
-       x="-19951.061"
+       x="-20243.992"
        y="-359.22211"
        inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
        inkscape:export-xdpi="49.997551"
@@ -5403,15 +5538,22 @@
        inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
-    <path
-       style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:0.29314747px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -19858.782,-248.34752 h -466.964 l 53.166,-144.7689 381.675,0.378 z"
-       id="path1160-5-3-6-1-9"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:2.58734298;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-1-84-3-9-7"
+       width="129.34734"
+       height="10.917819"
+       x="-20081.537"
+       y="-361.7908"
        inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
+    <path
+       style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:1.10795891px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -76620.775,-1485.7949 -200.942,547.15818 h 1764.903 l -121.409,-545.72848 z m 760.269,128.1054 h 397.787 l -76.498,257.1426 h -397.787 z"
+       transform="scale(0.26458333)"
+       id="path1160-5-3-6-1-9"
+       inkscape:connector-curvature="0" />
     <rect
        style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:7.91566181;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1211-9-2-1-0-1"
@@ -5514,14 +5656,25 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <path
-       style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:0.29314747px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -19687.645,271.58693 h -466.964 l 53.166,-144.7688 h 357.485 z"
+       style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:1.10795891px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -74492.832,474.3125 -622.252,2.10156 -32.121,550.04494 730.33,-0.01 z m -1372.645,4.63477 -108.48,0.36523 -200.943,547.1563 h 170.291 z"
+       transform="scale(0.26458333)"
        id="path1160-5-3-7-0-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
-       inkscape:export-xdpi="49.997551"
-       inkscape:export-ydpi="49.997551" />
+       inkscape:connector-curvature="0" />
+    <rect
+       style="opacity:1;fill:#8d2e24;fill-opacity:1;stroke:none;stroke-width:3.10399985;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1587"
+       width="9.8273811"
+       height="147.03275"
+       x="-19793.838"
+       y="124.49165" />
+    <rect
+       style="opacity:1;fill:#b17169;fill-opacity:1;stroke:none;stroke-width:3.10399985;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1587-5"
+       width="9.8273811"
+       height="147.03275"
+       x="-19792.963"
+       y="110.27568" />
     <rect
        style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:7.55252838;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1211-9-2-3-6-5"
@@ -5579,7 +5732,7 @@
        inkscape:export-ydpi="49.997551" />
     <path
        style="fill:#b1b1b1;fill-opacity:1;stroke:none;stroke-width:0.29314747px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -19056.888,271.58683 h -466.964 l 53.165,-144.7688 h 357.485 z"
+       d="m -19056.888,271.58683 h -466.964 l 39.18,-145.71374 371.47,0.94494 z"
        id="path1160-5-3-7-0-1-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc"
@@ -5598,13 +5751,13 @@
        inkscape:export-ydpi="49.997551" />
     <path
        style="fill:#b17169;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -19345.497,231.36433 -0.756,-57.7667 -166.688,-42.0277 -27.213,52.9891 c 64.336,15.6965 128.98,33.1705 194.657,46.8053 z"
+       d="m -19346.63,231.36433 0.556,-57.7667 -175.89,-43.89859 -18.261,54.85999 c 63.98,15.6965 128.227,33.1705 193.595,46.8053 z"
        id="path2783-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#844e46;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -19540.154,184.55903 -0.757,44.979 195.414,1.8263 z"
+       d="m -19540.225,184.55903 -1.777,44.979 195.372,1.8263 z"
        id="path2785-3"
        inkscape:connector-curvature="0" />
     <rect
@@ -5628,20 +5781,17 @@
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
     <path
-       style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:0.29314747px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -19389.985,829.65819 h -466.964 l 53.166,-144.7688 h 357.485 z"
+       style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:1.10795891px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -74848.941,2588.5586 -200.946,547.1582 h 1764.907 l -212.836,-547.1582 z m 1344.431,5.2891 45.457,121.5527 -1427.343,1.1797 44.271,-119.1836 z m -1426.254,283.6152 1524.323,3.6152 95.964,237.2168 -1712.209,5.2207 z"
        id="path1160-5-3-7-4-5-0"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
-       inkscape:export-xdpi="49.997551"
-       inkscape:export-ydpi="49.997551" />
+       transform="scale(0.26458333)" />
     <rect
-       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:5.16659975;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:5.14139032;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect1211-9-2-3-1-5-9"
-       width="465.92581"
+       width="461.39011"
        height="8.0180845"
-       x="-19859.062"
+       x="-19854.527"
        y="911.04492"
        inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
        inkscape:export-xdpi="49.997551"
@@ -5964,39 +6114,39 @@
        inkscape:export-ydpi="49.997551" />
     <path
        style="opacity:1;fill:#ff4141;fill-opacity:1;stroke:none;stroke-width:2.96499991;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
-       d="m -20129.943,-1818.9126 c 0,6.8124 4.689,62.6493 2.295,69.1302 -9.162,24.8053 -39.538,-2.7367 -60.891,9.6597 -8.751,5.08 5.014,-64.0274 -4.739,-94.0195 -5.482,-16.8594 -20.301,-3.4803 -26.434,-3.4803 -8.587,0 -15.386,0.7334 -23.268,-1.4291 -6.317,-1.7332 8.431,101.7208 2.745,98.7727 -14.233,-7.379 -49.059,9.8302 -63.532,-3.2771 -15.064,-13.6428 -9.494,-57.7978 -9.494,-75.3566 0,-49.5782 41.037,-89.7693 91.659,-89.7693 50.622,0 91.659,40.1911 91.659,89.7693 z"
+       d="m -20015.038,-1806.8174 c 0,6.8124 4.689,62.6493 2.295,69.1302 -9.162,24.8053 -39.538,-2.7367 -60.891,9.6597 -8.751,5.08 5.014,-64.0274 -4.739,-94.0195 -5.482,-16.8594 -20.301,-3.4803 -26.434,-3.4803 -8.587,0 -15.386,0.7334 -23.268,-1.4291 -6.317,-1.7332 8.431,101.7208 2.745,98.7727 -14.233,-7.379 -49.059,9.8302 -63.532,-3.2771 -15.064,-13.6428 -9.494,-57.7978 -9.494,-75.3566 0,-49.5782 41.037,-89.7693 91.659,-89.7693 50.622,0 91.659,40.1911 91.659,89.7693 z"
        id="path2335-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="sssssssssss" />
     <path
        style="fill:#f1caff;fill-opacity:1;stroke:none;stroke-width:0.24067412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20226.983,-1848.3766 -67.178,87.8116 52.712,27.2583 26.111,-108.649 z"
+       d="m -20112.078,-1836.2814 -67.178,87.8116 52.712,27.2583 26.111,-108.649 z"
        id="path2342-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#f1caff;fill-opacity:1;stroke:none;stroke-width:0.24067412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20217.737,-1839.6215 87.812,67.1782 27.258,-52.7115 -108.649,-26.1112 z"
+       d="m -20102.832,-1827.5263 87.812,67.1782 27.258,-52.7115 -108.649,-26.1112 z"
        id="path2342-3-9"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#f1caff;fill-opacity:1;stroke:none;stroke-width:0.24067412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20224.999,-1845.1641 -105.575,-32.8265 27.258,-52.7115 84.108,73.5677 z"
+       d="m -20110.094,-1833.0689 -105.575,-32.8265 27.258,-52.7115 84.108,73.5677 z"
        id="path2342-3-1-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#f1caff;fill-opacity:1;stroke:none;stroke-width:0.24067412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20213.15,-1846.1864 67.178,-87.8116 -52.712,-27.2582 -26.111,108.649 z"
+       d="m -20098.245,-1834.0912 67.178,-87.8116 -52.712,-27.2582 -26.111,108.649 z"
        id="path2342-9-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <ellipse
        style="opacity:1;fill:#9f4141;fill-opacity:1;stroke:none;stroke-width:3.59420109;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="path2340-2"
-       cx="-18809.461"
-       cy="7645.0864"
+       cx="-18701.84"
+       cy="7603.0498"
        rx="12.614956"
        ry="11.670014"
        transform="rotate(27.344452)" />
@@ -6094,44 +6244,444 @@
     </g>
     <path
        style="fill:#f1caff;fill-opacity:1;stroke:none;stroke-width:0.24067412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20553.768,-1824.0771 -67.178,87.8116 52.712,27.2583 26.111,-108.649 z"
+       d="m -20438.863,-1811.9819 -67.178,87.8116 52.712,27.2583 26.111,-108.649 z"
        id="path2342-6-9"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#f1caff;fill-opacity:1;stroke:none;stroke-width:0.24067412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20544.522,-1815.322 87.812,67.1782 27.258,-52.7115 -108.649,-26.1112 z"
+       d="m -20429.617,-1803.2268 87.812,67.1782 27.258,-52.7115 -108.649,-26.1112 z"
        id="path2342-3-9-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#f1caff;fill-opacity:1;stroke:none;stroke-width:0.24067412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20551.784,-1820.8646 -105.575,-32.8265 27.258,-52.7115 84.108,73.5677 z"
+       d="m -20436.879,-1808.7694 -105.575,-32.8265 27.258,-52.7115 84.108,73.5677 z"
        id="path2342-3-1-3-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#f1caff;fill-opacity:1;stroke:none;stroke-width:0.24067412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20539.935,-1821.8869 67.178,-87.8116 -52.712,-27.2582 -26.111,108.649 z"
+       d="m -20425.03,-1809.7917 67.178,-87.8116 -52.712,-27.2582 -26.111,108.649 z"
        id="path2342-9-1-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <ellipse
        style="opacity:1;fill:#9f4141;fill-opacity:1;stroke:none;stroke-width:3.59420109;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        id="path2340-2-7"
-       cx="-19088.568"
-       cy="7816.7754"
+       cx="-18980.947"
+       cy="7774.7388"
        rx="12.614956"
        ry="11.670014"
        transform="rotate(27.344452)" />
     <path
        style="opacity:1;fill:#ff4141;fill-opacity:1;stroke:none;stroke-width:2.96499991;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
-       d="m -20798.833,-1834.1689 c 0,6.8124 4.689,62.6493 2.295,69.1302 -9.162,24.8053 -39.538,-2.7367 -60.891,9.6597 -8.751,5.08 5.014,-64.0274 -4.739,-94.0195 -5.482,-16.8594 -20.301,-3.4803 -26.434,-3.4803 -8.587,0 -15.386,0.7334 -23.268,-1.4291 -6.317,-1.7332 8.431,101.7208 2.745,98.7727 -14.233,-7.379 -49.059,9.8302 -63.532,-3.2771 -15.064,-13.6428 -9.494,-57.7978 -9.494,-75.3566 0,-49.5782 41.037,-89.7693 91.659,-89.7693 50.622,0 91.659,40.1911 91.659,89.7693 z"
+       d="m -20683.928,-1822.0737 c 0,6.8124 4.689,62.6493 2.295,69.1302 -9.162,24.8053 -39.538,-2.7367 -60.891,9.6597 -8.751,5.08 5.014,-64.0274 -4.739,-94.0195 -5.482,-16.8594 -20.301,-3.4803 -26.434,-3.4803 -8.587,0 -15.386,0.7334 -23.268,-1.4291 -6.317,-1.7332 8.431,101.7208 2.745,98.7727 -14.233,-7.379 -49.059,9.8302 -63.532,-3.2771 -15.064,-13.6428 -9.494,-57.7978 -9.494,-75.3566 0,-49.5782 41.037,-89.7693 91.659,-89.7693 50.622,0 91.659,40.1911 91.659,89.7693 z"
        id="path2335-8-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="sssssssssss"
        inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Wheelhouse_House.png"
        inkscape:export-xdpi="49.997551"
        inkscape:export-ydpi="49.997551" />
+    <path
+       style="fill:#844e46;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19784.002,271.52441 0.867,-14.216 h -7.703 l -2.125,-147.03273 -0.867,14.21597 v 147.03276 z"
+       id="path1604"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="opacity:1;fill:#966017;fill-opacity:1;stroke:none;stroke-width:3.12045193;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19789.386,144.37321 279.165,-1.8332 -3.987,34.99783 -275.56,-0.28069 z"
+       id="rect1569-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="opacity:1;fill:#b78856;fill-opacity:1;stroke:none;stroke-width:3.10399985;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19788.037,141.72736 276.229,-1.8332 -4.017,34.84324 -272.59,-0.1261 z"
+       id="rect1569"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:#687573;fill-opacity:1;stroke:none;stroke-width:3.18633008;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1606"
+       width="355.67563"
+       height="56.318451"
+       x="-19477.115"
+       y="76.261894" />
+    <path
+       style="fill:#364e59;fill-opacity:1;stroke:none;stroke-width:0.25542244px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19275.086,55.926777 16.713,-13.226542 107.601,0.468348 0.567,98.253517 -5.439,20.33801 V 55.926777 Z"
+       id="path1627"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <rect
+       style="opacity:1;fill:#90988c;fill-opacity:1;stroke:none;stroke-width:3.58419037;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1608-6"
+       width="119.44048"
+       height="105.83334"
+       x="-19275.086"
+       y="55.926777" />
+    <rect
+       style="opacity:1;fill:#6d7376;fill-opacity:1;stroke:none;stroke-width:3.83972454;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1625"
+       width="41.577381"
+       height="88.446426"
+       x="-19252.221"
+       y="72.255356" />
+    <rect
+       style="opacity:1;fill:#37a446;fill-opacity:1;stroke:none;stroke-width:3.41746783;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1668-6"
+       width="108.73524"
+       height="72.549034"
+       x="-20208.389"
+       y="-546.84882"
+       transform="matrix(1,0,-0.28822738,0.957562,0,0)"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\TrapLevel06.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#527169;fill-opacity:1;stroke:none;stroke-width:4.47574997;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1213-7-5-2-1-2-7-7"
+       width="459.68274"
+       height="75.325432"
+       x="-18776.799"
+       y="836.18555"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#009100;fill-opacity:1;stroke:none;stroke-width:5.18002033;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1162-0-5-26-6-6-4-2"
+       width="464.07584"
+       height="12.197184"
+       x="-18779.861"
+       y="829.27954"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <path
+       style="fill:#55c35b;fill-opacity:1;stroke:none;stroke-width:0.29314747px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -18313.967,829.28687 h -466.964 l 53.166,-144.7688 h 357.485 z"
+       id="path1160-5-3-7-4-5-0-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:5.13717651;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect1211-9-2-3-1-5-9-5"
+       width="460.63416"
+       height="8.0180845"
+       x="-18777.754"
+       y="910.67358"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <rect
+       style="opacity:1;fill:#f1ffff;fill-opacity:1;stroke:none;stroke-width:1.74293315;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect3033-8-1-6-0-2-2"
+       width="57.504082"
+       height="13.667384"
+       x="-18387.324"
+       y="847.43945"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.24409676px;line-height:1;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';letter-spacing:0px;word-spacing:0px;fill:#364e59;fill-opacity:1;stroke:none;stroke-width:0.76525605"
+       x="-16568.402"
+       y="951.34729"
+       id="text3037-03-5-0-7-4-8"
+       transform="scale(1.1095832,0.90123931)"
+       inkscape:export-filename="C:\Users\david\Documents\Git\Games.MiniGolfSkyscraper\Assets\Sprites\Skyscraper.png"
+       inkscape:export-xdpi="49.997551"
+       inkscape:export-ydpi="49.997551"><tspan
+         sodipodi:role="line"
+         id="tspan3035-9-8-0-2-9-4"
+         x="-16568.402"
+         y="951.34729"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Nikkyou Sans';-inkscape-font-specification:'Nikkyou Sans';fill:#364e59;fill-opacity:1;stroke-width:0.76525605">HOLE 8</tspan></text>
+    <rect
+       style="opacity:1;fill:#374146;fill-opacity:1;stroke:none;stroke-width:3.13675737;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5532"
+       width="67.41629"
+       height="64.411957"
+       x="-19726.447"
+       y="622.7962" />
+    <circle
+       style="opacity:1;fill:#d6e9f1;fill-opacity:1;stroke:none;stroke-width:3.40266657;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5534"
+       cx="-19692.658"
+       cy="654.60327"
+       r="30.143602" />
+    <rect
+       style="opacity:1;fill:#374146;fill-opacity:1;stroke:none;stroke-width:3.13675737;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5532-6"
+       width="67.41629"
+       height="64.411957"
+       x="-19657.443"
+       y="622.79614" />
+    <circle
+       style="opacity:1;fill:#d6e9f1;fill-opacity:1;stroke:none;stroke-width:3.40266681;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5534-8"
+       cx="-19623.654"
+       cy="655.66156"
+       r="30.143602" />
+    <rect
+       style="opacity:1;fill:#374146;fill-opacity:1;stroke:none;stroke-width:3.13675737;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5532-5"
+       width="67.41629"
+       height="64.411957"
+       x="-19588.439"
+       y="622.79614" />
+    <circle
+       style="opacity:1;fill:#d6e9f1;fill-opacity:1;stroke:none;stroke-width:3.40266681;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5534-6"
+       cx="-19554.65"
+       cy="655.66156"
+       r="30.143602" />
+    <path
+       style="fill:#202135;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19726.448,622.7962 5.688,-4.67723 h 56.393 l 5.336,4.67723 z"
+       id="path5562"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#202135;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19657.444,622.79614 5.688,-4.67723 h 56.393 l 5.336,4.67723 z"
+       id="path5562-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#202135;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19588.44,622.79614 5.688,-4.67723 h 56.393 l 5.336,4.67723 z"
+       id="path5562-8"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#513f4a;fill-opacity:1;stroke:none;stroke-width:0.05866217px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19956.267,643.71521 -16.374,21.40329 12.848,6.64397 6.365,-26.48223 z"
+       id="path2342-6-9-8-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#513f4a;fill-opacity:1;stroke:none;stroke-width:0.05866217px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19954.013,645.84919 21.403,16.37409 6.644,-12.84796 -26.482,-6.36438 z"
+       id="path2342-3-9-1-5-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#513f4a;fill-opacity:1;stroke:none;stroke-width:0.05866217px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19955.783,644.49823 -25.733,-8.00117 6.644,-12.84795 20.501,17.93146 z"
+       id="path2342-3-1-3-3-5-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#513f4a;fill-opacity:1;stroke:none;stroke-width:0.05866217px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19952.895,644.24905 16.375,-21.4033 -12.848,-6.64393 -6.365,26.48222 z"
+       id="path2342-9-1-4-5-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <ellipse
+       style="opacity:1;fill:#9f8c9c;fill-opacity:1;stroke:none;stroke-width:0.87605441;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path2340-2-7-2-2"
+       cx="-17429.129"
+       cy="9737.4727"
+       rx="3.0747826"
+       ry="2.8444617"
+       transform="rotate(27.344452)" />
+    <path
+       style="opacity:1;fill:#9f6e9c;fill-opacity:1;stroke:none;stroke-width:3.25001717;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19597.026,127.63106 c 0,0 6.876,2.17785 10.423,2.13816 3.198,-0.0358 9.354,-2.13816 9.354,-2.13816 v 24.05426 c 0,0 -6.587,2.4161 -10.022,2.40543 -3.349,-0.0104 -9.755,-2.40543 -9.755,-2.40543 z"
+       id="rect5645"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="caccacc" />
+    <ellipse
+       style="opacity:1;fill:#52359c;fill-opacity:1;stroke:none;stroke-width:3.12264276;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5648"
+       cx="-19587.047"
+       cy="127.45406"
+       rx="9.921875"
+       ry="3.2364213" />
+    <path
+       style="opacity:1;fill:#9f2546;fill-opacity:1;stroke:none;stroke-width:2.88480949;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19608.054,136.33002 c 0,0 6.484,1.81962 9.829,1.78645 3.016,-0.0299 8.821,-1.78645 8.821,-1.78645 v 20.09768 c 0,0 -6.212,2.01869 -9.451,2.00978 -3.158,-0.009 -9.199,-2.00978 -9.199,-2.00978 z"
+       id="rect5645-2-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="caccacc" />
+    <path
+       style="opacity:1;fill:#848848;fill-opacity:1;stroke:none;stroke-width:2.88480949;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19608.054,136.33002 c 0,0 6.484,1.81962 9.829,1.78645 3.016,-0.0299 8.821,-1.78645 8.821,-1.78645 v 20.09768 c 0,0 -6.212,2.01869 -9.451,2.00978 -3.158,-0.009 -9.199,-2.00978 -9.199,-2.00978 z"
+       id="rect5645-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="caccacc" />
+    <ellipse
+       style="opacity:1;fill:#d0b874;fill-opacity:1;stroke:none;stroke-width:2.7717483;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5648-5"
+       cx="-19598.643"
+       cy="136.18205"
+       rx="9.3562698"
+       ry="2.7040772" />
+    <rect
+       style="opacity:1;fill:#2e2c1c;fill-opacity:1;stroke:none;stroke-width:3.69143605;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5683"
+       width="86.339577"
+       height="3.5412698"
+       x="-19625.598"
+       y="202.70404"
+       transform="matrix(1,0,-0.56191721,0.82719348,0,0)" />
+    <path
+       style="opacity:1;fill:#2e2c1c;fill-opacity:1;stroke:none;stroke-width:3.49543452;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19652.404,161.19146 11.74,0.45305 -4.801,17.60009 -13.176,-1.02143 z"
+       id="rect5700-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:#7e581c;fill-opacity:1;stroke:none;stroke-width:3.69143605;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5683-8"
+       width="86.339577"
+       height="3.5412698"
+       x="-19626.676"
+       y="200.78488"
+       transform="matrix(1,0,-0.56191721,0.82719348,0,0)" />
+    <rect
+       style="opacity:1;fill:#7e581c;fill-opacity:1;stroke:none;stroke-width:3.56137371;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5700"
+       width="4.2416906"
+       height="18.547377"
+       x="-19099.949"
+       y="1781.9882"
+       transform="matrix(0.99685451,0.07925329,-0.34388347,0.93901233,0,0)" />
+    <path
+       style="fill:#1d0911;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -19648.436,159.91147 c 1.052,0.0675 7.066,0.40164 7.066,0.40164 l -4.711,17.47274 -8.733,-0.45818 z"
+       id="path5717"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <ellipse
+       style="opacity:1;fill:#232a21;fill-opacity:1;stroke:none;stroke-width:3.93781328;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5782-3"
+       cx="-19668.301"
+       cy="-1158.5006"
+       rx="12.236502"
+       ry="10.851516" />
+    <path
+       style="opacity:1;fill:#2e3336;fill-opacity:1;stroke:none;stroke-width:4.74931002;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19671.255,-1158.1034 6.213,-0.2137 2.406,21.0449 -10.824,-0.2136 z"
+       id="rect5777-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:0.23115581;stroke:none;stroke-width:3.76194596;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5952-8"
+       width="41.426777"
+       height="95.816124"
+       x="-19647.451"
+       y="-1172.7944" />
+    <ellipse
+       style="opacity:1;fill:#232a21;fill-opacity:1;stroke:none;stroke-width:3.93781328;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5782-3-4"
+       cx="-19626.873"
+       cy="-1158.5006"
+       rx="12.236502"
+       ry="10.851516" />
+    <path
+       style="opacity:1;fill:#2e3336;fill-opacity:1;stroke:none;stroke-width:6.14392138;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19629.827,-1157.9595 6.213,-0.3576 2.406,35.219 -10.824,-0.3575 z"
+       id="rect5777-5-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:0.23115581;stroke:none;stroke-width:3.7619462;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5952-8-8"
+       width="41.426781"
+       height="95.816124"
+       x="-19606.023"
+       y="-1172.7944" />
+    <ellipse
+       style="opacity:1;fill:#232a21;fill-opacity:1;stroke:none;stroke-width:3.93781328;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5782-3-4-7"
+       cx="-19585.445"
+       cy="-1158.5006"
+       rx="12.236502"
+       ry="10.851516" />
+    <path
+       style="opacity:1;fill:#2e3336;fill-opacity:1;stroke:none;stroke-width:6.74128771;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19588.4,-1157.8866 6.213,-0.4306 2.406,42.4006 -10.824,-0.4304 z"
+       id="rect5777-5-5-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:0.23115581;stroke:none;stroke-width:3.76194644;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5952-8-8-4"
+       width="41.426781"
+       height="95.816124"
+       x="-19564.596"
+       y="-1172.7944" />
+    <ellipse
+       style="opacity:1;fill:#232a21;fill-opacity:1;stroke:none;stroke-width:3.93781328;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5782-3-4-7-4"
+       cx="-19544.018"
+       cy="-1158.5005"
+       rx="12.236502"
+       ry="10.851516" />
+    <path
+       style="opacity:1;fill:#2e3336;fill-opacity:1;stroke:none;stroke-width:7.3314271;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19546.973,-1157.8079 6.213,-0.5092 2.406,50.1491 -10.824,-0.509 z"
+       id="rect5777-5-5-7-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:0.23115581;stroke:none;stroke-width:3.76194644;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5952-8-8-4-0"
+       width="41.426781"
+       height="95.816124"
+       x="-19523.168"
+       y="-1172.7944" />
+    <ellipse
+       style="opacity:1;fill:#232a21;fill-opacity:1;stroke:none;stroke-width:3.93781328;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5782-3-4-7-4-3"
+       cx="-19502.59"
+       cy="-1158.5005"
+       rx="12.236502"
+       ry="10.851516" />
+    <path
+       style="opacity:1;fill:#2e3336;fill-opacity:1;stroke:none;stroke-width:7.79995775;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19505.544,-1157.7407 6.213,-0.5764 2.406,56.7637 -10.824,-0.5762 z"
+       id="rect5777-5-5-7-4-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:0.23115581;stroke:none;stroke-width:3.76194644;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect5952-8-8-4-0-7"
+       width="41.426781"
+       height="95.816124"
+       x="-19481.74"
+       y="-1172.7944" />
+    <ellipse
+       style="opacity:1;fill:#232a21;fill-opacity:1;stroke:none;stroke-width:3.93781328;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5782-3-4-7-4-3-8"
+       cx="-19461.162"
+       cy="-1158.5005"
+       rx="12.236502"
+       ry="10.851516" />
+    <path
+       style="opacity:1;fill:#2e3336;fill-opacity:1;stroke:none;stroke-width:8.27867889;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19464.116,-1157.6677 6.213,-0.6493 2.406,63.9452 -10.824,-0.649 z"
+       id="rect5777-5-5-7-4-5-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="opacity:1;fill:#48642c;fill-opacity:1;stroke:none;stroke-width:3.10399985;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -19733.951,-1141.9849 c -0.542,-0.4381 5.487,-3.0929 10.749,-3.4053 3.713,-0.2204 10.721,3.126 10.714,3.5943 l 2.363,9.1039 c 0,0 -8.931,-3.1501 -13.596,-3.1399 -4.357,0.01 -12.498,3.2182 -12.498,3.2182 z"
+       id="rect5772-6-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccscc" />
+    <ellipse
+       style="opacity:1;fill:#483f2c;fill-opacity:1;stroke:none;stroke-width:2.97809339;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path5775-7-5"
+       cx="-19723.207"
+       cy="-1132.7087"
+       rx="13.019709"
+       ry="3.64801" />
   </g>
 </svg>

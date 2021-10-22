@@ -22,9 +22,11 @@ position = Vector2( -0.5, 0 )
 texture = ExtResource( 2 )
 
 [node name="Perspectives2" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 55.559, -571.464 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( -7.93701, 261.921 )
 
 [node name="TopDown" type="Node2D" parent="."]
