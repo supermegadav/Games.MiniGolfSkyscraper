@@ -8,11 +8,10 @@
 [ext_resource path="res://Assets/Sprites/Wheelhouse_Wheel.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/Wheelhouse_House.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 454.605, 5.50247 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=2]
 length = 4.0
 loop = true
 tracks/0/type = "bezier"
@@ -28,6 +27,7 @@ tracks/0/keys = {
 
 [node name="Level03" type="Node2D"]
 script = ExtResource( 3 )
+levelNumber = 3
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -66,7 +66,7 @@ collision_layer = 32768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane6"]
 position = Vector2( 4.40973, -54.8066 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Plane5" type="StaticBody2D" parent="SideScroller" groups=[
 "SideScrollerMode",
@@ -76,7 +76,7 @@ collision_layer = 16384
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane5"]
 position = Vector2( 5.66968, -27.7183 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Plane4" type="StaticBody2D" parent="SideScroller" groups=[
 "SideScrollerMode",
@@ -86,7 +86,7 @@ collision_layer = 8192
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane4"]
 position = Vector2( 4.40973, 3.14978 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Plane3" type="StaticBody2D" parent="SideScroller" groups=[
 "SideScrollerMode",
@@ -96,7 +96,7 @@ collision_layer = 4096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane3"]
 position = Vector2( 1.25989, 50.3969 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Plane2" type="StaticBody2D" parent="SideScroller" groups=[
 "SideScrollerMode",
@@ -106,7 +106,7 @@ collision_layer = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane2"]
 position = Vector2( 5.66962, 106.463 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Plane1" type="StaticBody2D" parent="SideScroller" groups=[
 "SideScrollerMode",
@@ -116,7 +116,7 @@ collision_layer = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane1"]
 position = Vector2( 10.0793, 169.459 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -142,6 +142,7 @@ polygon = PoolVector2Array( -187.297, -232.863, -178.477, -190.026, -168.398, -1
 
 [node name="Wheel" type="StaticBody2D" parent="Obstacles"]
 position = Vector2( 0, -300 )
+rotation = -6.28319
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Wheel"]
 texture = ExtResource( 6 )
@@ -164,6 +165,6 @@ polygon = PoolVector2Array( -156.89, 172.088, -47.888, 228.65, -40.0219, 194.563
 [node name="WheelMovingAnim" type="AnimationPlayer" parent="Obstacles"]
 playback_speed = 2.0
 method_call_mode = 1
-"anims/New Anim" = SubResource( 1 )
+"anims/New Anim" = SubResource( 2 )
 
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]

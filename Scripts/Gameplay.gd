@@ -145,7 +145,7 @@ func loadNewLevel():
 	elif currentLevel == 3:
 		$Ball.resetPosition(Vector2(50,2750))
 	elif currentLevel == 4:
-		$Ball.resetPosition(Vector2(-150,1920))
+		$Ball.resetPosition(Vector2(-300,1920))
 	elif currentLevel == 5:
 		$Ball.resetPosition(Vector2(1350,1210))
 	elif currentLevel == 6:
@@ -153,7 +153,7 @@ func loadNewLevel():
 	elif currentLevel == 7:
 		$Ball.resetPosition(Vector2(1350,-310))
 	elif currentLevel == 8:
-		$Ball.resetPosition(Vector2(-150,-1170))
+		$Ball.resetPosition(Vector2(-300,-1170))
 	elif currentLevel == 9:
 		$Ball.resetPosition(Vector2(-150,-1930))
 	$Tween.start()

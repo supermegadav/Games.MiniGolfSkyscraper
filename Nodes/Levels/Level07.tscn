@@ -11,6 +11,7 @@ extents = Vector2( 1100, 5.41 )
 
 [node name="Level07" type="Node2D"]
 script = ExtResource( 3 )
+levelNumber = 7
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1.93378, -82.5789 )
@@ -110,10 +111,10 @@ shape = SubResource( 1 )
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -915.451, -227.91, -989.182, 51.5534, -547.986, 52.7426, -532.526, -227.91 )
+polygon = PoolVector2Array( -915.451, -227.91, -989.182, 51.5534, -375.444, 51.307, -374.174, -130.232, -405.321, -131.648, -404.378, -202.911, -375.589, -204.798, -374.65, -228.076 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -179.315, -128.024, -151.98, 55.121, 159.592, 51.5534, 176.241, -23.3666, 181.864, -92.7003, 137.371, -108.975, 130.228, -128.024, 96.099, -128.024 )
+polygon = PoolVector2Array( -182.549, -125.516, -158.765, 54.6487, 159.592, 51.5534, 176.241, -23.3666, 181.864, -92.7003, 137.371, -108.975, 130.228, -128.024, 96.099, -128.024 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
 polygon = PoolVector2Array( -197.169, -226.721, -193.602, -205.315, 156.025, -208.883, 161.971, -229.099 )
@@ -121,7 +122,8 @@ polygon = PoolVector2Array( -197.169, -226.721, -193.602, -205.315, 156.025, -20
 [node name="Wall" type="StaticBody2D" parent="Obstacles"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Wall"]
-polygon = PoolVector2Array( -369.862, -237.176, -369.112, 53.4954, -349.634, 54.2445, -350.384, -236.427 )
+position = Vector2( 0, 0.471924 )
+polygon = PoolVector2Array( -371.342, -130.704, -369.112, 53.4954, -349.634, 54.2445, -351.049, -129.76 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Wall"]
 polygon = PoolVector2Array( -3.76318, -211.582, -2.57394, -172.933, 4.56131, -170.257, 12.8858, -167.878, 21.2102, -168.176, 27.7509, -169.662, 33.9942, -172.338, 36.0753, -175.608, 42.6159, -177.095, 49.4539, -178.879, 55.1026, -180.365, 58.6702, -181.852, 58.3729, -229.42, 19.1291, -230.312, 19.1291, -218.42, -0.195526, -216.636 )
@@ -131,6 +133,10 @@ polygon = PoolVector2Array( -261.46, -152.744, -264.613, -146.017, -99.3772, -14
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles/Wall"]
 polygon = PoolVector2Array( 649.541, -220.251, 650.248, -161.561, 886.422, -162.975, 901.978, -205.402, 899.15, -221.665, 651.662, -230.858 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Obstacles/Wall"]
+position = Vector2( 0, 0.471924 )
+polygon = PoolVector2Array( -371.814, -261.903, -370.87, -203.383, -352.464, -204.326, -351.993, -263.319 )
 
 [node name="Jump" type="Node2D" parent="Obstacles"]
 

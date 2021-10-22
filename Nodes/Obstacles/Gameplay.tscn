@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Nodes/Levels/Level01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Sprites/BackgroundBuildings.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Sprites/SkyscraperPeak.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure_FrontPillars.png" type="Texture" id=16]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -33,7 +34,7 @@ extents = Vector2( 1041.48, 223.994 )
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource( 14 )
-currentLevel = 5
+currentLevel = 8
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 10
@@ -95,7 +96,7 @@ position = Vector2( 0, -1035 )
 position = Vector2( 0, -2270 )
 
 [node name="BuildingsStructure_FrontPillars" type="Sprite" parent="Skyscraper"]
-position = Vector2( 620, 940 )
+position = Vector2( 620, 942 )
 texture = ExtResource( 16 )
 
 [node name="BuildingStructure_FreeFall" type="StaticBody2D" parent="Skyscraper"]
@@ -105,7 +106,7 @@ collision_layer = 64512
 polygon = PoolVector2Array( -378.576, 4510.14, -377, -2931, -422, -2932, -413.901, 4510.69 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Skyscraper/BuildingStructure_FreeFall"]
-polygon = PoolVector2Array( 429.015, 4512.89, 412.979, 2513.71, 880.882, 2087.1, 1667.07, 2089.62, 1662.03, -546.13, 424.791, -551.171, 437.389, -2929.9, 389.512, -2929.9, 392.032, -523.453, 1624.24, -515.894, 1640.64, 2071.83, 863.773, 2070.04, 382.688, 2497.67, 382.688, 4514.67 )
+polygon = PoolVector2Array( 429.015, 4512.89, 412.979, 2513.71, 880.882, 2087.1, 1667.07, 2089.62, 1662.03, -546.13, 1665.94, -1935.24, 1625.68, -2200.1, 392.469, -2981.99, 339.496, -2960.8, 1117.14, -2416.23, 1464.65, -2223.41, 1617.21, -1937.36, 1624.24, -515.894, 1640.64, 2071.83, 863.773, 2070.04, 382.688, 2497.67, 382.688, 4514.67 )
 
 [node name="Area_FreeFall" type="Area2D" parent="Skyscraper"]
 collision_layer = 64512
@@ -168,6 +169,16 @@ polygon = PoolVector2Array( -385.83, -2625.1, -387.164, -2092.5, 412.405, -2089.
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="BetweenRightTo8and9" type="CollisionPolygon2D" parent="Skyscraper/Area_FreeFall"]
+polygon = PoolVector2Array( 479.796, -2630.01, 471.796, -630.007, 1595.8, -686.007, 1439.8, -2198.01 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BuildingPeak" type="Sprite" parent="Skyscraper"]
+position = Vector2( -16.9514, -3644.55 )
+texture = ExtResource( 15 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( -238.28, 4164.25 )

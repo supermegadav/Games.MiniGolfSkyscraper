@@ -1,28 +1,31 @@
 extends Node2D
 
+export var levelNumber = 1
+
 func _ready():
-	var wheel = $Obstacles/WheelMovingAnim
-	if not wheel == null:
-		wheel.play("New Anim")
-	var piston1 = $Obstacles/Pistons
-	var piston2 = $Obstacles/Pistons2
-	var piston3 = $Obstacles/Pistons3
-	var piston4 = $Obstacles/Pistons4
-	var piston5 = $Obstacles/Pistons5
-	if not piston1 == null:
-		piston1.get_node("AnimationPlayer").play("PistonAnimation")
+	
+	if levelNumber == 3:
+		$Obstacles/WheelMovingAnim.play("New Anim")
+		
+	if levelNumber == 5:
+		$Obstacles/Pistons/AnimationPlayer.play("PistonAnimation")
 		yield(get_tree().create_timer(0.1, false), "timeout")
-	if not piston2 == null:
-		piston2.get_node("AnimationPlayer").play("PistonAnimation")
+		$Obstacles/Pistons2/AnimationPlayer.play("PistonAnimation")
 		yield(get_tree().create_timer(0.1, false), "timeout")
-	if not piston3 == null:
-		piston3.get_node("AnimationPlayer").play("PistonAnimation")
+		$Obstacles/Pistons3/AnimationPlayer.play("PistonAnimation")
 		yield(get_tree().create_timer(0.1, false), "timeout")
-	if not piston4 == null:
-		piston4.get_node("AnimationPlayer").play("PistonAnimation")
+		$Obstacles/Pistons4/AnimationPlayer.play("PistonAnimation")
 		yield(get_tree().create_timer(0.1, false), "timeout")
-	if not piston5 == null:
-		piston5.get_node("AnimationPlayer").play("PistonAnimation")
+		$Obstacles/Pistons5/AnimationPlayer.play("PistonAnimation")
+		
+	if levelNumber == 8:
+		$Obstacles/Wind1/TurbineAnim.play("New Anim")
+		yield(get_tree().create_timer(0.1, false), "timeout")
+		$Obstacles/Wind2/TurbineAnim.play("New Anim")
+		yield(get_tree().create_timer(0.1, false), "timeout")
+		$Obstacles/Wind3/TurbineAnim.play("New Anim")
+		
+	
 
 func _on_Void_body_entered(body):
 	if body.is_in_group("Ball"):
@@ -55,3 +58,13 @@ func _on_Ramp_body_entered(body):
 func _on_Ramp_body_exited(body):
 	if body.is_in_group("Ball"):
 		var currentVelocity = body.exitJump()
+
+
+func _on_Wind_body_entered(body):
+	if body.is_in_group("Ball"):
+		var currentVelocity = body.applyWind(Vector2.DOWN)
+
+
+func _on_Wind_body_exited(body):
+	if body.is_in_group("Ball"):
+		var currentVelocity = body.noWind()

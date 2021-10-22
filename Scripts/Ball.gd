@@ -12,6 +12,7 @@ var ballIsJumpingNeedsReverse = false
 var ballIsJumpingNeedsReverseLeft = false
 var ballIsJumpingNeedsReverseRight = false
 var ballIsInFreeFallArea = false
+var ballIsInWind = false
 
 func _physics_process(delta):
 	if ballIsJumping:
@@ -29,6 +30,8 @@ func _physics_process(delta):
 			elif ballIsJumpingNeedsReverseRight:
 				linear_velocity.x += 10
 			linear_velocity.y = 35
+	elif ballIsInWind:
+		linear_velocity.y = linear_velocity.y + 1.5
 	else:
 		#slowdown faster
 		if abs(linear_velocity.x) <= 50 && abs(linear_velocity.y) < 50:
@@ -95,12 +98,19 @@ func exitJump():
 	ballIsJumpingNeedsReverseRight = false
 	return linear_velocity
 	
-	
+
+
 func enteredFreeFallArea():
 	ballIsInFreeFallArea = true
 	
 func exitedFreeFallArea():
 	ballIsInFreeFallArea = false
+
+func applyWind(direction:Vector2):
+	ballIsInWind = true
+	
+func noWind():
+	ballIsInWind = false
 
 func changeScale(perspective):
 	if perspective == 1:
