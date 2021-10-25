@@ -3,10 +3,8 @@ extends Node2D
 export var levelNumber = 1
 
 func _ready():
-	
 	if levelNumber == 3:
 		$Obstacles/WheelMovingAnim.play("New Anim")
-		
 	if levelNumber == 5:
 		$Obstacles/Pistons/AnimationPlayer.play("PistonAnimation")
 		yield(get_tree().create_timer(0.1, false), "timeout")
@@ -17,13 +15,15 @@ func _ready():
 		$Obstacles/Pistons4/AnimationPlayer.play("PistonAnimation")
 		yield(get_tree().create_timer(0.1, false), "timeout")
 		$Obstacles/Pistons5/AnimationPlayer.play("PistonAnimation")
-		
 	if levelNumber == 8:
 		$Obstacles/Wind1/TurbineAnim.play("New Anim")
 		yield(get_tree().create_timer(0.1, false), "timeout")
 		$Obstacles/Wind2/TurbineAnim.play("New Anim")
 		yield(get_tree().create_timer(0.1, false), "timeout")
 		$Obstacles/Wind3/TurbineAnim.play("New Anim")
+	if levelNumber == 9:
+		$Obstacles/BridgeLeft/AnimationPlayer.play("WaterRising")
+		$Obstacles/BridgeRight/AnimationPlayer.play("WaterRising")
 		
 	
 
@@ -31,6 +31,8 @@ func _on_Void_body_entered(body):
 	if body.is_in_group("Ball"):
 		var perspective = body.enteredVoid()
 		switchToSideScrollerMode()
+	if body.is_in_group("FakeBall"):
+		body.enteredVoid()
 
 func switchToSideScrollerMode():
 	self.get_node("SideScroller").get_node("Plane1").get_node("CollisionShape2D").set_deferred("disabled", true)
@@ -68,3 +70,8 @@ func _on_Wind_body_entered(body):
 func _on_Wind_body_exited(body):
 	if body.is_in_group("Ball"):
 		var currentVelocity = body.noWind()
+
+
+func _on_Water_body_entered(body):
+	if body.is_in_group("Ball"):
+		var currentVelocity = body.enteredWater()

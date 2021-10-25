@@ -1,53 +1,106 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Sprites/Level09.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/Level01_debug.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Levels/Perspectives.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/Plywood_Level9.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1100, 5.41 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "WaterRising"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1e-05, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Water:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "WaterRising"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1e-05, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Water:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 1, 3.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 1, 1 ) ]
+}
 
 [node name="Level09" type="Node2D"]
 script = ExtResource( 3 )
 levelNumber = 9
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.561218, -45.677 )
 texture = ExtResource( 1 )
 
-[node name="DebugSprite" type="Sprite" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.592157 )
-position = Vector2( -0.5, 0 )
-texture = ExtResource( 2 )
-
 [node name="Perspectives2" parent="." instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 55.559, -571.464 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
-visible = false
 position = Vector2( -7.93701, 261.921 )
 
 [node name="TopDown" type="Node2D" parent="."]
-visible = false
 
 [node name="Sandbox" type="StaticBody2D" parent="TopDown" groups=[
 "TopDownMode",
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopDown/Sandbox"]
+position = Vector2( -1.49835, 259.207 )
+polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
+
+[node name="Sandbox2" type="StaticBody2D" parent="TopDown" groups=[
+"TopDownMode",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopDown/Sandbox2"]
+position = Vector2( -8.98993, -569.357 )
 polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
 
 [node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( -289.285, -514.278 )
-
-[node name="Obstacles" type="Node2D" parent="."]
-
-[node name="Void" type="Area2D" parent="Obstacles" groups=[
-"ObstacleVoid",
-]]
+position = Vector2( -301.271, -460.339 )
 
 [node name="SideScroller" type="Node2D" parent="."]
 
@@ -111,4 +164,68 @@ collision_layer = 1024
 position = Vector2( 8.64444, 169.145 )
 shape = SubResource( 1 )
 
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Void" type="Area2D" parent="Obstacles" groups=[
+"ObstacleVoid",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( 21.5734, 186.691, 11.4713, 266.947, 114.738, 267.508, 104.074, 186.13 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( -5.36566, 380.877, -6.4881, 395.469, 128.769, 396.03, 125.962, 379.193 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( 0.561249, -0.561218 )
+polygon = PoolVector2Array( -16.0291, 454.398, -18.274, 470.113, 135.503, 470.113, 133.258, 454.398 )
+
+[node name="Water" type="Area2D" parent="Obstacles"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Water"]
+polygon = PoolVector2Array( -353.89, 186.691, -456.595, 470.113, -287.104, 470.674, -267.461, 375.265, -187.766, 375.826, -163.633, 267.508, -243.328, 266.947, -224.246, 186.691 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Water"]
+position = Vector2( 3.36737, -0.561218 )
+polygon = PoolVector2Array( -93.479, 268.069, -110.316, 378.071, 238.208, 378.632, 218.565, 270.876 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Water"]
+polygon = PoolVector2Array( 296.015, 268.069, 323.516, 379.754, 425.66, 378.071, 384.129, 266.947 )
+
+[node name="BridgeLeft" type="Node2D" parent="Obstacles"]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/BridgeLeft"]
+position = Vector2( -138.624, 323.269 )
+scale = Vector2( 1e-05, 1 )
+texture = ExtResource( 6 )
+
+[node name="Water" type="Area2D" parent="Obstacles/BridgeLeft"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/BridgeLeft/Water"]
+polygon = PoolVector2Array( -161.949, 271.998, -184.96, 372.458, -105.826, 372.458, -89.5504, 273.121 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/BridgeLeft"]
+method_call_mode = 1
+anims/WaterRising = SubResource( 2 )
+
+[node name="BridgeRight" type="Node2D" parent="Obstacles"]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/BridgeRight"]
+position = Vector2( 271.075, 323.83 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 6 )
+
+[node name="Water" type="Area2D" parent="Obstacles/BridgeRight"]
+scale = Vector2( 1e-05, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/BridgeRight/Water"]
+polygon = PoolVector2Array( 223.055, 270.314, 245.505, 378.632, 320.709, 378.632, 294.332, 269.753 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/BridgeRight"]
+method_call_mode = 1
+anims/WaterRising = SubResource( 3 )
+
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]
+[connection signal="body_entered" from="Obstacles/Water" to="." method="_on_Water_body_entered"]
+[connection signal="body_entered" from="Obstacles/BridgeLeft/Water" to="." method="_on_Water_body_entered"]
+[connection signal="body_entered" from="Obstacles/BridgeRight/Water" to="." method="_on_Water_body_entered"]

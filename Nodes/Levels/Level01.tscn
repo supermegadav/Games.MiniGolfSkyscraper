@@ -40,7 +40,7 @@ position = Vector2( -7.93701, -153.978 )
 polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
 
 [node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( -315.503, -105.629 )
+position = Vector2( 211.018, 17.7605 )
 
 [node name="SideScroller" type="Node2D" parent="."]
 
@@ -109,4 +109,10 @@ shape = SubResource( 1 )
 [node name="Blocks" type="StaticBody2D" parent="Obstacles"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
-polygon = PoolVector2Array( -215.207, -184.824, -247.965, -43.7126, -137.092, -43.7126, -120.713, -184.824 )
+polygon = PoolVector2Array( -196.446, -198.536, -298.899, -122.81, -289.099, -109.892, -183.973, -185.173 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+polygon = PoolVector2Array( 187.086, -202.1, 289.985, -125.037, 280.631, -112.119, 175.059, -189.627 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+polygon = PoolVector2Array( -27.175, -99.201, -49.002, 56.2609, 38.3061, 56.2609, 20.0427, -99.6464 )

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Sprites/Level06.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/Level01_debug.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Levels/Perspectives.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Nodes/FakeBall.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1100, 5.41 )
@@ -27,7 +28,7 @@ visible = false
 position = Vector2( 0, -153.978 )
 
 [node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( 872.85, -93.3592 )
+position = Vector2( 651.104, -100.919 )
 
 [node name="TopDown" type="Node2D" parent="."]
 visible = false
@@ -110,15 +111,309 @@ shape = SubResource( 1 )
 "ObstacleVoid",
 ]]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-position = Vector2( 1.05951, 2.11896 )
-polygon = PoolVector2Array( -380.505, -156.484, -422.825, -38.8839, -612.468, -38.8839, -577.506, -157.544 )
-
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -178.782, -46.1245, -158.276, 52.8705, 157.801, 52.1633, 174.772, -45.4174 )
+polygon = PoolVector2Array( -958.479, 3.77478, -974.585, 41.667, 991.146, 42.6455, 974.499, 2.35678 )
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
-position = Vector2( 0, 0.707108 )
-polygon = PoolVector2Array( -219.087, -227.851, -195.752, -127.442, 186.793, -128.149, 206.592, -229.265 )
+[node name="FakeBalls" type="Node2D" parent="Obstacles"]
+
+[node name="FakeBall" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -490.895, -93.7937 )
+
+[node name="FakeBall2" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -419.08, -156.79 )
+
+[node name="FakeBall3" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -342.225, -71.1151 )
+
+[node name="FakeBall4" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -414.04, -100.093 )
+
+[node name="FakeBall5" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -464.437, -63.5556 )
+
+[node name="FakeBall6" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -463.177, -193.327 )
+
+[node name="FakeBall7" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -288.048, -141.671 )
+
+[node name="FakeBall8" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 668.231, -68.5954 )
+
+[node name="FakeBall9" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 599.852, -67.7244 )
+
+[node name="FakeBall10" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 616.575, -168.129 )
+
+[node name="FakeBall11" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 227.259, -28.2779 )
+
+[node name="FakeBall12" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 286.476, -126.552 )
+
+[node name="FakeBall13" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 469.164, -71.1152 )
+
+[node name="FakeBall14" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 447.745, -130.331 )
+
+[node name="FakeBall15" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -437.979, -48.4366 )
+
+[node name="FakeBall16" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -380.022, -92.5338 )
+
+[node name="FakeBall17" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -255.29, -24.498 )
+
+[node name="FakeBall18" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -769.631, -53.5212 )
+
+[node name="FakeBall19" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -526.173, -194.587 )
+
+[node name="FakeBall20" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -478.296, -149.23 )
+
+[node name="FakeBall21" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -510.252, -44.3356 )
+
+[node name="FakeBall22" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -329.625, -29.5378 )
+
+[node name="FakeBall23" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -203.634, -74.8949 )
+
+[node name="FakeBall24" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -80.6877, -107.1 )
+
+[node name="FakeBall25" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -252.257, -130.049 )
+
+[node name="FakeBall26" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 78.5886, -76.1548 )
+
+[node name="FakeBall27" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -52.4431, -77.4147 )
+
+[node name="FakeBall28" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 399.868, -163.089 )
+
+[node name="FakeBall29" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 312.934, -171.909 )
+
+[node name="FakeBall30" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 392.309, -117.732 )
+
+[node name="FakeBall31" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 280.176, -73.6349 )
+
+[node name="FakeBall32" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 470.424, -29.5378 )
+
+[node name="FakeBall33" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 776.585, -141.671 )
+
+[node name="FakeBall34" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 740.047, -100.093 )
+
+[node name="FakeBall35" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 496.882, -179.468 )
+
+[node name="FakeBall36" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 542.239, -129.072 )
+
+[node name="FakeBall37" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 557.358, -74.895 )
+
+[node name="FakeBall38" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -449.013, -121.669 )
+
+[node name="FakeBall39" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -387.495, -127.326 )
+
+[node name="FakeBall40" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -241.831, -155.61 )
+
+[node name="FakeBall41" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -359.918, -192.38 )
+
+[node name="FakeBall42" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -270.115, -68.6361 )
+
+[node name="FakeBall43" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -332.341, -140.054 )
+
+[node name="FakeBall44" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -453.963, -91.2635 )
+
+[node name="FakeBall45" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -502.753, -137.225 )
+
+[node name="FakeBall46" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -392.445, -13.4817 )
+
+[node name="FakeBall47" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -558.718, -28.1973 )
+
+[node name="FakeBall48" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -606.698, -141.468 )
+
+[node name="FakeBall49" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -571.343, -114.598 )
+
+[node name="FakeBall50" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -553.665, -99.0417 )
+
+[node name="FakeBall51" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -386.788, -31.1594 )
+
+[node name="FakeBall52" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -168.999, -81.364 )
+
+[node name="FakeBall53" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -111.016, -99.7488 )
+
+[node name="FakeBall54" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -503.461, -219.957 )
+
+[node name="FakeBall55" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -545.18, -222.078 )
+
+[node name="FakeBall56" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -269.408, -13.4818 )
+
+[node name="FakeBall57" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 263.043, -198.037 )
+
+[node name="FakeBall58" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 265.165, -162.681 )
+
+[node name="FakeBall59" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 223.668, -97.9481 )
+
+[node name="FakeBall60" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 304.055, -34.6949 )
+
+[node name="FakeBall62" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -650.925, -156.737 )
+
+[node name="FakeBall61" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 360.624, -94.799 )
+
+[node name="FakeBall63" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -636.333, -29.8991 )
+
+[node name="FakeBall64" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -597.046, -75.92 )
+
+[node name="FakeBall65" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -701.435, -203.881 )
+
+[node name="FakeBall66" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -64.6157, -158.938 )
+
+[node name="FakeBall67" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -188.088, -162.718 )
+
+[node name="FakeBall68" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -20.5184, -84.6025 )
+
+[node name="FakeBall69" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 158.39, -64.4438 )
+
+[node name="FakeBall70" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -101.153, -40.5052 )
+
+[node name="FakeBall71" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 218.867, -146.339 )
+
+[node name="FakeBall72" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 751.813, -155.158 )
+
+[node name="FakeBall73" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 872.766, -95.9418 )
+
+[node name="FakeBall74" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 860.166, -69.4835 )
+
+[node name="FakeBall75" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 804.73, -185.396 )
+
+[node name="FakeBall76" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 753.073, -190.436 )
+
+[node name="FakeBall77" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 734.174, -172.797 )
+
+[node name="FakeBall78" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -744.973, -132.479 )
+
+[node name="FakeBall79" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -714.735, -123.66 )
+
+[node name="FakeBall80" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 149.571, -156.418 )
+
+[node name="FakeBall81" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 51.2971, -190.436 )
+
+[node name="FakeBall82" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -122.572, -186.656 )
+
+[node name="FakeBall83" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 140.751, -106.021 )
+
+[node name="FakeBall84" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 182.329, -166.497 )
+
+[node name="FakeBall85" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -855.363, -212.873 )
+
+[node name="FakeBall86" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -861.02, -146.405 )
+
+[node name="FakeBall87" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -835.564, -95.4937 )
+
+[node name="FakeBall88" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -960.015, -84.1799 )
+
+[node name="FakeBall89" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 976.044, -96.9078 )
+
+[node name="FakeBall90" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -779.345, -104.566 )
+
+[node name="FakeBall91" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -734.039, -74.3621 )
+
+[node name="FakeBall92" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -924.702, -161.199 )
+
+[node name="FakeBall93" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -173.378, -198.954 )
+
+[node name="FakeBall94" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 36.1625, -114.005 )
+
+[node name="FakeBall95" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -700.06, -29.0562 )
+
+[node name="FakeBall96" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 449.579, -76.2499 )
+
+[node name="FakeBall97" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 698.762, -225.382 )
+
+[node name="FakeBall98" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( 895.088, -166.862 )
+
+[node name="FakeBall99" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -656.641, -66.8112 )
+
+[node name="FakeBall100" parent="Obstacles/FakeBalls" instance=ExtResource( 6 )]
+position = Vector2( -907.712, -44.1581 )
 
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]

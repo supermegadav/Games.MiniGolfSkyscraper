@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BallHitWood2.wav-9e800041bb2acbb346b83ebddef3f4be.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/BallHitWood2.wav"
+dest_files=[ "res://.import/BallHitWood2.wav-9e800041bb2acbb346b83ebddef3f4be.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -128,7 +128,9 @@ polygon = PoolVector2Array( -807.294, 16.3441, -815.78, 47.4568, -709.007, 47.45
 
 [node name="Jump" type="Node2D" parent="Obstacles"]
 
-[node name="Side" type="StaticBody2D" parent="Obstacles/Jump"]
+[node name="Side" type="StaticBody2D" parent="Obstacles/Jump" groups=[
+"SideJump",
+]]
 rotation = -3.14159
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Jump/Side"]

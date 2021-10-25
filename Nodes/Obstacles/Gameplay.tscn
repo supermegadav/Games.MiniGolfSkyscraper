@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Nodes/Levels/Level01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=2]
@@ -16,40 +16,187 @@
 [ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Sprites/SkyscraperPeak.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure_FrontPillars.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Backdrop.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Logo.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/How-To-Play.png" type="Texture" id=19]
+[ext_resource path="res://Nodes/AudioController.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Sprites/PowerMeter.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites/PowerMeterGauge.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Sprites/RewindLogo.png" type="Texture" id=23]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.839216, 0.396078, 0.00784314, 1 )
+[sub_resource type="Shader" id=5]
+code = "//SHADER ORIGINALY CREADED BY \"FMS_Cat\" FROM SHADERTOY
+//PORTED AND MODIFYED TO GODOT BY AHOPNESS (@ahopness)
+//LICENSE : CC0
+//COMATIBLE WITH : GLES2, GLES3
+//SHADERTOY LINK : https://www.shadertoy.com/view/XtBXDt
 
-[sub_resource type="RectangleShape2D" id=2]
+shader_type canvas_item;
+
+uniform float tape_wave_amount :hint_range (0, .04) = 0.003;
+uniform float tape_crease_amount :hint_range (0, 15) = 2.5;
+uniform float color_displacement :hint_range (0, 5) = 1;
+uniform float lines_velocity :hint_range (0, 5) = 0.1;
+
+const float PI = 3.14159265;
+
+vec3 tex2D( sampler2D _tex, vec2 _p ){
+	vec3 col = texture( _tex, _p ).xyz;
+	if ( 0.5 < abs( _p.x - 0.5 ) ) {
+		col = vec3( 0.1 );
+	}
+	return col;
+}
+
+float hash( vec2 _v ){
+	return fract( sin( dot( _v, vec2( 89.44, 19.36 ) ) ) * 22189.22 );
+}
+
+float iHash( vec2 _v, vec2 _r ){
+	float h00 = hash( vec2( floor( _v * _r + vec2( 0.0, 0.0 ) ) / _r ) );
+	float h10 = hash( vec2( floor( _v * _r + vec2( 1.0, 0.0 ) ) / _r ) );
+	float h01 = hash( vec2( floor( _v * _r + vec2( 0.0, 1.0 ) ) / _r ) );
+	float h11 = hash( vec2( floor( _v * _r + vec2( 1.0, 1.0 ) ) / _r ) );
+	vec2 ip = vec2( smoothstep( vec2( 0.0, 0.0 ), vec2( 1.0, 1.0 ), mod( _v*_r, 1. ) ) );
+	return ( h00 * ( 1. - ip.x ) + h10 * ip.x ) * ( 1. - ip.y ) + ( h01 * ( 1. - ip.x ) + h11 * ip.x ) * ip.y;
+}
+
+float noise( vec2 _v ){
+	float sum = 0.;
+	for( float i=1.0; i<9.0; i++ ){
+	sum += iHash( _v + vec2( i ), vec2( 2. * pow( 2., float( i ) ) ) ) / pow( 2., float( i ) );
+	}
+	return sum;
+}
+
+void fragment(){
+	vec2 uv = FRAGCOORD.xy / (1.0 / SCREEN_PIXEL_SIZE).xy;
+	vec2 uvn = uv;
+	vec3 col = vec3( 0.0 );
+	
+	// tape wave
+	uvn.x += ( noise( vec2( uvn.y, TIME ) ) - 0.5 )* 0.005;
+	uvn.x += ( noise( vec2( uvn.y * 100.0, TIME * 10.0 ) ) - 0.5 ) * tape_wave_amount;
+	
+	// tape crease
+	float tcPhase = clamp( ( sin( uvn.y * 8.0 - TIME * PI * 1.2 ) - 0.92 ) * noise( vec2( TIME ) ), 0.0, 0.01 ) * tape_crease_amount;
+	float tcNoise = max( noise( vec2( uvn.y * 100.0, TIME * 10.0 ) ) - 0.5, 0.0 );
+	uvn.x = uvn.x - tcNoise * tcPhase;
+	
+	// switching noise
+	float snPhase = smoothstep( 0.03, 0.0, uvn.y );
+	uvn.y += snPhase * 0.3;
+	uvn.x += snPhase * ( ( noise( vec2( uv.y * 100.0, TIME * 10.0 ) ) - 0.5 ) * 0.2 );
+	
+	col = tex2D( SCREEN_TEXTURE, uvn );
+	col *= 1.0 - tcPhase;
+	col = mix(
+		col,
+		col.yzx,
+		snPhase
+	);
+	
+	// bloom
+	for( float x = -4.0; x < 2.5; x += 1.0 ){
+		col.xyz += vec3(
+		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 0.0, 0.0 ) * 0.007 ).x,
+		tex2D( SCREEN_TEXTURE, uvn + vec2( x - color_displacement, 0.0 ) * 0.007 ).y,
+		tex2D( SCREEN_TEXTURE, uvn + vec2( x - color_displacement * 2.0, 0.0 ) * 0.007 ).z
+		) * 0.1;
+	}
+	col *= 0.6;
+	
+	// ac beat
+	col *= 1.0 + clamp( noise( vec2( 0.0, uv.y + TIME * lines_velocity ) ) * 0.6 - 0.25, 0.0, 0.1 );
+	
+	COLOR = vec4( col, 1.0 );
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/tape_wave_amount = 0.008
+shader_param/tape_crease_amount = 3.864
+shader_param/color_displacement = 1.0
+shader_param/lines_velocity = 0.15
+
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 386.989, 218.992 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 393.227, 217.928 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1012.06, 219.124 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1041.48, 223.994 )
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource( 14 )
-currentLevel = 8
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 10
-offset = Vector2( 20, 685 )
-transform = Transform2D( 1, 0, 0, 1, 20, 685 )
 
-[node name="WindUpBar" type="ProgressBar" parent="HUD"]
-margin_right = 400.0
-margin_bottom = 20.0
-custom_styles/fg = SubResource( 1 )
+[node name="PowerMeter" type="Sprite" parent="HUD"]
+position = Vector2( 20, 685 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="Club" parent="HUD" instance=ExtResource( 3 )]
+position = Vector2( 82, 650 )
+
+[node name="WindUpBar" type="TextureProgress" parent="HUD"]
+margin_left = 145.0
+margin_top = 685.0
+margin_right = 610.0
+margin_bottom = 725.0
 min_value = 100.0
 max_value = 2000.0
 step = 10.0
 value = 100.0
-percent_visible = false
+texture_progress = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rewind1" type="Sprite" parent="HUD"]
+position = Vector2( 1230, 675 )
+texture = ExtResource( 23 )
+
+[node name="Rewind2" type="Sprite" parent="HUD"]
+position = Vector2( 1160, 675 )
+texture = ExtResource( 23 )
+
+[node name="Rewind3" type="Sprite" parent="HUD"]
+position = Vector2( 1090, 675 )
+texture = ExtResource( 23 )
+
+[node name="FixedComponents" type="CanvasLayer" parent="."]
+layer = 11
+
+[node name="ColorRect" type="ColorRect" parent="FixedComponents"]
+modulate = Color( 1, 1, 1, 0.266667 )
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleScreen" type="Sprite" parent="FixedComponents"]
+position = Vector2( 140, 40 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Instructions" type="Sprite" parent="FixedComponents"]
+position = Vector2( 140, 800 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="Rewind" type="ColorRect" parent="FixedComponents"]
+visible = false
+material = SubResource( 6 )
+margin_right = 1280.0
+margin_bottom = 720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -60,7 +207,15 @@ current = true
 
 [node name="Skyscraper" type="Node2D" parent="."]
 
+[node name="Backdrop" type="Sprite" parent="Skyscraper"]
+modulate = Color( 1, 1, 1, 0.666667 )
+position = Vector2( 508.667, 660.801 )
+scale = Vector2( 2, 2 )
+z_index = -5
+texture = ExtResource( 17 )
+
 [node name="Street" type="Sprite" parent="Skyscraper"]
+visible = false
 position = Vector2( 476.759, 3800.42 )
 texture = ExtResource( 12 )
 
@@ -106,21 +261,21 @@ collision_layer = 64512
 polygon = PoolVector2Array( -378.576, 4510.14, -377, -2931, -422, -2932, -413.901, 4510.69 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Skyscraper/BuildingStructure_FreeFall"]
-polygon = PoolVector2Array( 429.015, 4512.89, 412.979, 2513.71, 880.882, 2087.1, 1667.07, 2089.62, 1662.03, -546.13, 1665.94, -1935.24, 1625.68, -2200.1, 392.469, -2981.99, 339.496, -2960.8, 1117.14, -2416.23, 1464.65, -2223.41, 1617.21, -1937.36, 1624.24, -515.894, 1640.64, 2071.83, 863.773, 2070.04, 382.688, 2497.67, 382.688, 4514.67 )
+polygon = PoolVector2Array( 429.015, 4512.89, 461.322, 2261.73, 880.882, 2087.1, 1667.07, 2089.62, 1662.03, -546.13, 1665.94, -1935.24, 1625.68, -2200.1, 392.469, -2981.99, 339.496, -2960.8, 1117.14, -2416.23, 1464.65, -2223.41, 1617.21, -1937.36, 1624.24, -515.894, 1640.64, 2071.83, 863.773, 2070.04, 411.431, 2062.17, 372.232, 2067.51, 382.688, 4514.67 )
 
 [node name="Area_FreeFall" type="Area2D" parent="Skyscraper"]
 collision_layer = 64512
 
 [node name="BetweenLevel1and2" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 1.59857, 3810.64 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel2and3" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 3.5636, 3068.26 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -133,21 +288,21 @@ __meta__ = {
 
 [node name="BetweenLevel4and5" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 631.984, 1526.48 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel5and6" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 623.708, 785.114 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel6and7" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 600.4, 20.1815 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -177,6 +332,7 @@ __meta__ = {
 }
 
 [node name="BuildingPeak" type="Sprite" parent="Skyscraper"]
+visible = false
 position = Vector2( -16.9514, -3644.55 )
 texture = ExtResource( 15 )
 
@@ -187,6 +343,8 @@ position = Vector2( -238.28, 4164.25 )
 position = Vector2( -238.28, 4164.25 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="AudioController" parent="." instance=ExtResource( 20 )]
 
 [connection signal="body_entered" from="Skyscraper/Area_FreeFall" to="." method="_on_Area_FreeFall_body_entered"]
 [connection signal="body_exited" from="Skyscraper/Area_FreeFall" to="." method="_on_Area_FreeFall_body_exited"]

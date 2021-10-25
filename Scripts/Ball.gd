@@ -3,6 +3,7 @@ extends RigidBody2D
 signal ball_finished_moving
 signal ball_entered_hole
 signal ball_freefall_done
+signal ball_finished_rewinding
 
 var ballIsMoving = false
 var ballIsFreefalling = false
@@ -14,7 +15,24 @@ var ballIsJumpingNeedsReverseRight = false
 var ballIsInFreeFallArea = false
 var ballIsInWind = false
 
+var ballIsInRewind = false
+var ballIsInRewindIndex = 0
+var lastShot = []
+
 func _physics_process(delta):
+	if ballIsMoving:
+		lastShot.append(global_position)
+		
+	if ballIsInRewind:
+		ballIsInRewindIndex -= 2
+		if ballIsInRewindIndex >= 0:
+			global_transform.origin = lastShot[ballIsInRewindIndex]
+		else:
+			lastShot = []
+			ballIsInRewind = false
+			set_collision_mask_bit(0, true)
+			emit_signal("ball_finished_rewinding")
+	
 	if ballIsJumping:
 		if !ballIsJumpingNeedsReverse:
 			if abs(linear_velocity.x) <= 10:
@@ -64,16 +82,24 @@ func resetToTopDownMode():
 	
 
 func move(velocity:Vector2):
+	lastShot = []
+	$SFX/BallHit.play()
 	linear_velocity = velocity
 	ballIsMoving = true
-	
-	
+
+func rewind():
+	if lastShot != null:
+		ballIsInRewind = true
+		ballIsInRewindIndex = lastShot.size()
+		set_collision_mask_bit(0, false)
+		
 func collision_with_hole():
+	#TODO: if velocity too high, not enterd
+	$SFX/BallEnteringHole.play()
 	linear_velocity = Vector2(0,0)
 	ballIsMoving = false
 	emit_signal("ball_entered_hole")
 	emit_signal("ball_finished_moving")
-	
 	
 func enteredVoid():
 	linear_velocity = Vector2(linear_velocity.x,1000)
@@ -87,6 +113,7 @@ func enteredJump():
 		linear_velocity = Vector2(linear_velocity.x - 100, linear_velocity.y - 130)
 	else:
 		linear_velocity = Vector2(linear_velocity.x + 100, linear_velocity.y - 130)
+		
 	ballIsJumping = true
 	return linear_velocity
 	
@@ -98,8 +125,6 @@ func exitJump():
 	ballIsJumpingNeedsReverseRight = false
 	return linear_velocity
 	
-
-
 func enteredFreeFallArea():
 	ballIsInFreeFallArea = true
 	
@@ -111,6 +136,9 @@ func applyWind(direction:Vector2):
 	
 func noWind():
 	ballIsInWind = false
+
+func enteredWater():
+	print("entered water")
 
 func changeScale(perspective):
 	if perspective == 1:
@@ -127,6 +155,10 @@ func changeScale(perspective):
 		$Sprite.scale = Vector2(0.80, 0.80)
 	ballIsInPerspective = perspective
 
-
 func resetPosition(pos:Vector2):
 	global_transform.origin = pos
+
+
+func _on_Ball_body_entered(body):
+	if body.is_in_group("SideJump"):
+		print("needs to drop down")
