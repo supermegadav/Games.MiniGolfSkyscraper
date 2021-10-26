@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Nodes/Levels/Level01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=2]
@@ -11,10 +11,9 @@
 [ext_resource path="res://Nodes/Levels/Level07.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Nodes/Levels/Level08.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Nodes/Levels/Level09.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Sprites/BackgroundBuildings.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/BackButton.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Sprites/SkyscraperPeak.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure_FrontPillars.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/Backdrop.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sprites/Logo.png" type="Texture" id=18]
@@ -23,8 +22,20 @@
 [ext_resource path="res://Assets/Sprites/PowerMeter.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Sprites/PowerMeterGauge.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Sprites/RewindLogo.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Sprites/PlayButton_pressed.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sprites/PlayButton_hover.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Sprites/PlayButton.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Sprites/Score.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Fonts/ScoreFont2.tres" type="DynamicFont" id=28]
+[ext_resource path="res://Assets/Sprites/InstructionsButton.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Sprites/InstructionsButton_hover.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Sprites/InstructionsButton_pressed.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Sprites/BackButton_pressed.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Sprites/BackButton_hover.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Sprites/LudwigJamLogo.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Sprites/GodotLogo2.png" type="Texture" id=35]
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=1]
 code = "//SHADER ORIGINALY CREADED BY \"FMS_Cat\" FROM SHADERTOY
 //PORTED AND MODIFYED TO GODOT BY AHOPNESS (@ahopness)
 //LICENSE : CC0
@@ -112,40 +123,44 @@ void fragment(){
 	COLOR = vec4( col, 1.0 );
 }"
 
-[sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 5 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/tape_wave_amount = 0.008
 shader_param/tape_crease_amount = 3.864
 shader_param/color_displacement = 1.0
 shader_param/lines_velocity = 0.15
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 386.989, 218.992 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 393.227, 217.928 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 1012.06, 219.124 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 1041.48, 223.994 )
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource( 14 )
+isDebug = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 10
 
 [node name="PowerMeter" type="Sprite" parent="HUD"]
+visible = false
 position = Vector2( 20, 685 )
 texture = ExtResource( 21 )
 centered = false
 
 [node name="Club" parent="HUD" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 82, 650 )
 
 [node name="WindUpBar" type="TextureProgress" parent="HUD"]
+visible = false
 margin_left = 145.0
 margin_top = 685.0
 margin_right = 610.0
@@ -160,14 +175,17 @@ __meta__ = {
 }
 
 [node name="Rewind1" type="Sprite" parent="HUD"]
+visible = false
 position = Vector2( 1230, 675 )
 texture = ExtResource( 23 )
 
 [node name="Rewind2" type="Sprite" parent="HUD"]
+visible = false
 position = Vector2( 1160, 675 )
 texture = ExtResource( 23 )
 
 [node name="Rewind3" type="Sprite" parent="HUD"]
+visible = false
 position = Vector2( 1090, 675 )
 texture = ExtResource( 23 )
 
@@ -183,7 +201,7 @@ __meta__ = {
 }
 
 [node name="TitleScreen" type="Sprite" parent="FixedComponents"]
-position = Vector2( 140, 40 )
+position = Vector2( 140, 60 )
 texture = ExtResource( 18 )
 centered = false
 
@@ -194,12 +212,228 @@ centered = false
 
 [node name="Rewind" type="ColorRect" parent="FixedComponents"]
 visible = false
-material = SubResource( 6 )
+material = SubResource( 2 )
 margin_right = 1280.0
 margin_bottom = 720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PlayButton" type="TextureButton" parent="FixedComponents"]
+margin_left = 430.0
+margin_top = 450.0
+margin_right = 830.0
+margin_bottom = 541.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 24 )
+texture_hover = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsButton" type="TextureButton" parent="FixedComponents"]
+margin_left = 430.0
+margin_top = 559.567
+margin_right = 830.0
+margin_bottom = 650.567
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 31 )
+texture_hover = ExtResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="FixedComponents"]
+visible = false
+margin_left = 510.817
+margin_top = 633.65
+margin_right = 910.817
+margin_bottom = 724.65
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 32 )
+texture_hover = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fireworks" type="Node2D" parent="FixedComponents"]
+visible = false
+
+[node name="FireworkTimer1" type="Timer" parent="FixedComponents/Fireworks"]
+wait_time = 0.3
+
+[node name="FireworkTimer2" type="Timer" parent="FixedComponents/Fireworks"]
+wait_time = 0.5
+
+[node name="FireworkTimer3" type="Timer" parent="FixedComponents/Fireworks"]
+wait_time = 0.25
+
+[node name="FireworkTimer4" type="Timer" parent="FixedComponents/Fireworks"]
+wait_time = 1.1
+
+[node name="EndPanel" type="Node2D" parent="FixedComponents"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="FixedComponents/EndPanel"]
+position = Vector2( 140, 40 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="Scores" type="Node2D" parent="FixedComponents/EndPanel"]
+
+[node name="Level1" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 164.0
+margin_right = 940.0
+margin_bottom = 202.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 206.0
+margin_right = 940.0
+margin_bottom = 244.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 248.0
+margin_right = 940.0
+margin_bottom = 286.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 290.0
+margin_right = 940.0
+margin_bottom = 328.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "1"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 332.0
+margin_right = 940.0
+margin_bottom = 370.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 375.0
+margin_right = 940.0
+margin_bottom = 413.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level7" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 417.0
+margin_right = 940.0
+margin_bottom = 455.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level8" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 460.0
+margin_right = 940.0
+margin_bottom = 498.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level9" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 502.0
+margin_right = 940.0
+margin_bottom = 540.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalScore" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 900.0
+margin_top = 549.0
+margin_right = 940.0
+margin_bottom = 587.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "12"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalTime" type="Label" parent="FixedComponents/EndPanel/Scores"]
+margin_left = 815.0
+margin_top = 594.0
+margin_right = 941.0
+margin_bottom = 632.0
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.211765, 0.305882, 0.34902, 1 )
+text = "00:00:00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GodotLogo" type="Sprite" parent="FixedComponents"]
+position = Vector2( 1181.44, 686.723 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 35 )
+
+[node name="LudwigJamLogo" type="Sprite" parent="FixedComponents"]
+position = Vector2( 90.1366, 661.024 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 34 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, 4150 )
@@ -209,18 +443,12 @@ current = true
 
 [node name="Backdrop" type="Sprite" parent="Skyscraper"]
 modulate = Color( 1, 1, 1, 0.666667 )
-position = Vector2( 508.667, 660.801 )
-scale = Vector2( 2, 2 )
+position = Vector2( 506.706, 663.324 )
 z_index = -5
 texture = ExtResource( 17 )
 
-[node name="Street" type="Sprite" parent="Skyscraper"]
-visible = false
-position = Vector2( 476.759, 3800.42 )
-texture = ExtResource( 12 )
-
 [node name="Building" type="Sprite" parent="Skyscraper"]
-position = Vector2( 615, 800 )
+position = Vector2( 536.755, 1364 )
 texture = ExtResource( 13 )
 
 [node name="Level01" parent="Skyscraper" instance=ExtResource( 1 )]
@@ -251,14 +479,14 @@ position = Vector2( 0, -1035 )
 position = Vector2( 0, -2270 )
 
 [node name="BuildingsStructure_FrontPillars" type="Sprite" parent="Skyscraper"]
-position = Vector2( 620, 942 )
+position = Vector2( 620, 1346.92 )
 texture = ExtResource( 16 )
 
 [node name="BuildingStructure_FreeFall" type="StaticBody2D" parent="Skyscraper"]
 collision_layer = 64512
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Skyscraper/BuildingStructure_FreeFall"]
-polygon = PoolVector2Array( -378.576, 4510.14, -377, -2931, -422, -2932, -413.901, 4510.69 )
+polygon = PoolVector2Array( -378.576, 4510.14, -393.602, -1727.87, -415.031, -1809.62, -403.92, -1855.65, -377, -2931, -422, -2932, -466.622, -1868.35, -413.901, 4510.69 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Skyscraper/BuildingStructure_FreeFall"]
 polygon = PoolVector2Array( 429.015, 4512.89, 461.322, 2261.73, 880.882, 2087.1, 1667.07, 2089.62, 1662.03, -546.13, 1665.94, -1935.24, 1625.68, -2200.1, 392.469, -2981.99, 339.496, -2960.8, 1117.14, -2416.23, 1464.65, -2223.41, 1617.21, -1937.36, 1624.24, -515.894, 1640.64, 2071.83, 863.773, 2070.04, 411.431, 2062.17, 372.232, 2067.51, 382.688, 4514.67 )
@@ -268,14 +496,14 @@ collision_layer = 64512
 
 [node name="BetweenLevel1and2" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 1.59857, 3810.64 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel2and3" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 3.5636, 3068.26 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -288,21 +516,21 @@ __meta__ = {
 
 [node name="BetweenLevel4and5" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 631.984, 1526.48 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel5and6" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 623.708, 785.114 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel6and7" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 600.4, 20.1815 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -314,27 +542,16 @@ __meta__ = {
 }
 
 [node name="BetweenLevel8and9" type="CollisionPolygon2D" parent="Skyscraper/Area_FreeFall"]
-polygon = PoolVector2Array( -385.83, -1792.16, -389.834, -1272.91, 411.07, -1271.57, 401.726, -1793.5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BetweenLayersOf9" type="CollisionPolygon2D" parent="Skyscraper/Area_FreeFall"]
-polygon = PoolVector2Array( -385.83, -2625.1, -387.164, -2092.5, 412.405, -2089.83, 401.726, -2625.1 )
+polygon = PoolVector2Array( -385.83, -1792.16, -389.834, -1272.91, 434.67, -1270.64, 410.101, -1797.29 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenRightTo8and9" type="CollisionPolygon2D" parent="Skyscraper/Area_FreeFall"]
-polygon = PoolVector2Array( 479.796, -2630.01, 471.796, -630.007, 1595.8, -686.007, 1439.8, -2198.01 )
+polygon = PoolVector2Array( 369.395, -2662.33, 471.796, -630.007, 1595.8, -686.007, 1582.81, -1939.75, 1439.8, -2198.01 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="BuildingPeak" type="Sprite" parent="Skyscraper"]
-visible = false
-position = Vector2( -16.9514, -3644.55 )
-texture = ExtResource( 15 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( -238.28, 4164.25 )
@@ -346,5 +563,14 @@ position = Vector2( -238.28, 4164.25 )
 
 [node name="AudioController" parent="." instance=ExtResource( 20 )]
 
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="FixedComponents/PlayButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="FixedComponents/InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
+[connection signal="pressed" from="FixedComponents/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="timeout" from="FixedComponents/Fireworks/FireworkTimer1" to="." method="_on_FireworkTimer_timeout"]
+[connection signal="timeout" from="FixedComponents/Fireworks/FireworkTimer2" to="." method="_on_FireworkTimer2_timeout"]
+[connection signal="timeout" from="FixedComponents/Fireworks/FireworkTimer3" to="." method="_on_FireworkTimer3_timeout"]
+[connection signal="timeout" from="FixedComponents/Fireworks/FireworkTimer4" to="." method="_on_FireworkTimer4_timeout"]
 [connection signal="body_entered" from="Skyscraper/Area_FreeFall" to="." method="_on_Area_FreeFall_body_entered"]
 [connection signal="body_exited" from="Skyscraper/Area_FreeFall" to="." method="_on_Area_FreeFall_body_exited"]

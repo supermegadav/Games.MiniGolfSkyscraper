@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SkyscraperPeak.png-daee2d188ae121c9c96265384ba14f4a.stex"
+path="res://.import/InstructionsButton.png-4e52d840e545ac75e4932b8f5db156c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/SkyscraperPeak.png"
-dest_files=[ "res://.import/SkyscraperPeak.png-daee2d188ae121c9c96265384ba14f4a.stex" ]
+source_file="res://Assets/Sprites/InstructionsButton.png"
+dest_files=[ "res://.import/InstructionsButton.png-4e52d840e545ac75e4932b8f5db156c0.stex" ]
 
 [params]
 

@@ -1,11 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Audio/Song1.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Nodes/AudioController.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Audio/Song3.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Song2.mp3" type="AudioStream" id=4]
 
 [node name="AudioController" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Song1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -8.0
+volume_db = -10.0
+
+[node name="Song2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+
+[node name="Song3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[connection signal="finished" from="Song1" to="." method="_on_Song1_finished"]
+[connection signal="finished" from="Song2" to="." method="_on_Song2_finished"]
+[connection signal="finished" from="Song3" to="." method="_on_Song3_finished"]

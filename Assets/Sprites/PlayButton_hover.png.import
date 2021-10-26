@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Skyscraper.png-80b23fd6b3d818939ff6b300758f78dd.stex"
+path="res://.import/PlayButton_hover.png-6f954fdfbb3344d4bc72569d426d8e80.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Skyscraper.png"
-dest_files=[ "res://.import/Skyscraper.png-80b23fd6b3d818939ff6b300758f78dd.stex" ]
+source_file="res://Assets/Sprites/PlayButton_hover.png"
+dest_files=[ "res://.import/PlayButton_hover.png-6f954fdfbb3344d4bc72569d426d8e80.stex" ]
 
 [params]
 

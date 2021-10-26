@@ -128,6 +128,13 @@ polygon = PoolVector2Array( -807.294, 16.3441, -815.78, 47.4568, -709.007, 47.45
 
 [node name="Jump" type="Node2D" parent="Obstacles"]
 
+[node name="SideArea" type="Area2D" parent="Obstacles/Jump"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Jump/SideArea"]
+position = Vector2( 1679.07, -126.536 )
+polygon = PoolVector2Array( -659.11, 33.1787, -2074.92, 28.4593, -2273.14, 30.347, -2056.04, -33.8364, -679.875, -32.8925 )
+one_way_collision_margin = 0.0
+
 [node name="Side" type="StaticBody2D" parent="Obstacles/Jump" groups=[
 "SideJump",
 ]]
@@ -146,5 +153,7 @@ position = Vector2( 53.939, -53.1899 )
 polygon = PoolVector2Array( -641.06, -133.875, -656.809, -41.9007, -431.283, -109.306, -434.433, -195.611 )
 
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]
+[connection signal="body_entered" from="Obstacles/Jump/SideArea" to="." method="_on_SideArea_body_entered"]
+[connection signal="body_exited" from="Obstacles/Jump/SideArea" to="." method="_on_SideArea_body_exited"]
 [connection signal="body_entered" from="Obstacles/Jump/Ramp" to="." method="_on_Ramp_body_entered"]
 [connection signal="body_exited" from="Obstacles/Jump/Ramp" to="." method="_on_Ramp_body_exited"]

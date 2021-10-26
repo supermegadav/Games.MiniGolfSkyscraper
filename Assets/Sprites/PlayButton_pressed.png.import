@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TheMinigolfSkyscrapper.svg-73836a1777671eae92e265092ea01479.stex"
+path="res://.import/PlayButton_pressed.png-85fdd52743e320f33dcdfb879c79759d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMinigolfSkyscrapper.svg"
-dest_files=[ "res://.import/TheMinigolfSkyscrapper.svg-73836a1777671eae92e265092ea01479.stex" ]
+source_file="res://Assets/Sprites/PlayButton_pressed.png"
+dest_files=[ "res://.import/PlayButton_pressed.png-85fdd52743e320f33dcdfb879c79759d.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BackgroundBuildings.png-d121a3cf8afcb62db2d6e6f0f9d3ac88.stex"
+path="res://.import/LudwigJamLogo.png-12db217fe51574c9374e3150064cff57.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/BackgroundBuildings.png"
-dest_files=[ "res://.import/BackgroundBuildings.png-d121a3cf8afcb62db2d6e6f0f9d3ac88.stex" ]
+source_file="res://Assets/Sprites/LudwigJamLogo.png"
+dest_files=[ "res://.import/LudwigJamLogo.png-12db217fe51574c9374e3150064cff57.stex" ]
 
 [params]
 

@@ -21,9 +21,6 @@ func _ready():
 		$Obstacles/Wind2/TurbineAnim.play("New Anim")
 		yield(get_tree().create_timer(0.1, false), "timeout")
 		$Obstacles/Wind3/TurbineAnim.play("New Anim")
-	if levelNumber == 9:
-		$Obstacles/BridgeLeft/AnimationPlayer.play("WaterRising")
-		$Obstacles/BridgeRight/AnimationPlayer.play("WaterRising")
 		
 	
 
@@ -75,3 +72,13 @@ func _on_Wind_body_exited(body):
 func _on_Water_body_entered(body):
 	if body.is_in_group("Ball"):
 		var currentVelocity = body.enteredWater()
+
+
+func _on_SideArea_body_entered(body):
+	if body.is_in_group("Ball"):
+		body.fellOffRamp()
+
+
+func _on_SideArea_body_exited(body):
+	if body.is_in_group("Ball"):
+		body.exitedOffRamp()

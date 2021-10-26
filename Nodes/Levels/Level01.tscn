@@ -43,6 +43,7 @@ polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161
 position = Vector2( 211.018, 17.7605 )
 
 [node name="SideScroller" type="Node2D" parent="."]
+visible = false
 
 [node name="Plane6" type="StaticBody2D" parent="SideScroller" groups=[
 "SideScrollerMode",

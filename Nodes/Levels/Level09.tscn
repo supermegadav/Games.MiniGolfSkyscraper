@@ -1,82 +1,20 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Sprites/Level09.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Levels/Perspectives.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Sprites/Plywood_Level9.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1100, 5.41 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "WaterRising"
-length = 6.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 4, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1e-05, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1e-05, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Water:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 4, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "WaterRising"
-length = 6.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 4, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1e-05, 1 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1e-05, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Water:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.3, 1, 3.5, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 1, 1 ) ]
-}
+extents = Vector2( 454.605, 5.50247 )
 
 [node name="Level09" type="Node2D"]
 script = ExtResource( 3 )
 levelNumber = 9
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.561218, -45.677 )
+position = Vector2( 2.16745, 172.843 )
 texture = ExtResource( 1 )
-
-[node name="Perspectives2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 55.559, -571.464 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
 position = Vector2( -7.93701, 261.921 )
@@ -89,143 +27,211 @@ position = Vector2( -7.93701, 261.921 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopDown/Sandbox"]
 position = Vector2( -1.49835, 259.207 )
-polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
-
-[node name="Sandbox2" type="StaticBody2D" parent="TopDown" groups=[
-"TopDownMode",
-]]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopDown/Sandbox2"]
-position = Vector2( -8.98993, -569.357 )
-polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161.422, 571.211, 270.84, -542.592, 266.542, -451.114, 207.191, -450.37, 207.558, 466.271, 206.047, 354.814, -77.7745, -348.821, -76.8574, -448.251, 205.439 )
+polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, -254.123, -230.184, -73.9578, -259.914, 282.804, -259.914, 435.618, -246.833, 400.498, -185.207, 346.427, -186.778, 242.966, -186.778, 242.824, -182.04, 15.5258, -181.479, 17.0165, -186.778, -62.0657, -187.372, -268.979, -141.351, -349.135, -143.414, -389.543, -21.0661, -400.768, 56.3838, -455.029, 207.111, 462.389, 210.475, 474.162, 260.929 )
 
 [node name="Flag" parent="." instance=ExtResource( 5 )]
-position = Vector2( -301.271, -460.339 )
-
-[node name="SideScroller" type="Node2D" parent="."]
-
-[node name="Plane6" type="StaticBody2D" parent="SideScroller" groups=[
-"SideScrollerMode",
-]]
-position = Vector2( 12.9568, 263.521 )
-collision_layer = 32768
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane6"]
-position = Vector2( 5.34543, -54.3448 )
-shape = SubResource( 1 )
-
-[node name="Plane5" type="StaticBody2D" parent="SideScroller" groups=[
-"SideScrollerMode",
-]]
-position = Vector2( 12.9568, 263.521 )
-collision_layer = 16384
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane5"]
-position = Vector2( 7.19785, -27.3689 )
-shape = SubResource( 1 )
-
-[node name="Plane4" type="StaticBody2D" parent="SideScroller" groups=[
-"SideScrollerMode",
-]]
-position = Vector2( 12.9568, 263.521 )
-collision_layer = 8192
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane4"]
-position = Vector2( 8.19897, 3.33241 )
-shape = SubResource( 1 )
-
-[node name="Plane3" type="StaticBody2D" parent="SideScroller" groups=[
-"SideScrollerMode",
-]]
-position = Vector2( 12.9568, 263.521 )
-collision_layer = 4096
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane3"]
-position = Vector2( 7.86526, 51.0529 )
-shape = SubResource( 1 )
-
-[node name="Plane2" type="StaticBody2D" parent="SideScroller" groups=[
-"SideScrollerMode",
-]]
-position = Vector2( 12.9568, 263.521 )
-collision_layer = 2048
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane2"]
-position = Vector2( 8.19897, 106.783 )
-shape = SubResource( 1 )
-
-[node name="Plane1" type="StaticBody2D" parent="SideScroller" groups=[
-"SideScrollerMode",
-]]
-position = Vector2( 12.9568, 263.521 )
-collision_layer = 1024
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane1"]
-position = Vector2( 8.64444, 169.145 )
-shape = SubResource( 1 )
+position = Vector2( 301.294, 104.915 )
 
 [node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Ramp1" type="Node2D" parent="Obstacles"]
+
+[node name="SideArea" type="Area2D" parent="Obstacles/Ramp1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp1/SideArea"]
+position = Vector2( 1975.73, 346.929 )
+polygon = PoolVector2Array( -1560.05, 31.7319, -2074.92, 28.4593, -2273.14, 30.347, -2058.24, -16.2138, -1561.55, -19.2105 )
+one_way_collision_margin = 0.0
+
+[node name="Side" type="StaticBody2D" parent="Obstacles/Ramp1" groups=[
+"SideJump",
+]]
+rotation = -3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp1/Side"]
+position = Vector2( 1080.65, 129.254 )
+polygon = PoolVector2Array( -998.906, -461.055, -1500.05, -457.183, -1506.22, -507.277, -779.375, -504.807 )
+one_way_collision = true
+one_way_collision_margin = 18.8
+
+[node name="Ramp" type="Area2D" parent="Obstacles/Ramp1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp1/Ramp"]
+position = Vector2( 350.608, 451.059 )
+polygon = PoolVector2Array( -641.06, -133.875, -654.998, -77.1734, -448.762, -115.872, -464.808, -162.594, -525.688, -160.234 )
+
+[node name="Ramp2" type="Node2D" parent="Obstacles"]
+
+[node name="SideArea" type="Area2D" parent="Obstacles/Ramp2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp2/SideArea"]
+position = Vector2( 1879.09, 256.282 )
+polygon = PoolVector2Array( -1588.97, 28.4915, -2051.2, 26.9932, -2167.32, 48.7186, -2275.2, 49.4678, -2269.95, -11.9628, -1773.26, -12.712 )
+one_way_collision_margin = 0.0
+
+[node name="Side" type="StaticBody2D" parent="Obstacles/Ramp2" groups=[
+"SideJump",
+]]
+rotation = -3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp2/Side"]
+position = Vector2( 1116.61, 269.346 )
+polygon = PoolVector2Array( -996.942, -510.668, -1220.19, -511.417, -1434.45, -558.613, -1002.93, -558.614, -945.25, -558.614, -827.633, -584.086, -717.507, -583.337, -727.246, -510.669 )
+one_way_collision = true
+one_way_collision_margin = 18.8
+
+[node name="Ramp" type="Area2D" parent="Obstacles/Ramp2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp2/Ramp"]
+position = Vector2( 755.151, 315.462 )
+polygon = PoolVector2Array( -644.83, -130.326, -654.998, -77.1734, -435.067, -27.6924, -446.304, -90.6212 )
+
+[node name="Ramp3" type="Node2D" parent="Obstacles"]
+
+[node name="SideArea" type="Area2D" parent="Obstacles/Ramp3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp3/SideArea"]
+position = Vector2( 2001.95, 128.925 )
+polygon = PoolVector2Array( -1633.17, 86.1763, -1692.36, 89.173, -1891.63, 50.217, -2167.32, 48.7186, -2275.2, 49.4678, -2060.94, 14.2576, -1636.92, 12.0101 )
+one_way_collision_margin = 0.0
+
+[node name="Side" type="StaticBody2D" parent="Obstacles/Ramp3" groups=[
+"SideJump",
+]]
+rotation = -3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp3/Side"]
+position = Vector2( 998.993, 401.197 )
+polygon = PoolVector2Array( -1364.03, -536.887, -1368.52, -623.789, -1308.59, -621.542, -1108.57, -583.336, -827.633, -584.086, -717.507, -583.337, -942.253, -538.387 )
+one_way_collision = true
+one_way_collision_margin = 18.8
+
+[node name="Ramp" type="Area2D" parent="Obstacles/Ramp3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp3/Ramp"]
+position = Vector2( 372.334, 245.042 )
+polygon = PoolVector2Array( -641.833, -125.831, -650.823, -70.3941, -435.816, -110.848, -437.314, -169.282 )
 
 [node name="Void" type="Area2D" parent="Obstacles" groups=[
 "ObstacleVoid",
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( 21.5734, 186.691, 11.4713, 266.947, 114.738, 267.508, 104.074, 186.13 )
+position = Vector2( -431, 244 )
+polygon = PoolVector2Array( 39.5, 195, 32, 216.5, 128, 214.5, 132.5, 196 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -5.36566, 380.877, -6.4881, 395.469, 128.769, 396.03, 125.962, 379.193 )
+position = Vector2( -167.247, 6.17355 )
+polygon = PoolVector2Array( -13.2532, 434.826, -17.2532, 453.326, 79.2468, 453.326, 80.7468, 432.826 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
-position = Vector2( 0.561249, -0.561218 )
-polygon = PoolVector2Array( -16.0291, 454.398, -18.274, 470.113, 135.503, 470.113, 133.258, 454.398 )
+position = Vector2( 76.8887, -20.7655 )
+polygon = PoolVector2Array( -0.888702, 459.266, -0.888702, 481.266, 99.1113, 482.766, 94.6113, 460.766 )
 
-[node name="Water" type="Area2D" parent="Obstacles"]
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( 286, 441, 294, 461, 390, 459.5, 381, 440.5 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Water"]
-polygon = PoolVector2Array( -353.89, 186.691, -456.595, 470.113, -287.104, 470.674, -267.461, 375.265, -187.766, 375.826, -163.633, 267.508, -243.328, 266.947, -224.246, 186.691 )
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Obstacles/Void"]
+polygon = PoolVector2Array( 348.061, 75.1813, 372.81, 131.043, 377.052, 220.845, 387.659, 235.695, 401.801, 240.644, 411.701, 281.656, 405.337, 292.263, 426.55, 332.568, 463.319, 459.847, 478.169, 517.83, 681.815, 529.144, 467.562, 63.1604 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Water"]
-position = Vector2( 3.36737, -0.561218 )
-polygon = PoolVector2Array( -93.479, 268.069, -110.316, 378.071, 238.208, 378.632, 218.565, 270.876 )
+[node name="Blocks" type="StaticBody2D" parent="Obstacles"]
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Water"]
-polygon = PoolVector2Array( 296.015, 268.069, 323.516, 379.754, 425.66, 378.071, 384.129, 266.947 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+position = Vector2( 232.022, 557.278 )
+polygon = PoolVector2Array( -214.32, -240.634, -268.087, -240.899, -269.941, -227.126, -214.055, -226.861 )
 
-[node name="BridgeLeft" type="Node2D" parent="Obstacles"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+position = Vector2( 374.52, 555.688 )
+polygon = PoolVector2Array( -214.32, -240.634, -268.087, -240.899, -269.941, -227.126, -214.055, -226.861 )
 
-[node name="Sprite" type="Sprite" parent="Obstacles/BridgeLeft"]
-position = Vector2( -138.624, 323.269 )
-scale = Vector2( 1e-05, 1 )
-texture = ExtResource( 6 )
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+position = Vector2( 523.375, 555.159 )
+polygon = PoolVector2Array( -214.32, -240.634, -268.087, -240.899, -269.941, -227.126, -214.055, -226.861 )
 
-[node name="Water" type="Area2D" parent="Obstacles/BridgeLeft"]
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+position = Vector2( 24.2085, 467.195 )
+polygon = PoolVector2Array( -214.32, -240.634, -268.087, -240.899, -269.941, -227.126, -214.055, -226.861 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/BridgeLeft/Water"]
-polygon = PoolVector2Array( -161.949, 271.998, -184.96, 372.458, -105.826, 372.458, -89.5504, 273.121 )
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+position = Vector2( -98.8744, 467.195 )
+polygon = PoolVector2Array( -214.32, -240.634, -268.087, -240.899, -269.941, -227.126, -214.055, -226.861 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/BridgeLeft"]
-method_call_mode = 1
-anims/WaterRising = SubResource( 2 )
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+polygon = PoolVector2Array( 369.085, 242.485, 379.947, 276.572, 392.683, 275.823, 394.93, 281.816, 404.295, 281.441, 394.556, 243.234 )
 
-[node name="BridgeRight" type="Node2D" parent="Obstacles"]
+[node name="SideScroller" type="Node2D" parent="."]
+visible = false
 
-[node name="Sprite" type="Sprite" parent="Obstacles/BridgeRight"]
-position = Vector2( 271.075, 323.83 )
-scale = Vector2( -1, 1 )
-texture = ExtResource( 6 )
+[node name="Plane6" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 32768
 
-[node name="Water" type="Area2D" parent="Obstacles/BridgeRight"]
-scale = Vector2( 1e-05, 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane6"]
+position = Vector2( 4.40973, -54.8066 )
+shape = SubResource( 1 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/BridgeRight/Water"]
-polygon = PoolVector2Array( 223.055, 270.314, 245.505, 378.632, 320.709, 378.632, 294.332, 269.753 )
+[node name="Plane5" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 16384
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/BridgeRight"]
-method_call_mode = 1
-anims/WaterRising = SubResource( 3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane5"]
+position = Vector2( 5.66968, -27.7183 )
+shape = SubResource( 1 )
 
+[node name="Plane4" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane4"]
+position = Vector2( 4.40973, 3.14978 )
+shape = SubResource( 1 )
+
+[node name="Plane3" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane3"]
+position = Vector2( 1.25989, 50.3969 )
+shape = SubResource( 1 )
+
+[node name="Plane2" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane2"]
+position = Vector2( 5.66962, 106.463 )
+shape = SubResource( 1 )
+
+[node name="Plane1" type="StaticBody2D" parent="SideScroller" groups=[
+"SideScrollerMode",
+]]
+position = Vector2( -8.32443, -152.219 )
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideScroller/Plane1"]
+position = Vector2( 10.0793, 169.459 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Obstacles/Ramp1/SideArea" to="." method="_on_SideArea_body_entered"]
+[connection signal="body_exited" from="Obstacles/Ramp1/SideArea" to="." method="_on_SideArea_body_exited"]
+[connection signal="body_entered" from="Obstacles/Ramp1/Ramp" to="." method="_on_Ramp_body_entered"]
+[connection signal="body_exited" from="Obstacles/Ramp1/Ramp" to="." method="_on_Ramp_body_exited"]
+[connection signal="body_entered" from="Obstacles/Ramp2/SideArea" to="." method="_on_SideArea_body_entered"]
+[connection signal="body_exited" from="Obstacles/Ramp2/SideArea" to="." method="_on_SideArea_body_exited"]
+[connection signal="body_entered" from="Obstacles/Ramp2/Ramp" to="." method="_on_Ramp_body_entered"]
+[connection signal="body_exited" from="Obstacles/Ramp2/Ramp" to="." method="_on_Ramp_body_exited"]
+[connection signal="body_entered" from="Obstacles/Ramp3/SideArea" to="." method="_on_SideArea_body_entered"]
+[connection signal="body_exited" from="Obstacles/Ramp3/SideArea" to="." method="_on_SideArea_body_exited"]
+[connection signal="body_entered" from="Obstacles/Ramp3/Ramp" to="." method="_on_Ramp_body_entered"]
+[connection signal="body_exited" from="Obstacles/Ramp3/Ramp" to="." method="_on_Ramp_body_exited"]
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]
-[connection signal="body_entered" from="Obstacles/Water" to="." method="_on_Water_body_entered"]
-[connection signal="body_entered" from="Obstacles/BridgeLeft/Water" to="." method="_on_Water_body_entered"]
-[connection signal="body_entered" from="Obstacles/BridgeRight/Water" to="." method="_on_Water_body_entered"]

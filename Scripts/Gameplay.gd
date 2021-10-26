@@ -28,8 +28,11 @@ enum GameplayStatus{
 }
 
 export var currentGameplayStatus = GameplayStatus.TitleScreen
+var score = [0,0,0,0,0,0,0,0,0]
+var timerInFrame = 0
 
 func _ready():
+	randomize()
 	$Ball.connect("ball_finished_moving", self, "on_ball_finished_moving")
 	$Ball.connect("ball_entered_hole", self, "on_ball_entered_hole")
 	$Ball.connect("ball_freefall_done", self, "on_ball_free_fall")
@@ -40,27 +43,8 @@ func _ready():
 	$AudioController.playGameplaySong()
 
 func _physics_process(delta):
-	if currentGameplayStatus == GameplayStatus.TitleScreen:
-		if Input.is_action_just_pressed("shoot"):
-			currentGameplayStatus = GameplayStatus.Instructions
-			$Tween.interpolate_property($FixedComponents/TitleScreen, "position", Vector2(140,40), Vector2(140, -500), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-			$Tween.start()
-			yield($Tween, "tween_all_completed")
-			currentLevel += 1
-			loadNewLevel()
-			yield($Tween, "tween_all_completed")
-			$Tween.interpolate_property($FixedComponents/Instructions, "position", Vector2(140,800), Vector2(140,40), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-			$Tween.start()
-		
-	elif currentGameplayStatus == GameplayStatus.Instructions:
-		if Input.is_action_just_pressed("shoot"):
-			currentGameplayStatus = GameplayStatus.Gameplay
-			$Tween.interpolate_property($FixedComponents/Instructions, "position",  Vector2(140,40), Vector2(140, 800), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-			$Tween.interpolate_property($FixedComponents/ColorRect, "modulate", $FixedComponents/ColorRect.modulate, Color(255,255,255,0), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-			$Tween.start()
-			yield($Tween, "tween_all_completed")
-		
-	elif currentGameplayStatus == GameplayStatus.Gameplay:
+	if currentGameplayStatus == GameplayStatus.Gameplay:
+		timerInFrame += 1
 		if hasRewindInAction:
 			cameraRewindIndex -= 2
 			if cameraRewindIndex >= 0:
@@ -124,7 +108,6 @@ func _physics_process(delta):
 			else:
 				cameraRewindPos.append($Camera2D.offset)
 				cameraRewindZoom.append($Camera2D.zoom)
-			
 	elif currentGameplayStatus == GameplayStatus.Congratulations:
 		pass
 
@@ -134,6 +117,7 @@ func shoot():
 	cameraRewindPos = []
 	cameraRewindZoom = []
 	hasShotInAction = true
+	score[currentLevel-1] += 1
 	var deg = deg2rad(angleFromUp)
 	var directionx = cos(deg) * windUp
 	var directiony = sin(deg) * windUp
@@ -141,7 +125,7 @@ func shoot():
 
 func on_ball_finished_moving():
 	windUp = windUpOriginalPosition
-	angleFromUp = 0
+	angleFromUp = getAngleToFlagRounded()
 	hasShotInAction = false
 	$Club.position = $Ball.position
 	$Club.rotation_degrees = 0
@@ -155,13 +139,13 @@ func on_ball_free_fall():
 	currentLevel -= 1
 
 func on_ball_entered_hole():
+	$Club.visible = false
 	windUp = windUpOriginalPosition
-	angleFromUp = 0
 	hasShotInAction = false
 	yield(get_tree().create_timer(1, false), "timeout")
 	currentLevel += 1
 	loadNewLevel()
-	
+
 func on_ball_finish_rewinding():
 	angleFromUp = 0
 	hasShotInAction = false
@@ -180,9 +164,17 @@ func on_ball_finish_rewinding():
 		
 func changeCamera(off:Vector2):
 	$Camera2D.offset.y = off.y
+	if currentLevel == 4 or currentLevel == 5 or currentLevel == 6 or currentLevel == 7:
+		$Camera2D.offset.x = 620
+		$Camera2D.zoom = Vector2(1.75,1.75)
+	else:
+		$Camera2D.offset.x = 0
+		$Camera2D.zoom = Vector2(1,1)
 
 func resetCamera():
 	$Camera2D.current = true
+	$Club.visible = true
+	$HUD/Club.visible = false
 	var cameraOffset = Vector2()
 	var cameraZoom = Vector2()
 	var speed = 0.5
@@ -204,6 +196,8 @@ func resetCamera():
 		cameraZoom = Vector2(1.75,1.75)
 		cameraOffset = Vector2(620,1160)
 	elif currentLevel == 6:
+		$Club.visible = false
+		$HUD/Club.visible = true
 		cameraZoom = Vector2(1.75,1.75)
 		cameraOffset = Vector2(620,400)
 	elif currentLevel == 7:
@@ -213,23 +207,19 @@ func resetCamera():
 		cameraZoom = Vector2(1,1)
 		cameraOffset = Vector2(0,-1120)
 	elif currentLevel == 9:
-		cameraZoom = Vector2(2,2)
-		cameraOffset = Vector2(0,-2280)
+		cameraZoom = Vector2(1.25,1.25)
+		cameraOffset = Vector2(0,-2050)
 	else:
 		#TODO where do you won!!
 		cameraZoom = Vector2(12,12)
 		cameraOffset = Vector2(620,920)
-		print('you won!')
-		
 	$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, cameraZoom, speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property($Camera2D, "offset", $Camera2D.offset, cameraOffset, speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	
+	
 func loadNewLevel():
-	print(currentLevel)
 	resetCamera()
-	$Club.visible = true
-	$HUD/Club.visible = false
 	if currentLevel == 1:
 		$Ball.resetPosition(Vector2(-250,4300))
 	elif currentLevel == 2:
@@ -241,22 +231,85 @@ func loadNewLevel():
 	elif currentLevel == 5:
 		$Ball.resetPosition(Vector2(1350,1210))
 	elif currentLevel == 6:
-		$Club.visible = false
-		$HUD/Club.visible = true
 		$Ball.resetPosition(Vector2(-150,350))
 	elif currentLevel == 7:
 		$Ball.resetPosition(Vector2(1350,-310))
 	elif currentLevel == 8:
 		$Ball.resetPosition(Vector2(-300,-1170))
 	elif currentLevel == 9:
-		$Ball.resetPosition(Vector2(-150,-1930))
+		$Ball.resetPosition(Vector2(345,-1880))
+	elif currentLevel == 10:
+		winning()
+	angleFromUp = getAngleToFlagRounded()
 	$Tween.start()
 	$Club.position = $Ball.position
-	$Club.rotation_degrees = 0
-	$HUD/Club.rotation_degrees = 0
+	$Club.rotation_degrees = angleFromUp
+	$HUD/Club.rotation_degrees = angleFromUp
 	$HUD/WindUpBar.value = windUpOriginalPosition
+	
 		
+func getFlagPosition() -> Vector2:
+	if currentLevel == 1:
+		return $Skyscraper/Level01/Flag.global_position
+	elif currentLevel == 2:
+		return $Skyscraper/Level02/Flag.global_position
+	elif currentLevel == 3:
+		return $Skyscraper/Level03/Flag.global_position
+	elif currentLevel == 4:
+		return $Skyscraper/Level04/Flag.global_position
+	elif currentLevel == 5:
+		return $Skyscraper/Level05/Flag.global_position
+	elif currentLevel == 6:
+		return $Skyscraper/Level06/Flag.global_position
+	elif currentLevel == 7:
+		return $Skyscraper/Level07/Flag.global_position
+	elif currentLevel == 8:
+		return $Skyscraper/Level08/Flag.global_position
+	elif currentLevel == 9:
+		return $Skyscraper/Level09/Flag.global_position
+	return Vector2.UP
 
+func getAngleToFlagRounded() -> float:
+	var flagPosition = getFlagPosition()
+	var ballPosition = $Ball.global_position
+	var angle = rad2deg(flagPosition.angle_to_point(ballPosition))
+	var randomAngleSum = RNGTools.randi_range(-25.0, 25.0)
+	return (angle+randomAngleSum)
+
+func winning():
+	currentGameplayStatus = GameplayStatus.Congratulations
+	$FixedComponents/Fireworks.visible = true
+	$FixedComponents/Fireworks/FireworkTimer1.start()
+	$FixedComponents/Fireworks/FireworkTimer2.start()
+	$FixedComponents/Fireworks/FireworkTimer3.start()
+	$FixedComponents/Fireworks/FireworkTimer4.start()
+	yield(get_tree().create_timer(3, false), "timeout")
+	$FixedComponents/EndPanel/Scores/Level1.text = str(score[0])
+	$FixedComponents/EndPanel/Scores/Level2.text = str(score[1])
+	$FixedComponents/EndPanel/Scores/Level3.text = str(score[2])
+	$FixedComponents/EndPanel/Scores/Level4.text = str(score[3])
+	$FixedComponents/EndPanel/Scores/Level5.text = str(score[4])
+	$FixedComponents/EndPanel/Scores/Level6.text = str(score[5])
+	$FixedComponents/EndPanel/Scores/Level7.text = str(score[6])
+	$FixedComponents/EndPanel/Scores/Level8.text = str(score[7])
+	$FixedComponents/EndPanel/Scores/Level9.text = str(score[8])
+	$FixedComponents/EndPanel/Scores/TotalScore.text = str(sumScore())
+	$FixedComponents/EndPanel/Scores/TotalTime.text = str(getTime())
+	$FixedComponents/EndPanel.visible = true
+	
+
+func sumScore():
+	var sum = 0.0
+	for element in score:
+		 sum += element
+	return sum
+	
+func getTime():
+	var seconds = (timerInFrame / 60) % 60
+	var minutes = (timerInFrame / 60 / 60) % 60
+	var hours = (timerInFrame / 60 / 60 / 60) % 60
+	return "%s:%s:%s" % [str(hours).pad_zeros(2), str(minutes).pad_zeros(2), str(seconds).pad_zeros(2)]
+	
 
 func _on_Area_FreeFall_body_entered(body):
 	if body.is_in_group("Ball"):
@@ -267,3 +320,80 @@ func _on_Area_FreeFall_body_exited(body):
 	if body.is_in_group("Ball"):
 		$Ball.exitedFreeFallArea()
 
+
+func _on_TextureButton_pressed():
+	currentGameplayStatus = GameplayStatus.Gameplay
+	$Tween.interpolate_property($FixedComponents/TitleScreen, "position", Vector2(140,40), Vector2(140, -500), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.start()
+	$FixedComponents/PlayButton.visible = false
+	$FixedComponents/InstructionsButton.visible = false
+	$FixedComponents/LudwigJamLogo.visible = false
+	$FixedComponents/GodotLogo.visible = false
+	yield($Tween, "tween_all_completed")
+	currentLevel += 1
+	loadNewLevel()
+	$Tween.interpolate_property($FixedComponents/ColorRect, "modulate", $FixedComponents/ColorRect.modulate, Color(255,255,255,0), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	$HUD/PowerMeter.visible = true
+	$HUD/WindUpBar.visible = true
+	$HUD/Rewind1.visible = true
+	$HUD/Rewind2.visible = true
+	$HUD/Rewind3.visible = true
+
+func _on_InstructionsButton_pressed():
+	currentGameplayStatus = GameplayStatus.Instructions
+	$Tween.interpolate_property($FixedComponents/TitleScreen, "position", Vector2(140,40), Vector2(140, -500), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.start()
+	$FixedComponents/PlayButton.visible = false
+	$FixedComponents/InstructionsButton.visible = false
+	$FixedComponents/LudwigJamLogo.visible = false
+	$FixedComponents/GodotLogo.visible = false
+	yield($Tween, "tween_all_completed")
+	$Tween.interpolate_property($FixedComponents/Instructions, "position", Vector2(140,800), Vector2(140,40), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	$FixedComponents/BackButton.visible = true
+
+func _on_BackButton_pressed():
+	currentGameplayStatus = GameplayStatus.TitleScreen
+	$FixedComponents/BackButton.visible = false
+	$Tween.interpolate_property($FixedComponents/Instructions, "position", Vector2(140,40), Vector2(140, 800), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	$Tween.interpolate_property($FixedComponents/TitleScreen, "position", Vector2(140,-500), Vector2(140, 40), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	$FixedComponents/PlayButton.visible = true
+	$FixedComponents/InstructionsButton.visible = true
+	$FixedComponents/LudwigJamLogo.visible = true
+	$FixedComponents/GodotLogo.visible = true
+	
+func _on_FireworkTimer_timeout():
+	var fireworkNode = load("res://Nodes/Fireworks/Explosion.tscn")
+	var fireworkInstance = fireworkNode.instance()
+	fireworkInstance.position = Vector2(175,200)
+	$FixedComponents/Fireworks.add_child(fireworkInstance)
+	$FixedComponents/Fireworks/FireworkTimer1.wait_time = RNGTools.randi_range(0.5,2.0)
+
+
+func _on_FireworkTimer2_timeout():
+	var fireworkNode = load("res://Nodes/Fireworks/Explosion.tscn")
+	var fireworkInstance = fireworkNode.instance()
+	fireworkInstance.position = Vector2(1100,175)
+	$FixedComponents/Fireworks.add_child(fireworkInstance)
+	$FixedComponents/Fireworks/FireworkTimer2.wait_time = RNGTools.randi_range(0.5,2.0)
+
+func _on_FireworkTimer3_timeout():
+	var fireworkNode = load("res://Nodes/Fireworks/Explosion.tscn")
+	var fireworkInstance = fireworkNode.instance()
+	fireworkInstance.position = Vector2(860,250)
+	$FixedComponents/Fireworks.add_child(fireworkInstance)
+	$FixedComponents/Fireworks/FireworkTimer3.wait_time = RNGTools.randi_range(0.5,2.0)
+
+func _on_FireworkTimer4_timeout():
+	var fireworkNode = load("res://Nodes/Fireworks/Explosion.tscn")
+	var fireworkInstance = fireworkNode.instance()
+	fireworkInstance.position = Vector2(225,210)
+	$FixedComponents/Fireworks.add_child(fireworkInstance)
+	$FixedComponents/Fireworks/FireworkTimer4.wait_time = RNGTools.randi_range(0.5,2.0)

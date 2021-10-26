@@ -12,14 +12,17 @@ var ballIsJumping = false
 var ballIsJumpingNeedsReverse = false
 var ballIsJumpingNeedsReverseLeft = false
 var ballIsJumpingNeedsReverseRight = false
+var ballIsJumpingFellOffRamp = false
 var ballIsInFreeFallArea = false
 var ballIsInWind = false
+
 
 var ballIsInRewind = false
 var ballIsInRewindIndex = 0
 var lastShot = []
 
 func _physics_process(delta):
+	rotation_degrees = 0
 	if ballIsMoving:
 		lastShot.append(global_position)
 		
@@ -50,6 +53,8 @@ func _physics_process(delta):
 			linear_velocity.y = 35
 	elif ballIsInWind:
 		linear_velocity.y = linear_velocity.y + 1.5
+	elif ballIsJumpingFellOffRamp:
+		linear_velocity.y = linear_velocity.y + 3
 	else:
 		#slowdown faster
 		if abs(linear_velocity.x) <= 50 && abs(linear_velocity.y) < 50:
@@ -95,11 +100,17 @@ func rewind():
 		
 func collision_with_hole():
 	#TODO: if velocity too high, not enterd
-	$SFX/BallEnteringHole.play()
-	linear_velocity = Vector2(0,0)
-	ballIsMoving = false
-	emit_signal("ball_entered_hole")
-	emit_signal("ball_finished_moving")
+	if abs(linear_velocity.x) >= 500 or abs(linear_velocity.y) > 500:
+		$SFX/Wood/Hit1.play()
+		$AnimationPlayer.play("Bounce")
+		return true
+	else:
+		$SFX/BallEnteringHole.play()
+		linear_velocity = Vector2(0,0)
+		ballIsMoving = false
+		emit_signal("ball_entered_hole")
+		emit_signal("ball_finished_moving")
+		return false
 	
 func enteredVoid():
 	linear_velocity = Vector2(linear_velocity.x,1000)
@@ -130,6 +141,8 @@ func enteredFreeFallArea():
 	
 func exitedFreeFallArea():
 	ballIsInFreeFallArea = false
+	$AnimationPlayer.play("Bounce")
+	$SFX/Wood/Hit2.play()
 
 func applyWind(direction:Vector2):
 	ballIsInWind = true
@@ -139,6 +152,12 @@ func noWind():
 
 func enteredWater():
 	print("entered water")
+
+func fellOffRamp():
+	ballIsJumpingFellOffRamp = true
+	
+func exitedOffRamp():
+	ballIsJumpingFellOffRamp = false
 
 func changeScale(perspective):
 	if perspective == 1:
