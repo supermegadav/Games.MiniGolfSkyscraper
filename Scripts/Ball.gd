@@ -52,7 +52,7 @@ func _physics_process(delta):
 				linear_velocity.x += 10
 			linear_velocity.y = 35
 	elif ballIsInWind:
-		linear_velocity.y = linear_velocity.y + 1.5
+		linear_velocity.y = linear_velocity.y + 1
 	elif ballIsJumpingFellOffRamp:
 		linear_velocity.y = linear_velocity.y + 3
 	else:
@@ -142,7 +142,6 @@ func enteredFreeFallArea():
 func exitedFreeFallArea():
 	ballIsInFreeFallArea = false
 	$AnimationPlayer.play("Bounce")
-	$SFX/Wood/Hit2.play()
 
 func applyWind(direction:Vector2):
 	ballIsInWind = true

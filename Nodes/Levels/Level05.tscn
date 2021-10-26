@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Assets/Sprites/Level05.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/Level01_debug.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sprites/PistonHandle.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/Pistons.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Generator.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Ventilator.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Wind.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/VentilatorStructure.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1100, 5.41 )
@@ -53,7 +57,7 @@ animations = [ {
 extents = Vector2( 29.292, 18.0442 )
 
 [sub_resource type="Animation" id=10]
-length = 10.0
+length = 12.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Piston1/Piston:position")
@@ -81,7 +85,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=11]
-length = 10.0
+length = 12.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Piston1/Piston:position")
@@ -109,7 +113,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=12]
-length = 10.0
+length = 12.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Piston1/Piston:position")
@@ -137,7 +141,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=13]
-length = 10.0
+length = 12.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Piston1/Piston:position")
@@ -165,7 +169,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=14]
-length = 10.0
+length = 12.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Piston1/Piston:position")
@@ -192,12 +196,64 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1, 0 ]
 }
 
+[sub_resource type="Animation" id=15]
+resource_name = "Shake"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Blocks:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 3, 3 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 117, 210 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 117, 0, 117, 210 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="Animation" id=19]
+resource_name = "New Anim"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
 [node name="Level05" type="Node2D"]
 script = ExtResource( 3 )
 levelNumber = 5
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -152.401, -642.424 )
+position = Vector2( -150.987, -644.85 )
 texture = ExtResource( 1 )
 offset = Vector2( 152.401, 643.838 )
 
@@ -295,24 +351,26 @@ shape = SubResource( 1 )
 ]]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -164.44, -22.5994, -154.926, 53.5098, 153.673, 52.9152, 166.16, -22.0048 )
+polygon = PoolVector2Array( -160, -19, -154.926, 53.5098, 153.673, 52.9152, 162, -19 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
 position = Vector2( 0, 0.707108 )
 polygon = PoolVector2Array( -186.44, -226.066, -176.926, -136.281, 176.268, -136.876, 188.16, -227.256 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -586.243, -218.573, -609.245, -139.592, -460.92, -139.328, -449.001, -218.522 )
+polygon = PoolVector2Array( -582, -219, -600, -147, -466, -148, -449.001, -218.522 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles/Void"]
-position = Vector2( -0.264893, 0 )
-polygon = PoolVector2Array( -612.423, -112.576, -633.612, -31.5272, -478.931, -32.3218, -464.363, -111.781 )
+position = Vector2( -1.26489, 2 )
+polygon = PoolVector2Array( -606.735, -108, -623.735, -38, -480.735, -41, -467.735, -106 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -831.467, -142.771, -862.986, -61.9868, -717.31, -62.7814, -694.267, -142.241 )
+position = Vector2( -1, 0 )
+polygon = PoolVector2Array( -825, -137, -853, -67, -721, -69, -699, -138 )
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -870.667, -33.911, -901.392, 47.6676, -743.532, 47.4028, -721.018, -33.1164 )
+position = Vector2( -1, 0 )
+polygon = PoolVector2Array( -863, -28, -890, 42, -748, 44, -724, -26 )
 
 [node name="Pistons" type="Node2D" parent="Obstacles"]
 
@@ -428,4 +486,47 @@ shape = SubResource( 9 )
 playback_speed = 6.0
 anims/PistonAnimation = SubResource( 14 )
 
+[node name="Generator" type="Node2D" parent="Obstacles"]
+
+[node name="Blocks" type="StaticBody2D" parent="Obstacles/Generator"]
+position = Vector2( 0.523685, 0.523685 )
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Generator/Blocks"]
+position = Vector2( 366, -243 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Generator/Blocks"]
+position = Vector2( 466.112, -117.127 )
+polygon = PoolVector2Array( -196.446, -198.536, -198.09, -62.4909, -188.4, -60.7359, -186.901, -51.3715, -136.708, -50.9969, -137.093, -60.7527, -70.7824, -58.8631, -67.4112, -51.7461, -20.9637, -50.2478, -18.7162, -59.6122, -5.60602, -64.8563, -5.53998, -197.465 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Generator"]
+anims/Shake = SubResource( 15 )
+
+[node name="Wind1" type="Area2D" parent="Obstacles"]
+
+[node name="Sprite2" type="Sprite" parent="Obstacles/Wind1"]
+position = Vector2( 552, -245 )
+texture = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Wind1"]
+position = Vector2( 551, -100.5 )
+frames = SubResource( 18 )
+playing = true
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Wind1"]
+position = Vector2( 553, -241.5 )
+rotation = 5.32917
+texture = ExtResource( 9 )
+
+[node name="TurbineAnim" type="AnimationPlayer" parent="Obstacles/Wind1"]
+playback_speed = 3.0
+method_call_mode = 1
+"anims/New Anim" = SubResource( 19 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Wind1"]
+position = Vector2( 689, 53 )
+polygon = PoolVector2Array( -185.329, -231.704, -198.807, -75.3358, -78.0045, -75.0021, -92.8308, -233.806 )
+
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]
+[connection signal="body_entered" from="Obstacles/Wind1" to="." method="_on_Wind_body_entered"]
+[connection signal="body_exited" from="Obstacles/Wind1" to="." method="_on_Wind_body_exited"]

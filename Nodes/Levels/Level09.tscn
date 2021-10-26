@@ -13,11 +13,11 @@ script = ExtResource( 3 )
 levelNumber = 9
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2.16745, 172.843 )
+position = Vector2( -4.78708, 173.672 )
 texture = ExtResource( 1 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
-position = Vector2( -7.93701, 261.921 )
+position = Vector2( 711.297, 256.258 )
 
 [node name="TopDown" type="Node2D" parent="."]
 
@@ -57,8 +57,8 @@ one_way_collision_margin = 18.8
 [node name="Ramp" type="Area2D" parent="Obstacles/Ramp1"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp1/Ramp"]
-position = Vector2( 350.608, 451.059 )
-polygon = PoolVector2Array( -641.06, -133.875, -654.998, -77.1734, -448.762, -115.872, -464.808, -162.594, -525.688, -160.234 )
+position = Vector2( 358.931, 445.307 )
+polygon = PoolVector2Array( -641.06, -133.875, -654.998, -77.1734, -534.217, -98.5954, -544.932, -155.345 )
 
 [node name="Ramp2" type="Node2D" parent="Obstacles"]
 
@@ -76,15 +76,15 @@ rotation = -3.14159
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp2/Side"]
 position = Vector2( 1116.61, 269.346 )
-polygon = PoolVector2Array( -996.942, -510.668, -1220.19, -511.417, -1434.45, -558.613, -1002.93, -558.614, -945.25, -558.614, -827.633, -584.086, -717.507, -583.337, -727.246, -510.669 )
+polygon = PoolVector2Array( -996.942, -510.668, -1220.19, -511.417, -1413.36, -554.095, -1003.11, -552.346, -934.361, -554.096, -824.861, -576.097, -717.507, -583.337, -727.246, -510.669 )
 one_way_collision = true
 one_way_collision_margin = 18.8
 
 [node name="Ramp" type="Area2D" parent="Obstacles/Ramp2"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp2/Ramp"]
-position = Vector2( 755.151, 315.462 )
-polygon = PoolVector2Array( -644.83, -130.326, -654.998, -77.1734, -435.067, -27.6924, -446.304, -90.6212 )
+position = Vector2( 734.934, 310.111 )
+polygon = PoolVector2Array( -594.262, -122.319, -609.612, -65.588, -435.067, -27.6924, -446.304, -90.6212 )
 
 [node name="Ramp3" type="Node2D" parent="Obstacles"]
 
@@ -109,44 +109,33 @@ one_way_collision_margin = 18.8
 [node name="Ramp" type="Area2D" parent="Obstacles/Ramp3"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Ramp3/Ramp"]
-position = Vector2( 372.334, 245.042 )
-polygon = PoolVector2Array( -641.833, -125.831, -650.823, -70.3941, -435.816, -110.848, -437.314, -169.282 )
+position = Vector2( 400.28, 240.285 )
+polygon = PoolVector2Array( -641.833, -125.831, -650.823, -70.3941, -484.419, -99.9529, -486.755, -159.353 )
 
 [node name="Void" type="Area2D" parent="Obstacles" groups=[
 "ObstacleVoid",
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-position = Vector2( -431, 244 )
-polygon = PoolVector2Array( 39.5, 195, 32, 216.5, 128, 214.5, 132.5, 196 )
+position = Vector2( -433.381, 246.381 )
+polygon = PoolVector2Array( 42.2086, 195.574, 32, 216.5, 128, 214.5, 132.5, 196 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
-position = Vector2( -167.247, 6.17355 )
-polygon = PoolVector2Array( -13.2532, 434.826, -17.2532, 453.326, 79.2468, 453.326, 80.7468, 432.826 )
+position = Vector2( -171.215, 8.55465 )
+polygon = PoolVector2Array( -13.2532, 434.826, -17.2532, 453.326, 79.2468, 453.326, 80.8555, 435.385 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
-position = Vector2( 76.8887, -20.7655 )
+position = Vector2( 73.317, -16.797 )
 polygon = PoolVector2Array( -0.888702, 459.266, -0.888702, 481.266, 99.1113, 482.766, 94.6113, 460.766 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles/Void"]
 polygon = PoolVector2Array( 286, 441, 294, 461, 390, 459.5, 381, 440.5 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( 348.061, 75.1813, 372.81, 131.043, 377.052, 220.845, 387.659, 235.695, 401.801, 240.644, 411.701, 281.656, 405.337, 292.263, 426.55, 332.568, 463.319, 459.847, 478.169, 517.83, 681.815, 529.144, 467.562, 63.1604 )
+position = Vector2( -3.05542, -0.163742 )
+polygon = PoolVector2Array( 348.061, 75.1813, 372.81, 131.043, 377.052, 220.845, 387.659, 235.695, 401.801, 240.644, 411.701, 281.656, 405.337, 292.263, 417.69, 334.996, 463.319, 459.847, 478.169, 517.83, 681.815, 529.144, 467.562, 63.1604 )
 
 [node name="Blocks" type="StaticBody2D" parent="Obstacles"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
-position = Vector2( 232.022, 557.278 )
-polygon = PoolVector2Array( -214.32, -240.634, -268.087, -240.899, -269.941, -227.126, -214.055, -226.861 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
-position = Vector2( 374.52, 555.688 )
-polygon = PoolVector2Array( -214.32, -240.634, -268.087, -240.899, -269.941, -227.126, -214.055, -226.861 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
-position = Vector2( 523.375, 555.159 )
-polygon = PoolVector2Array( -214.32, -240.634, -268.087, -240.899, -269.941, -227.126, -214.055, -226.861 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
 position = Vector2( 24.2085, 467.195 )

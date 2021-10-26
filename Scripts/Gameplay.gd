@@ -39,6 +39,7 @@ func _ready():
 	$Ball.connect("ball_finished_rewinding", self, "on_ball_finish_rewinding")
 	$HUD/WindUpBar.min_value = windUpMin
 	$HUD/WindUpBar.max_value = windUpMax
+	$HUD/FindYourBallAnim.play("New Anim")
 	loadNewLevel()
 	$AudioController.playGameplaySong()
 
@@ -87,7 +88,7 @@ func _physics_process(delta):
 						hasWindUpInAction = false
 						shoot()
 				if Input.is_action_just_pressed("rewind"):
-					if numberOfRewinds > 0:
+					if numberOfRewinds > 0 && cameraRewindPos.size() != 0:
 						$Ball.rewind()
 						$Club.visible = false
 						$FixedComponents/Rewind.visible = true
@@ -139,23 +140,25 @@ func on_ball_free_fall():
 	currentLevel -= 1
 
 func on_ball_entered_hole():
-	$Club.visible = false
-	windUp = windUpOriginalPosition
-	hasShotInAction = false
-	yield(get_tree().create_timer(1, false), "timeout")
-	currentLevel += 1
-	loadNewLevel()
+	if hasShotInAction:
+		$Club.visible = false
+		$Ball.visible = false
+		windUp = windUpOriginalPosition
+		hasShotInAction = false
+		yield(get_tree().create_timer(1, false), "timeout")
+		currentLevel += 1
+		loadNewLevel()
 
 func on_ball_finish_rewinding():
-	angleFromUp = 0
+	angleFromUp = getAngleToFlagRounded()
 	hasShotInAction = false
 	hasRewindInAction = false
 	cameraRewindPos = []
 	cameraRewindZoom = []
 	cameraRewindIndex = 0
 	$Club.position = $Ball.position
-	$Club.rotation_degrees = 0
-	$HUD/Club.rotation_degrees = 0
+	$Club.rotation_degrees = angleFromUp
+	$HUD/Club.rotation_degrees = angleFromUp
 	$HUD/WindUpBar.value = windUpOriginalPosition
 	$Club.visible = true
 	resetCamera()
@@ -164,7 +167,7 @@ func on_ball_finish_rewinding():
 		
 func changeCamera(off:Vector2):
 	$Camera2D.offset.y = off.y
-	if currentLevel == 4 or currentLevel == 5 or currentLevel == 6 or currentLevel == 7:
+	if currentLevel == 4 or currentLevel == 5 or currentLevel == 6 or currentLevel == 7 or currentLevel == 8 or currentLevel == 9:
 		$Camera2D.offset.x = 620
 		$Camera2D.zoom = Vector2(1.75,1.75)
 	else:
@@ -175,6 +178,7 @@ func resetCamera():
 	$Camera2D.current = true
 	$Club.visible = true
 	$HUD/Club.visible = false
+	$HUD/FindYourBall.visible = false
 	var cameraOffset = Vector2()
 	var cameraZoom = Vector2()
 	var speed = 0.5
@@ -198,6 +202,7 @@ func resetCamera():
 	elif currentLevel == 6:
 		$Club.visible = false
 		$HUD/Club.visible = true
+		$HUD/FindYourBall.visible = true
 		cameraZoom = Vector2(1.75,1.75)
 		cameraOffset = Vector2(620,400)
 	elif currentLevel == 7:
@@ -219,6 +224,7 @@ func resetCamera():
 	
 	
 func loadNewLevel():
+	$Ball.visible = true
 	resetCamera()
 	if currentLevel == 1:
 		$Ball.resetPosition(Vector2(-250,4300))
@@ -229,7 +235,7 @@ func loadNewLevel():
 	elif currentLevel == 4:
 		$Ball.resetPosition(Vector2(-300,1920))
 	elif currentLevel == 5:
-		$Ball.resetPosition(Vector2(1350,1210))
+		$Ball.resetPosition(Vector2(1450,1130))
 	elif currentLevel == 6:
 		$Ball.resetPosition(Vector2(-150,350))
 	elif currentLevel == 7:

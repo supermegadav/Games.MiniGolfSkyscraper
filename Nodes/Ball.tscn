@@ -95,12 +95,15 @@ stream = ExtResource( 5 )
 
 [node name="Hit1" type="AudioStreamPlayer" parent="SFX/Wood"]
 stream = ExtResource( 4 )
+pitch_scale = 1.46
 
 [node name="Hit2" type="AudioStreamPlayer" parent="SFX/Wood"]
 stream = ExtResource( 7 )
 
 [node name="Hit3" type="AudioStreamPlayer" parent="SFX/Wood"]
 stream = ExtResource( 6 )
+
+[node name="Falling" type="AudioStreamPlayer" parent="SFX"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5

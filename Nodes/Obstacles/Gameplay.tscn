@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Nodes/Levels/Level01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Sprites/BackButton.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Sprites/FindYourBall.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/BuildingsStructure_FrontPillars.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/Backdrop.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sprites/Logo.png" type="Texture" id=18]
@@ -33,7 +34,24 @@
 [ext_resource path="res://Assets/Sprites/BackButton_pressed.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Sprites/BackButton_hover.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Sprites/LudwigJamLogo.png" type="Texture" id=34]
-[ext_resource path="res://Assets/Sprites/GodotLogo2.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Sprites/SuperMegaDavLogo.png" type="Texture" id=35]
+
+[sub_resource type="Animation" id=7]
+resource_name = "New Anim"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("FindYourBall:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 240.719, 651.227 ), Vector2( 248, 651.227 ), Vector2( 240.719, 651.227 ) ]
+}
 
 [sub_resource type="Shader" id=1]
 code = "//SHADER ORIGINALY CREADED BY \"FMS_Cat\" FROM SHADERTOY
@@ -188,6 +206,14 @@ texture = ExtResource( 23 )
 visible = false
 position = Vector2( 1090, 675 )
 texture = ExtResource( 23 )
+
+[node name="FindYourBall" type="Sprite" parent="HUD"]
+visible = false
+position = Vector2( 246.412, 651.227 )
+texture = ExtResource( 15 )
+
+[node name="FindYourBallAnim" type="AnimationPlayer" parent="HUD"]
+"anims/New Anim" = SubResource( 7 )
 
 [node name="FixedComponents" type="CanvasLayer" parent="."]
 layer = 11
@@ -426,13 +452,13 @@ __meta__ = {
 }
 
 [node name="GodotLogo" type="Sprite" parent="FixedComponents"]
-position = Vector2( 1181.44, 686.723 )
-scale = Vector2( 0.05, 0.05 )
+position = Vector2( 1138.44, 574.723 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 35 )
 
 [node name="LudwigJamLogo" type="Sprite" parent="FixedComponents"]
-position = Vector2( 90.1366, 661.024 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 141.002, 576.483 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 34 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

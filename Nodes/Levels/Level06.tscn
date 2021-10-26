@@ -112,6 +112,7 @@ shape = SubResource( 1 )
 ]]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( 1.8877, 9.43872 )
 polygon = PoolVector2Array( -958.479, 3.77478, -974.585, 41.667, 991.146, 42.6455, 974.499, 2.35678 )
 
 [node name="FakeBalls" type="Node2D" parent="Obstacles"]

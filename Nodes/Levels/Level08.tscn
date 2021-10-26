@@ -9,21 +9,21 @@
 [ext_resource path="res://Assets/Sprites/Ventilator.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 454.605, 5.50247 )
+extents = Vector2( 1781.53, 5.50247 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 117, 210 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 117, 0, 117, 210 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 4.0
@@ -95,8 +95,7 @@ position = Vector2( -0.5, 0 )
 texture = ExtResource( 2 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 33.9028, -153.622 )
+position = Vector2( 521.933, -161.014 )
 
 [node name="TopDown" type="Node2D" parent="."]
 
@@ -112,7 +111,6 @@ polygon = PoolVector2Array( -543.386, 265.351, -385.458, -161.422, 395.909, -161
 position = Vector2( 332.85, -116.522 )
 
 [node name="SideScroller" type="Node2D" parent="."]
-visible = false
 
 [node name="Plane6" type="StaticBody2D" parent="SideScroller" groups=[
 "SideScrollerMode",
@@ -181,20 +179,22 @@ shape = SubResource( 1 )
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( 0, -3.17839 )
 polygon = PoolVector2Array( -349.059, -228.468, -370.784, -175.278, 363.386, -174.529, 340.163, -231.464 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
-position = Vector2( 0.5, -0.5 )
-polygon = PoolVector2Array( -396.255, -75.6405, -444.201, 41.9766, 439.8, 36.7325, 394.102, -74.1422 )
+position = Vector2( 1.0946, -2.28381 )
+polygon = PoolVector2Array( -397.578, -71.6675, -444.201, 41.9766, 439.8, 36.7325, 394.37, -69.0189 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( 350.651, -231.961, 458.374, 35.1418, 574.205, 32.3084, 457.469, -234.838 )
+polygon = PoolVector2Array( 350.651, -231.961, 384.7, -147.536, 398.37, -140.64, 407.809, -106.189, 400.73, -106.661, 458.374, 35.1418, 574.205, 32.3084, 457.469, -234.838 )
 
 [node name="Wind1" type="Area2D" parent="Obstacles"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Wind1"]
 position = Vector2( -138, -153.5 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Wind1"]
@@ -215,7 +215,6 @@ polygon = PoolVector2Array( -185.329, -231.704, -198.807, -75.3358, -78.0045, -7
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Wind2"]
 position = Vector2( -3.0361, -153.92 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Wind2"]
@@ -237,7 +236,6 @@ polygon = PoolVector2Array( -185.329, -231.704, -197.284, -75.2491, -76.1473, -7
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Obstacles/Wind3"]
 position = Vector2( 133.105, -153.391 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Wind3"]
@@ -253,6 +251,12 @@ method_call_mode = 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Wind3"]
 position = Vector2( 271.105, 0.109253 )
 polygon = PoolVector2Array( -185.329, -231.704, -195.936, -76.1125, -73.1312, -76.1125, -92.8308, -233.806 )
+
+[node name="Blocks" type="StaticBody2D" parent="Obstacles"]
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Obstacles/Blocks"]
+position = Vector2( 4.8772, -383.805 )
+polygon = PoolVector2Array( 369.085, 242.485, 379.947, 276.572, 392.683, 275.823, 397.873, 278.305, 404.295, 281.441, 394.556, 243.234 )
 
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]
 [connection signal="body_entered" from="Obstacles/Wind1" to="." method="_on_Wind_body_entered"]

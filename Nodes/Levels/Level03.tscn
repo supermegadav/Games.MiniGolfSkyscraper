@@ -124,10 +124,10 @@ shape = SubResource( 1 )
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -318.166, -229.31, -403.453, 52.507, -328.761, 53.0367, -259.366, -229.31 )
+polygon = PoolVector2Array( -318.166, -229.31, -403.453, 52.507, -334.159, 53.3171, -265.56, -229.543 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( 285.198, -231.429, 336.582, 54.0961, 404.388, 53.5664, 324.928, -230.37 )
+polygon = PoolVector2Array( 290.361, -229.543, 343.815, 53.7626, 404.388, 53.5664, 324.928, -230.37 )
 
 [node name="Wheel" type="StaticBody2D" parent="Obstacles"]
 position = Vector2( 0.943909, -356.632 )
@@ -138,18 +138,18 @@ texture = ExtResource( 6 )
 
 [node name="Collision4" type="CollisionPolygon2D" parent="Obstacles/Wheel"]
 position = Vector2( 265.89, -132.548 )
-polygon = PoolVector2Array( -151.42, 252.647, -93.1519, 285.908, -40.3366, 174.284, -99.5066, 151.653 )
+polygon = PoolVector2Array( -127.927, 252.065, -93.1519, 285.908, -40.3366, 174.284, -86.4996, 164.757 )
 
 [node name="Collision3" type="CollisionPolygon2D" parent="Obstacles/Wheel"]
 position = Vector2( 3.17474, -371.452 )
-polygon = PoolVector2Array( 2.75083, 200.838, 113.184, 251.807, 139.971, 200.053, 30.5949, 142.743 )
+polygon = PoolVector2Array( 21.6458, 190.29, 108.508, 235.281, 139.971, 200.053, 30.5949, 142.743 )
 
 [node name="Collision2" type="CollisionPolygon2D" parent="Obstacles/Wheel"]
 position = Vector2( -70.6394, -277.421 )
-polygon = PoolVector2Array( -157.795, 219.144, -98.0524, 246.499, -44.2511, 144.561, -101.234, 112.015 )
+polygon = PoolVector2Array( -157.795, 219.144, -106.775, 229.893, -61.3385, 149.712, -101.234, 112.015 )
 
 [node name="Collision1" type="CollisionPolygon2D" parent="Obstacles/Wheel"]
-polygon = PoolVector2Array( -156.89, 172.088, -47.888, 228.65, -28.0554, 165.405, -121.499, 120.098 )
+polygon = PoolVector2Array( -156.89, 172.088, -47.888, 228.65, -39.7713, 179.652, -129.306, 141.343 )
 
 [node name="WheelMovingAnim" type="AnimationPlayer" parent="Obstacles"]
 method_call_mode = 1

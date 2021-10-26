@@ -8,5 +8,10 @@ func _on_Flag_body_entered(body):
 			$AnimationPlayer.stop()
 			$Flagpole.rotation_degrees = 0
 			$Flagpole.position.x = 17
+		else:
+			$BallInHole.visible = true
+			$BallInHole.play("default")
+			yield(get_tree().create_timer(1.5,false), "timeout")
+			$BallInHole.visible = false
 	if body.is_in_group("FakeBall"):
 		body.enteredFlag()

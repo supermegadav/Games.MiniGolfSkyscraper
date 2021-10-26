@@ -1,13 +1,102 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Sprites/Level04.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/Level01_debug.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LevelController.gd" type="Script" id=3]
 [ext_resource path="res://Nodes/Levels/Perspectives.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/Obstacles/Flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/Pusher.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1100, 5.41 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 42.6137
+
+[sub_resource type="Animation" id=9]
+resource_name = "PusherUp"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pusher:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "PusherUp"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pusher:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "PusherUp"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pusher:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "PusherUp"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pusher:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "PusherUp"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pusher:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
 
 [node name="Level04" type="Node2D"]
 script = ExtResource( 3 )
@@ -109,21 +198,25 @@ shape = SubResource( 1 )
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( 0.529724, -1.58917 )
 polygon = PoolVector2Array( -580.978, -92.5417, -583.359, -65.5559, -461.923, -63.9685, -464.304, -91.748 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( -2.11896, 3.17838 )
 polygon = PoolVector2Array( -588.091, 16.3441, -592.334, 46.0426, -462.933, 44.6284, -462.933, 15.637 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -759.918, -224.072, -766.989, -183.06, -675.773, -181.646, -670.116, -221.951 )
+polygon = PoolVector2Array( -759.918, -224.072, -764.286, -183.604, -676.88, -184.134, -670.116, -221.951 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Obstacles/Void"]
 polygon = PoolVector2Array( -571.828, -228.315, -575.363, -194.374, -464.348, -227.608 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( -782.546, -108.814, -791.031, -65.6803, -691.329, -64.9732, -686.379, -108.107 )
+position = Vector2( -0.529724, 2.64868 )
+polygon = PoolVector2Array( -782.546, -108.814, -789.183, -69.182, -691.713, -69.182, -686.379, -108.107 )
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Obstacles/Void"]
+position = Vector2( -1.05945, 2.11893 )
 polygon = PoolVector2Array( -807.294, 16.3441, -815.78, 47.4568, -709.007, 47.4568, -703.35, 15.637 )
 
 [node name="Jump" type="Node2D" parent="Obstacles"]
@@ -151,6 +244,85 @@ one_way_collision_margin = 18.8
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Jump/Ramp"]
 position = Vector2( 53.939, -53.1899 )
 polygon = PoolVector2Array( -641.06, -133.875, -656.809, -41.9007, -431.283, -109.306, -434.433, -195.611 )
+
+[node name="Pusher1" type="Node2D" parent="Obstacles"]
+position = Vector2( -84.6544, -20.9763 )
+
+[node name="Pusher" type="Sprite" parent="Obstacles/Pusher1"]
+scale = Vector2( 0.36, 0.36 )
+texture = ExtResource( 6 )
+
+[node name="Blocks" type="StaticBody2D" parent="Obstacles/Pusher1/Pusher"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pusher1/Pusher/Blocks"]
+scale = Vector2( 1, 0.7 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pusher1"]
+anims/PusherUp = SubResource( 9 )
+
+[node name="Pusher2" type="Node2D" parent="Obstacles"]
+position = Vector2( 120.614, -40.4543 )
+
+[node name="Pusher" type="Sprite" parent="Obstacles/Pusher2"]
+scale = Vector2( 0.36, 0.36 )
+texture = ExtResource( 6 )
+
+[node name="Blocks" type="StaticBody2D" parent="Obstacles/Pusher2/Pusher"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pusher2/Pusher/Blocks"]
+scale = Vector2( 1, 0.7 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pusher2"]
+anims/PusherUp = SubResource( 10 )
+
+[node name="Pusher3" type="Node2D" parent="Obstacles"]
+position = Vector2( 327.38, -19.478 )
+
+[node name="Pusher" type="Sprite" parent="Obstacles/Pusher3"]
+scale = Vector2( 0.36, 0.36 )
+texture = ExtResource( 6 )
+
+[node name="Blocks" type="StaticBody2D" parent="Obstacles/Pusher3/Pusher"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pusher3/Pusher/Blocks"]
+scale = Vector2( 1, 0.7 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pusher3"]
+anims/PusherUp = SubResource( 11 )
+
+[node name="Pusher4" type="Node2D" parent="Obstacles"]
+position = Vector2( 523.658, -43.4509 )
+
+[node name="Pusher" type="Sprite" parent="Obstacles/Pusher4"]
+scale = Vector2( 0.36, 0.36 )
+texture = ExtResource( 6 )
+
+[node name="Blocks" type="StaticBody2D" parent="Obstacles/Pusher4/Pusher"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pusher4/Pusher/Blocks"]
+scale = Vector2( 1, 0.7 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pusher4"]
+anims/PusherUp = SubResource( 12 )
+
+[node name="Pusher5" type="Node2D" parent="Obstacles"]
+position = Vector2( 728.917, -21.597 )
+
+[node name="Pusher" type="Sprite" parent="Obstacles/Pusher5"]
+texture = ExtResource( 6 )
+
+[node name="Blocks" type="StaticBody2D" parent="Obstacles/Pusher5/Pusher"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Pusher5/Pusher/Blocks"]
+scale = Vector2( 1, 0.7 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obstacles/Pusher5"]
+anims/PusherUp = SubResource( 8 )
 
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]
 [connection signal="body_entered" from="Obstacles/Jump/SideArea" to="." method="_on_SideArea_body_entered"]

@@ -5,7 +5,16 @@ export var levelNumber = 1
 func _ready():
 	if levelNumber == 3:
 		$Obstacles/WheelMovingAnim.play("New Anim")
+	if levelNumber == 4:
+		$Obstacles/Pusher1/AnimationPlayer.play("PusherUp")
+		$Obstacles/Pusher3/AnimationPlayer.play("PusherUp")
+		$Obstacles/Pusher5/AnimationPlayer.play("PusherUp")
+		yield(get_tree().create_timer(1.5, false), "timeout")
+		$Obstacles/Pusher2/AnimationPlayer.play("PusherUp")
+		$Obstacles/Pusher4/AnimationPlayer.play("PusherUp")
 	if levelNumber == 5:
+		$Obstacles/Generator/AnimationPlayer.play("Shake")
+		$Obstacles/Wind1/TurbineAnim.play("New Anim")
 		$Obstacles/Pistons/AnimationPlayer.play("PistonAnimation")
 		yield(get_tree().create_timer(0.1, false), "timeout")
 		$Obstacles/Pistons2/AnimationPlayer.play("PistonAnimation")

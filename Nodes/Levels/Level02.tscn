@@ -106,9 +106,9 @@ shape = SubResource( 1 )
 ]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( 40.4139, -57.5687, 25.5488, 50.6491, 167.659, 50.6491, 152.794, -57.5687 )
+polygon = PoolVector2Array( 43.7321, -54.2331, 31.3848, 50.5518, 162.867, 51.2192, 150.519, -53.5657 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
-polygon = PoolVector2Array( 61.8196, -228.22, 51.1168, -151.516, 139.118, -150.327, 128.415, -228.22 )
+polygon = PoolVector2Array( 61.8196, -228.22, 54.4108, -155.681, 133.5, -155.681, 128.415, -228.22 )
 
 [connection signal="body_entered" from="Obstacles/Void" to="." method="_on_Void_body_entered"]
