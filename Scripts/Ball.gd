@@ -22,6 +22,13 @@ var ballIsInRewindIndex = 0
 var lastShot = []
 
 func _physics_process(delta):
+	$SFX/BallEnteringHole.volume_db = PlayerVariables.sfxVolume * (0.7)
+	$SFX/BallHit.volume_db = PlayerVariables.sfxVolume
+	$SFX/Wood/Hit1.volume_db = PlayerVariables.sfxVolume
+	$SFX/Wood/Hit2.volume_db = PlayerVariables.sfxVolume
+	$SFX/Wood/Hit3.volume_db = PlayerVariables.sfxVolume
+	$SFX/Falling.volume_db = PlayerVariables.sfxVolume
+	
 	rotation_degrees = 0
 	if ballIsMoving:
 		lastShot.append(global_position)

@@ -39,7 +39,6 @@ position = Vector2( -0.5, 0 )
 texture = ExtResource( 2 )
 
 [node name="Perspectives" parent="." instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 1.49829, -153.577 )
 
 [node name="TopDown" type="Node2D" parent="."]
@@ -129,7 +128,9 @@ polygon = PoolVector2Array( -318.166, -229.31, -403.453, 52.507, -334.159, 53.31
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/Void"]
 polygon = PoolVector2Array( 290.361, -229.543, 343.815, 53.7626, 404.388, 53.5664, 324.928, -230.37 )
 
-[node name="Wheel" type="StaticBody2D" parent="Obstacles"]
+[node name="Wheel" type="StaticBody2D" parent="Obstacles" groups=[
+"Wheelhouse",
+]]
 position = Vector2( 0.943909, -356.632 )
 rotation = -6.28319
 

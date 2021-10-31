@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Nodes/Levels/Level01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Ball.tscn" type="PackedScene" id=2]
@@ -28,15 +28,19 @@
 [ext_resource path="res://Assets/Sprites/PlayButton.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Sprites/Score.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Fonts/ScoreFont2.tres" type="DynamicFont" id=28]
-[ext_resource path="res://Assets/Sprites/InstructionsButton.png" type="Texture" id=29]
-[ext_resource path="res://Assets/Sprites/InstructionsButton_hover.png" type="Texture" id=30]
-[ext_resource path="res://Assets/Sprites/InstructionsButton_pressed.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Sprites/SettingsButton.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Sprites/BackButton_pressed.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Sprites/BackButton_hover.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Sprites/LudwigJamLogo.png" type="Texture" id=34]
 [ext_resource path="res://Assets/Sprites/SuperMegaDavLogo.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Sprites/Backdrop_clouds2.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Sprites/Backdrop_clouds1.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Audio/BallEnteringHole.ogg" type="AudioStream" id=38]
+[ext_resource path="res://Assets/Sprites/SettingsButton_pressed.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Sprites/SettingsButton_hover.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Sprites/FlagIcon.png" type="Texture" id=41]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=1]
 resource_name = "New Anim"
 length = 2.0
 loop = true
@@ -50,10 +54,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 240.719, 651.227 ), Vector2( 248, 651.227 ), Vector2( 240.719, 651.227 ) ]
+"values": [ Vector2( 280, 650 ), Vector2( 290, 650 ), Vector2( 280, 650 ) ]
 }
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=2]
 code = "//SHADER ORIGINALY CREADED BY \"FMS_Cat\" FROM SHADERTOY
 //PORTED AND MODIFYED TO GODOT BY AHOPNESS (@ahopness)
 //LICENSE : CC0
@@ -141,23 +145,23 @@ void fragment(){
 	COLOR = vec4( col, 1.0 );
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 shader_param/tape_wave_amount = 0.008
 shader_param/tape_crease_amount = 3.864
 shader_param/color_displacement = 1.0
 shader_param/lines_velocity = 0.15
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 386.989, 218.992 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 393.227, 217.928 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 1012.06, 219.124 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 1041.48, 223.994 )
 
 [node name="Gameplay" type="Node2D"]
@@ -207,17 +211,18 @@ position = Vector2( 1090, 675 )
 texture = ExtResource( 23 )
 
 [node name="FindYourBall" type="Sprite" parent="HUD"]
-visible = false
-position = Vector2( 246.412, 651.227 )
+position = Vector2( 240.719, 651.227 )
 texture = ExtResource( 15 )
 
 [node name="FindYourBallAnim" type="AnimationPlayer" parent="HUD"]
-"anims/New Anim" = SubResource( 7 )
+"anims/New Anim" = SubResource( 1 )
 
 [node name="FixedComponents" type="CanvasLayer" parent="."]
 layer = 11
 
-[node name="ColorRect" type="ColorRect" parent="FixedComponents"]
+[node name="TitleScreen" type="Node2D" parent="FixedComponents"]
+
+[node name="WhiteBackground" type="ColorRect" parent="FixedComponents/TitleScreen"]
 modulate = Color( 1, 1, 1, 0.266667 )
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -225,30 +230,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitleScreen" type="Sprite" parent="FixedComponents"]
+[node name="Logo" type="Sprite" parent="FixedComponents/TitleScreen"]
 position = Vector2( 140, 60 )
 texture = ExtResource( 18 )
 centered = false
 
-[node name="Instructions" type="Sprite" parent="FixedComponents"]
+[node name="Instructions" type="Sprite" parent="FixedComponents/TitleScreen"]
 position = Vector2( 140, 800 )
 texture = ExtResource( 19 )
 centered = false
 
-[node name="Rewind" type="ColorRect" parent="FixedComponents"]
-visible = false
-material = SubResource( 2 )
-margin_right = 1280.0
-margin_bottom = 720.0
+[node name="MusicSlider" type="HSlider" parent="FixedComponents/TitleScreen/Instructions"]
+margin_left = 260.0
+margin_top = 430.0
+margin_right = 660.0
+margin_bottom = 450.0
+custom_icons/grabber_highlight = ExtResource( 41 )
+custom_icons/grabber = ExtResource( 41 )
+step = 10.0
+value = 70.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="TextureButton" parent="FixedComponents"]
+[node name="SFXSlider" type="HSlider" parent="FixedComponents/TitleScreen/Instructions"]
+margin_left = 260.0
+margin_top = 482.0
+margin_right = 660.0
+margin_bottom = 502.0
+custom_icons/grabber_highlight = ExtResource( 41 )
+custom_icons/grabber = ExtResource( 41 )
+step = 10.0
+value = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BallEnteringHole" type="AudioStreamPlayer" parent="FixedComponents/TitleScreen/Instructions"]
+process_priority = 2
+stream = ExtResource( 38 )
+
+[node name="PlayButton" type="TextureButton" parent="FixedComponents/TitleScreen"]
 margin_left = 430.0
-margin_top = 450.0
+margin_top = 500.0
 margin_right = 830.0
-margin_bottom = 541.0
+margin_bottom = 591.0
 texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 24 )
 texture_hover = ExtResource( 25 )
@@ -256,24 +282,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InstructionsButton" type="TextureButton" parent="FixedComponents"]
+[node name="InstructionsButton" type="TextureButton" parent="FixedComponents/TitleScreen"]
 margin_left = 430.0
-margin_top = 559.567
+margin_top = 580.0
 margin_right = 830.0
-margin_bottom = 650.567
+margin_bottom = 671.0
 texture_normal = ExtResource( 29 )
-texture_pressed = ExtResource( 31 )
-texture_hover = ExtResource( 30 )
+texture_pressed = ExtResource( 39 )
+texture_hover = ExtResource( 40 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackButton" type="TextureButton" parent="FixedComponents"]
+[node name="BackButton" type="TextureButton" parent="FixedComponents/TitleScreen"]
 visible = false
-margin_left = 510.817
-margin_top = 633.65
-margin_right = 910.817
-margin_bottom = 724.65
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 440.0
+margin_bottom = 111.0
 rect_scale = Vector2( 0.6, 0.6 )
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 32 )
@@ -281,6 +307,16 @@ texture_hover = ExtResource( 33 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GodotLogo" type="Sprite" parent="FixedComponents/TitleScreen"]
+position = Vector2( 1138.44, 574.723 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 35 )
+
+[node name="LudwigJamLogo" type="Sprite" parent="FixedComponents/TitleScreen"]
+position = Vector2( 141.002, 576.483 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 34 )
 
 [node name="Fireworks" type="Node2D" parent="FixedComponents"]
 visible = false
@@ -450,21 +486,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GodotLogo" type="Sprite" parent="FixedComponents"]
-position = Vector2( 1138.44, 574.723 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 35 )
-
-[node name="LudwigJamLogo" type="Sprite" parent="FixedComponents"]
-position = Vector2( 141.002, 576.483 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 34 )
+[node name="Rewind" type="ColorRect" parent="FixedComponents"]
+visible = false
+material = SubResource( 3 )
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, 4150 )
 current = true
 
 [node name="Skyscraper" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Skyscraper"]
+
+[node name="CloudQuick2" type="ParallaxLayer" parent="Skyscraper/ParallaxBackground"]
+motion_mirroring = Vector2( 22500, 0 )
+
+[node name="Clouds" type="Sprite" parent="Skyscraper/ParallaxBackground/CloudQuick2"]
+position = Vector2( 2040, -1504.76 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 36 )
+
+[node name="CloudQuick" type="ParallaxLayer" parent="Skyscraper/ParallaxBackground"]
+motion_mirroring = Vector2( 22500, 0 )
+
+[node name="Clouds" type="Sprite" parent="Skyscraper/ParallaxBackground/CloudQuick"]
+position = Vector2( 427.302, 40.3184 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 37 )
 
 [node name="Backdrop" type="Sprite" parent="Skyscraper"]
 modulate = Color( 1, 1, 1, 0.666667 )
@@ -521,14 +574,14 @@ collision_layer = 64512
 
 [node name="BetweenLevel1and2" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 1.59857, 3810.64 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel2and3" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 3.5636, 3068.26 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -541,21 +594,21 @@ __meta__ = {
 
 [node name="BetweenLevel4and5" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 631.984, 1526.48 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel5and6" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 623.708, 785.114 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BetweenLevel6and7" type="CollisionShape2D" parent="Skyscraper/Area_FreeFall"]
 position = Vector2( 600.4, 20.1815 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -590,9 +643,11 @@ position = Vector2( -238.28, 4164.25 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="pressed" from="FixedComponents/PlayButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="FixedComponents/InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
-[connection signal="pressed" from="FixedComponents/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="value_changed" from="FixedComponents/TitleScreen/Instructions/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="FixedComponents/TitleScreen/Instructions/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+[connection signal="pressed" from="FixedComponents/TitleScreen/PlayButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="FixedComponents/TitleScreen/InstructionsButton" to="." method="_on_InstructionsButton_pressed"]
+[connection signal="pressed" from="FixedComponents/TitleScreen/BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="timeout" from="FixedComponents/Fireworks/FireworkTimer1" to="." method="_on_FireworkTimer_timeout"]
 [connection signal="timeout" from="FixedComponents/Fireworks/FireworkTimer2" to="." method="_on_FireworkTimer2_timeout"]
 [connection signal="timeout" from="FixedComponents/Fireworks/FireworkTimer3" to="." method="_on_FireworkTimer3_timeout"]

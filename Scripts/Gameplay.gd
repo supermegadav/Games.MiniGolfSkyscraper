@@ -44,6 +44,9 @@ func _ready():
 	$AudioController.playGameplaySong()
 
 func _physics_process(delta):
+	$Skyscraper/ParallaxBackground/CloudQuick2.motion_offset.x += 0.5
+	$Skyscraper/ParallaxBackground/CloudQuick.motion_offset.x += 1
+	$Club.position = $Ball.position
 	if currentGameplayStatus == GameplayStatus.Gameplay:
 		timerInFrame += 1
 		if hasRewindInAction:
@@ -76,6 +79,7 @@ func _physics_process(delta):
 				elif windUp < windUpMin:
 					windUpIncrease = true
 			if !hasShotInAction:
+				angleFromUp = getAngleToMouse()
 				if Input.is_action_pressed("left"):
 					angleFromUp += angleRate
 				if Input.is_action_pressed("right"):
@@ -114,6 +118,7 @@ func _physics_process(delta):
 
 
 func shoot():
+	$Club.visible = false
 	previousLevel = currentLevel
 	cameraRewindPos = []
 	cameraRewindZoom = []
@@ -132,8 +137,6 @@ func on_ball_finished_moving():
 	$Club.rotation_degrees = 0
 	$HUD/Club.rotation_degrees = 0
 	$HUD/WindUpBar.value = windUpOriginalPosition
-	print('ball finished moving')
-	print('ball position: %s' % $Ball.position)
 	resetCamera()
 	
 func on_ball_free_fall():
@@ -227,7 +230,7 @@ func loadNewLevel():
 	$Ball.visible = true
 	resetCamera()
 	if currentLevel == 1:
-		$Ball.resetPosition(Vector2(-250,4300))
+		$Ball.resetPosition(Vector2(-240,4300))
 	elif currentLevel == 2:
 		$Ball.resetPosition(Vector2(-250,3390))
 	elif currentLevel == 3:
@@ -282,6 +285,12 @@ func getAngleToFlagRounded() -> float:
 	var randomAngleSum = RNGTools.randi_range(-25.0, 25.0)
 	return (angle+randomAngleSum)
 
+func getAngleToMouse() -> float:
+	var mousePosition = get_global_mouse_position()
+	var ballPosition = $Ball.global_position
+	var angle = rad2deg(mousePosition.angle_to_point(ballPosition))
+	return angle
+
 func winning():
 	currentGameplayStatus = GameplayStatus.Congratulations
 	$FixedComponents/Fireworks.visible = true
@@ -329,16 +338,16 @@ func _on_Area_FreeFall_body_exited(body):
 
 func _on_TextureButton_pressed():
 	currentGameplayStatus = GameplayStatus.Gameplay
-	$Tween.interpolate_property($FixedComponents/TitleScreen, "position", Vector2(140,40), Vector2(140, -500), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($FixedComponents/TitleScreen/Logo, "position", Vector2(140,40), Vector2(140, -500), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
-	$FixedComponents/PlayButton.visible = false
-	$FixedComponents/InstructionsButton.visible = false
-	$FixedComponents/LudwigJamLogo.visible = false
-	$FixedComponents/GodotLogo.visible = false
+	$FixedComponents/TitleScreen/PlayButton.visible = false
+	$FixedComponents/TitleScreen/InstructionsButton.visible = false
+	$FixedComponents/TitleScreen/LudwigJamLogo.visible = false
+	$FixedComponents/TitleScreen/GodotLogo.visible = false
 	yield($Tween, "tween_all_completed")
 	currentLevel += 1
 	loadNewLevel()
-	$Tween.interpolate_property($FixedComponents/ColorRect, "modulate", $FixedComponents/ColorRect.modulate, Color(255,255,255,0), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($FixedComponents/TitleScreen/WhiteBackground, "modulate", $FixedComponents/TitleScreen/WhiteBackground.modulate, Color(255,255,255,0), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
 	$HUD/PowerMeter.visible = true
@@ -349,31 +358,31 @@ func _on_TextureButton_pressed():
 
 func _on_InstructionsButton_pressed():
 	currentGameplayStatus = GameplayStatus.Instructions
-	$Tween.interpolate_property($FixedComponents/TitleScreen, "position", Vector2(140,40), Vector2(140, -500), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($FixedComponents/TitleScreen/Logo, "position", Vector2(140,40), Vector2(140, -500), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
-	$FixedComponents/PlayButton.visible = false
-	$FixedComponents/InstructionsButton.visible = false
-	$FixedComponents/LudwigJamLogo.visible = false
-	$FixedComponents/GodotLogo.visible = false
+	$FixedComponents/TitleScreen/PlayButton.visible = false
+	$FixedComponents/TitleScreen/InstructionsButton.visible = false
+	$FixedComponents/TitleScreen/LudwigJamLogo.visible = false
+	$FixedComponents/TitleScreen/GodotLogo.visible = false
 	yield($Tween, "tween_all_completed")
-	$Tween.interpolate_property($FixedComponents/Instructions, "position", Vector2(140,800), Vector2(140,40), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($FixedComponents/TitleScreen/Instructions, "position", Vector2(140,800), Vector2(140,40), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
-	$FixedComponents/BackButton.visible = true
+	$FixedComponents/TitleScreen/BackButton.visible = true
 
 func _on_BackButton_pressed():
 	currentGameplayStatus = GameplayStatus.TitleScreen
-	$FixedComponents/BackButton.visible = false
-	$Tween.interpolate_property($FixedComponents/Instructions, "position", Vector2(140,40), Vector2(140, 800), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$FixedComponents/TitleScreen/BackButton.visible = false
+	$Tween.interpolate_property($FixedComponents/TitleScreen/Instructions, "position", Vector2(140,40), Vector2(140, 800), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
-	$Tween.interpolate_property($FixedComponents/TitleScreen, "position", Vector2(140,-500), Vector2(140, 40), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($FixedComponents/TitleScreen/Logo, "position", Vector2(140,-500), Vector2(140, 40), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
-	$FixedComponents/PlayButton.visible = true
-	$FixedComponents/InstructionsButton.visible = true
-	$FixedComponents/LudwigJamLogo.visible = true
-	$FixedComponents/GodotLogo.visible = true
+	$FixedComponents/TitleScreen/PlayButton.visible = true
+	$FixedComponents/TitleScreen/InstructionsButton.visible = true
+	$FixedComponents/TitleScreen/LudwigJamLogo.visible = true
+	$FixedComponents/TitleScreen/GodotLogo.visible = true
 	
 func _on_FireworkTimer_timeout():
 	var fireworkNode = load("res://Nodes/Fireworks/Explosion.tscn")
@@ -403,3 +412,12 @@ func _on_FireworkTimer4_timeout():
 	fireworkInstance.position = Vector2(225,210)
 	$FixedComponents/Fireworks.add_child(fireworkInstance)
 	$FixedComponents/Fireworks/FireworkTimer4.wait_time = RNGTools.randi_range(0.5,2.0)
+
+
+func _on_MusicSlider_value_changed(value):
+	PlayerVariables.musicVolume = -1 * ((100-value)/100 * 40)
+
+func _on_SFXSlider_value_changed(value):
+	PlayerVariables.sfxVolume = -1 * ((100-value)/100 * 25)
+	$FixedComponents/TitleScreen/Instructions/BallEnteringHole.volume_db = PlayerVariables.sfxVolume
+	$FixedComponents/TitleScreen/Instructions/BallEnteringHole.play()

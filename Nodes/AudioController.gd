@@ -1,6 +1,10 @@
 extends Node2D
 
-var hit = 0
+
+func _physics_process(delta):
+	$Song1.volume_db = PlayerVariables.musicVolume
+	$Song2.volume_db = PlayerVariables.musicVolume
+	$Song3.volume_db = PlayerVariables.musicVolume
 
 func playGameplaySong():
 	$Song1.play()
