@@ -166,6 +166,7 @@ extents = Vector2( 1041.48, 223.994 )
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource( 14 )
+isDebug = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 10
